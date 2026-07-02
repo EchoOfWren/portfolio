@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zoe Yeh</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon-512.png">
+<style>
+  @font-face{font-family:'Noto Serif TC';src:url('assets/fonts/NotoSerifTC-Medium.ttf') format('truetype');font-weight:300 700;font-style:normal;font-display:swap;}
+  *{box-sizing:border-box;}
+  html,body{margin:0;background:#050a18;}
+  a{color:inherit;}
+  ::selection{background:#274a86;color:#eaf3ff;}
+  @keyframes wk-tw{0%,100%{opacity:.18}50%{opacity:1}}
+  @keyframes wk-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  @keyframes wk-eq{0%,100%{height:22%}50%{height:100%}}
+</style>
+<script src="image-slot.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#0a1430">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><circle cx="600" cy="400" r="190" fill="none" stroke="#7fc4ff" stroke-width="5"/><circle cx="600" cy="400" r="150" fill="none" stroke="rgba(127,196,255,.4)" stroke-width="2"/><text x="600" y="440" font-family="Georgia,serif" font-size="150" fill="#dcecff" text-anchor="middle">Z</text></svg>
+</template>
+</helmet>
+
+<div data-root style="position:relative; min-height:100vh; background:radial-gradient(125% 90% at 28% 6%, #14274f 0%, #0a1430 46%, #050a18 100%); color:#e8f0ff; font-family:'Noto Serif TC',serif; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <div class="wk-stars" style="position:fixed; inset:0; pointer-events:none; z-index:0;"></div>
+  <div style="position:fixed; inset:0; pointer-events:none; z-index:0; background:radial-gradient(60% 40% at 78% 90%, rgba(70,130,230,.10), transparent 70%);"></div>
+
+  <!-- ============ TOP BAR ============ -->
+  <header style="position:fixed; top:0; left:0; right:0; z-index:30; backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); background:rgba(6,12,28,.66); border-bottom:1px solid rgba(130,180,255,.14);">
+    <div style="max-width:1180px; margin:0 auto; padding:12px 34px; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;">
+      <a href="index.html?enter=1" class="i18n" data-zh="← 返回星圖" data-en="← Back to the star-map" style="text-decoration:none; font-size:13px; letter-spacing:.12em; color:rgba(190,214,255,.82); white-space:nowrap;">← 返回星圖</a>
+      <nav style="display:flex; flex-wrap:wrap; gap:2px; justify-content:flex-end; font-size:13px; letter-spacing:.06em;">
+        <a href="#about" data-tab="about" class="i18n" data-zh="關於" data-en="About" style="padding:6px 11px; border-radius:999px; text-decoration:none; color:rgba(190,214,255,.66);">關於</a>
+        <a href="#cv" data-tab="cv" class="i18n" data-zh="履歷" data-en="CV" style="padding:6px 11px; border-radius:999px; text-decoration:none; color:rgba(190,214,255,.66);">履歷</a>
+        <a href="#journal" data-tab="journal" class="i18n" data-zh="研究" data-en="Research" style="padding:6px 11px; border-radius:999px; text-decoration:none; color:rgba(190,214,255,.66);">研究</a>
+        <a href="#web" data-tab="web" class="i18n" data-zh="網頁設計" data-en="Web" style="padding:6px 11px; border-radius:999px; text-decoration:none; color:rgba(190,214,255,.66);">網頁設計</a>
+        <a href="#graphic" data-tab="graphic" class="i18n" data-zh="平面設計" data-en="Graphic" style="padding:6px 11px; border-radius:999px; text-decoration:none; color:rgba(190,214,255,.66);">平面設計</a>
+        <a href="#fashion" data-tab="fashion" class="i18n" data-zh="服裝設計" data-en="Fashion" style="padding:6px 11px; border-radius:999px; text-decoration:none; color:rgba(190,214,255,.66);">服裝設計</a>
+        <a href="#music" data-tab="music" class="i18n" data-zh="音樂創作" data-en="Music" style="padding:6px 11px; border-radius:999px; text-decoration:none; color:rgba(190,214,255,.66);">音樂創作</a>
+        <a href="#image" data-tab="image" class="i18n" data-zh="圖像創作" data-en="Image" style="padding:6px 11px; border-radius:999px; text-decoration:none; color:rgba(190,214,255,.66);">圖像創作</a>
+        <a href="#writing" data-tab="writing" class="i18n" data-zh="文字創作" data-en="Writing" style="padding:6px 11px; border-radius:999px; text-decoration:none; color:rgba(190,214,255,.66);">文字創作</a>
+        <a href="#contact" data-tab="contact" class="i18n" data-zh="聯絡我" data-en="Contact" style="padding:6px 11px; border-radius:999px; text-decoration:none; color:rgba(190,214,255,.66);">聯絡我</a>
+        <span style="display:inline-flex; align-items:center; border:1px solid rgba(130,180,255,.3); border-radius:999px; overflow:hidden; margin-left:8px; cursor:pointer;">
+          <span data-lang-btn="zh" style="padding:6px 11px; font-size:12px; background:#7fc4ff; color:#08152e;">中</span>
+          <span data-lang-btn="en" style="padding:6px 11px; font-size:12px; background:transparent; color:rgba(190,214,255,.7);">EN</span>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <main style="position:relative; z-index:1; max-width:1180px; margin:0 auto; padding:64px 40px 140px;">
+
+    <!-- ============ ABOUT ============ -->
+    <section data-cat="about" data-screen-label="About" style="padding:74px 0 0;">
+      <div class="i18n" data-zh="關於 · 在 0 與 1 之間" data-en="About · Between 0 and 1" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">關於 · 在 0 與 1 之間</div>
+      <div style="display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:54px; align-items:center; margin-top:26px;">
+        <div>
+          <h1 class="i18n" data-zh="0 與 1 的距離" data-en="The distance between 0 and 1" style="font-size:64px; font-weight:500; line-height:1.06; letter-spacing:.01em; margin:0; color:#eef4ff;">0 與 1 的距離</h1>
+          <div class="i18n" data-zh="從 0 到 1" data-en="From 0 to 1" style="font-size:21px; color:#8fc8ff; letter-spacing:.06em; margin:16px 0 0;">從 0 到 1</div>
+          <p class="i18n" data-zh="我喜歡創作——喜歡從一個無形的概念，一路建構成有框架的系統。" data-en="I love to create — carrying a formless idea all the way into a system with a framework." style="font-size:17px; line-height:1.78; color:rgba(224,236,255,.76); max-width:none; margin:18px 0 0;">我喜歡創作——喜歡從一個無形的概念，一路建構成有框架的系統。</p>
+          <div style="display:flex; flex-wrap:wrap; gap:16px; margin-top:30px; font-size:11px; letter-spacing:.14em; color:rgba(190,214,255,.6);">
+            <span class="i18n" data-zh="教育" data-en="Education">教育</span><span style="color:#5f9fe0;">/</span>
+            <span class="i18n" data-zh="GenAI" data-en="GenAI">GenAI</span><span style="color:#5f9fe0;">/</span>
+            <span class="i18n" data-zh="設計" data-en="Design">設計</span>
+          </div>
+        </div>
+        <image-slot id="zoe_portrait" style="width:100%; height:auto; aspect-ratio:3/4; display:block;" shape="rounded" radius="4" placeholder="人像 / Portrait"></image-slot>
+      </div>
+
+      <blockquote class="i18n" data-zh="「給我一個失靈的系統——一塊布、五百人的課堂、一套僵化的機制——我會找到那條，重新織起它的線。」" data-en="&ldquo;Give me a system that fails — a length of cloth, a class of five hundred, a mechanism grown rigid — and I will find the thread that reweaves it.&rdquo;" style="margin:70px 0 0; font-size:33px; font-weight:300; line-height:1.4; color:#dce8ff; max-width:none;">「給我一個失靈的系統——一塊布、五百人的課堂、一套僵化的機制——我會找到那條，重新織起它的線。」</blockquote>
+
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:58px; border-top:1px solid rgba(130,180,255,.22);">
+        <div style="padding:26px 22px 30px; border-right:1px solid rgba(130,180,255,.12);"><div style="font-size:11px; color:#6fb0f0; margin-bottom:14px;">01</div><div class="i18n" data-zh="布料" data-en="Fabric" style="font-size:24px; margin-bottom:10px; color:#eaf3ff;">布料</div><p class="i18n" data-zh="織品與服裝設計——賦予原始材料結構與形體。" data-en="Textile & garment design — giving raw material structure and form." style="font-size:13px; line-height:1.64; color:rgba(224,236,255,.6); margin:0;">織品與服裝設計——賦予原始材料結構與形體。</p></div>
+        <div style="padding:26px 22px 30px; border-right:1px solid rgba(130,180,255,.12);"><div style="font-size:11px; color:#6fb0f0; margin-bottom:14px;">02</div><div class="i18n" data-zh="轉向" data-en="Pivot" style="font-size:24px; margin-bottom:10px; color:#eaf3ff;">轉向</div><p class="i18n" data-zh="把同一套設計方法，從服裝帶進教育與生成式 AI。" data-en="Carrying one design method from fashion into education and generative AI." style="font-size:13px; line-height:1.64; color:rgba(224,236,255,.6); margin:0;">把同一套設計方法，從服裝帶進教育與生成式 AI。</p></div>
+        <div style="padding:26px 22px 30px; border-right:1px solid rgba(130,180,255,.12);"><div style="font-size:11px; color:#6fb0f0; margin-bottom:14px;">03</div><div class="i18n" data-zh="課堂" data-en="Classroom" style="font-size:24px; margin-bottom:10px; color:#eaf3ff;">課堂</div><p class="i18n" data-zh="與近 500 位學生，一同透過 GenAI，將概念具象化。" data-en="Giving concepts a form, together with nearly 500 students, through GenAI." style="font-size:13px; line-height:1.64; color:rgba(224,236,255,.6); margin:0;">與近 500 位學生，一同透過 GenAI，將概念具象化。</p></div>
+        <div style="padding:26px 22px 30px;"><div style="font-size:11px; color:#6fb0f0; margin-bottom:14px;">04</div><div class="i18n" data-zh="教學" data-en="Teaching" style="font-size:24px; margin-bottom:10px; color:#eaf3ff;">教學</div><p class="i18n" data-zh="期望以自身經驗，帶來創新的教學。" data-en="Bringing innovative teaching, drawn from my own experience." style="font-size:13px; line-height:1.64; color:rgba(224,236,255,.6); margin:0;">期望以自身經驗，帶來創新的教學。</p></div>
+      </div>
+    </section>
+
+    <!-- ============ CV ============ -->
+    <section data-cat="cv" data-screen-label="CV" style="padding:74px 0 0; display:none;">
+      <div class="i18n" data-zh="履歷 · 旅程" data-en="CV · The journey" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">履歷 · 旅程</div>
+      <h1 class="i18n" data-zh="一趟跨域的旅程。" data-en="A cross-disciplinary journey." style="font-size:58px; font-weight:500; line-height:1.02; margin:14px 0 40px; color:#eef4ff;">一趟跨域的旅程。</h1>
+      <div data-cvlist style="border-top:1px solid rgba(130,180,255,.3);"></div>
+    </section>
+
+    <!-- ============ JOURNAL ============ -->
+    <section data-cat="journal" data-screen-label="Journal Papers" style="padding:74px 0 0; display:none;">
+      <div class="i18n" data-zh="研究 · 把概念搭成具體" data-en="Research · Scaffolding ideas into form" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">研究 · 把概念搭成具體</div>
+      <h1 class="i18n" data-zh="把 GenAI，帶進 K-12 領域。" data-en="Bringing GenAI into K-12." style="font-size:56px; font-weight:500; line-height:1.04; margin:14px 0 0; color:#eef4ff;">把 GenAI，帶進 K-12 領域。</h1>
+      <p class="i18n" data-zh="四項關於生成式 AI 繪圖與音樂、提示詞鷹架，以及教師角色轉變的研究——獲四場 2026 研討會錄取（NKNU、NTHU、NYCU、NTUE）。" data-en="Four studies on generative-AI image and music, prompt scaffolding, and the teacher's changing role — accepted across four 2026 conferences (NKNU, NTHU, NYCU, NTUE)." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 0;">四項關於生成式 AI 繪圖與音樂、提示詞鷹架，以及教師角色轉變的研究——獲四場 2026 研討會錄取（NKNU、NTHU、NYCU、NTUE）。</p>
+
+      <div style="border:1px solid rgba(127,196,255,.4); background:linear-gradient(135deg, rgba(120,170,255,.12), rgba(120,160,255,.03)); padding:30px 34px; margin-top:36px;">
+        <div class="i18n" data-zh="原創概念 · 我提出的理論視角" data-en="Original concept · a theoretical lens I proposed" style="font-size:11px; letter-spacing:.2em; color:#6fb0f0; margin-bottom:14px;">原創概念 · 我提出的理論視角</div>
+        <h3 class="i18n" data-zh="概念具象化困境" data-en="The Conceptual Materialization Dilemma" style="font-weight:500; font-size:30px; line-height:1.2; margin:0 0 12px; color:#eef4ff;">概念具象化困境</h3>
+        <p class="i18n" data-zh="當生成式 AI 幾乎能生成一切，創作的門檻便從「技術執行」位移到「概念表達」——學生真正的瓶頸，不再是工具，而是說不清楚自己想要什麼。我以此為核心，重新設計課堂的認知鷹架。" data-en="When generative AI can make almost anything, the barrier to creation shifts from technical execution to conceptual articulation — a student's real bottleneck is no longer the tool, but being unable to say what they want. I made this the core of the cognitive scaffolding I redesigned for the classroom." style="font-size:15px; line-height:1.75; color:rgba(224,236,255,.74); margin:0; max-width:none;">當生成式 AI 幾乎能生成一切，創作的門檻便從「技術執行」位移到「概念表達」——學生真正的瓶頸，不再是工具，而是說不清楚自己想要什麼。我以此為核心，重新設計課堂的認知鷹架。</p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:44px;">
+        <div style="border:1px solid rgba(130,180,255,.18); background:rgba(120,160,255,.05); padding:26px 24px;"><div style="font-size:11px; color:#6fb0f0; margin-bottom:12px;">01</div><h3 class="i18n" data-zh="教師於 AI 賦能課堂之專業轉化" data-en="Teachers' professional transformation in AI-empowered classrooms" style="font-weight:500; font-size:21px; line-height:1.3; margin:0 0 9px; color:#eaf3ff;">教師於 AI 賦能課堂之專業轉化</h3><p class="i18n" data-zh="以行動研究，將生成式 AI 繪圖融入國中資訊科技，探討教師角色的轉變。" data-en="An action-research study weaving GenAI image-making into junior-high IT, tracing how the teacher's role transforms." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:0;">以行動研究，將生成式 AI 繪圖融入國中資訊科技，探討教師角色的轉變。</p></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:rgba(120,160,255,.05); padding:26px 24px;"><div style="font-size:11px; color:#6fb0f0; margin-bottom:12px;">02</div><h3 class="i18n" data-zh="基於 ADDIE 模型之生成式 AI 繪圖教案設計" data-en="GenAI image lesson design, based on the ADDIE model" style="font-weight:500; font-size:21px; line-height:1.3; margin:0 0 9px; color:#eaf3ff;">基於 ADDIE 模型之生成式 AI 繪圖教案設計</h3><p class="i18n" data-zh="以 ADDIE 設計跨領域教案，並自建提示詞鷹架平台，協助不同學習風格的學生。" data-en="A cross-disciplinary curriculum on the ADDIE model, with a self-built prompt-scaffolding platform for diverse learners." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:0;">以 ADDIE 設計跨領域教案，並自建提示詞鷹架平台，協助不同學習風格的學生。</p></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:rgba(120,160,255,.05); padding:26px 24px;"><div style="font-size:11px; color:#6fb0f0; margin-bottom:12px;">03</div><h3 class="i18n" data-zh="從聆聽者到創作者：生成式 AI 音樂" data-en="From listeners to creators: GenAI music" style="font-weight:500; font-size:21px; line-height:1.3; margin:0 0 9px; color:#eaf3ff;">從聆聽者到創作者：生成式 AI 音樂</h3><p class="i18n" data-zh="用三層認知鷹架，讓沒有音樂背景的學生以 SUNO AI 創作多語原創歌曲。" data-en="A three-tier scaffolding that let students with no musical training compose original multilingual songs with SUNO AI." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:0;">用三層認知鷹架，讓沒有音樂背景的學生以 SUNO AI 創作多語原創歌曲。</p></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:rgba(120,160,255,.05); padding:26px 24px;"><div style="font-size:11px; color:#6fb0f0; margin-bottom:12px;">04</div><h3 class="i18n" data-zh="AI 賦能時代下的教師角色重塑" data-en="Reshaping the teacher's role in the AI era" style="font-weight:500; font-size:21px; line-height:1.3; margin:0 0 9px; color:#eaf3ff;">AI 賦能時代下的教師角色重塑</h3><p class="i18n" data-zh="探討教師如何以情緒領導與認知鷹架，協助學生跨越「概念具象化」困境。" data-en="How teachers use emotional leadership and cognitive scaffolding to help students cross the &lsquo;conceptual materialization&rsquo; barrier." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:0;">探討教師如何以情緒領導與認知鷹架，協助學生跨越「概念具象化」困境。</p></div>
+      </div>
+
+      <!-- READING ROOM -->
+      <div data-rr style="margin-top:56px;">
+        <div class="i18n" data-zh="線上閱覽室 · 論文、海報、簡報" data-en="Reading room · papers, posters, talks" style="font-size:12px; letter-spacing:.2em; color:#6fb0f0; margin-bottom:20px;">線上閱覽室 · 論文、海報、簡報</div>
+        <div style="display:grid; grid-template-columns:minmax(300px, 380px) 1fr; gap:22px; align-items:start;">
+          <div>
+            <div class="i18n" data-zh="論文" data-en="Papers" style="font-size:11px; letter-spacing:.18em; color:rgba(190,214,255,.5); margin:0 0 9px;">論文</div>
+            <div class="rr-chip i18n" data-doc="assets/docs/paper-addie.pdf" data-zh="基於 ADDIE 模型之生成式 AI 繪圖跨領域教案設計：以國中資訊科技為例（全文）" data-en="Lesson plans integrating generative-AI image tools into junior-high IT, based on the ADDIE model (full paper)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">基於 ADDIE 模型之生成式 AI 繪圖跨領域教案設計：以國中資訊科技為例（全文）</div>
+            <div class="rr-chip i18n" data-doc="assets/docs/abstract-addie.pdf" data-zh="基於 ADDIE 模型之生成式 AI 繪圖跨領域教案設計（摘要）" data-en="Integrating generative-AI image tools into junior-high IT — ADDIE model (abstract)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">基於 ADDIE 模型之生成式 AI 繪圖跨領域教案設計（摘要）</div>
+            <div class="rr-chip i18n" data-doc="assets/docs/abstract-genai-music.pdf" data-zh="從聆聽者到創作者：以生成式 AI 音樂工具跨越音樂不平等（摘要）" data-en="From listeners to creators: bridging musical inequality through generative-AI music tools (abstract)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">從聆聽者到創作者：以生成式 AI 音樂工具跨越音樂不平等（摘要）</div>
+            <div class="rr-chip i18n" data-doc="assets/docs/abstract-c09-en.pdf" data-zh="AI 賦能時代下的教師角色重塑：情緒領導與鷹架建構（英文摘要）" data-en="Reshaping the teacher's role in an age of AI empowerment (English abstract)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">AI 賦能時代下的教師角色重塑：情緒領導與鷹架建構（英文摘要）</div>
+            <div class="i18n" data-zh="海報" data-en="Posters" style="font-size:11px; letter-spacing:.18em; color:rgba(190,214,255,.5); margin:20px 0 9px;">海報</div>
+            <div class="rr-chip i18n" data-doc="assets/docs/poster-facdev.pdf" data-zh="從聆聽者到創作者（FacDev 2026 海報）" data-en="From listeners to creators (FacDev 2026 poster)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">從聆聽者到創作者（FacDev 2026 海報）</div>
+            <div class="rr-chip i18n" data-doc="assets/docs/poster-c09.pdf" data-zh="AI 賦能時代下的教師角色重塑（C09 海報）" data-en="Reshaping the teacher's role in an age of AI empowerment (C09 poster)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">AI 賦能時代下的教師角色重塑（C09 海報）</div>
+            <div class="i18n" data-zh="口頭簡報" data-en="Talks" style="font-size:11px; letter-spacing:.18em; color:rgba(190,214,255,.5); margin:20px 0 9px;">口頭簡報</div>
+            <div class="rr-chip i18n" data-doc="assets/docs/talk-facdev-en.pdf" data-zh="從聆聽者到創作者（FacDev 2026 口頭簡報 · 英文）" data-en="From listeners to creators (FacDev 2026 talk, English)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">從聆聽者到創作者（FacDev 2026 口頭簡報 · 英文）</div>
+            <div class="rr-chip i18n" data-doc="assets/docs/talk-defense.pdf" data-zh="臺灣北部女性銀髮族連身裙設計開發之研究（碩士口試簡報）" data-en="Design & development of dresses for elderly women in northern Taiwan (Master's defense)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">臺灣北部女性銀髮族連身裙設計開發之研究（碩士口試簡報）</div>
+          </div>
+          <div>
+            <div style="border:1px solid rgba(130,180,255,.2); background:#0a1024;">
+              <iframe class="rr-frame" title="Document viewer" style="display:block; width:100%; height:760px; border:0; background:#0a1024;"></iframe>
+            </div>
+            <div style="display:flex; justify-content:flex-end; margin-top:10px;">
+              <a class="rr-open i18n" href="assets/docs/paper-addie.pdf" target="_blank" rel="noopener" data-zh="在新分頁開啟 ↗" data-en="Open in new tab ↗" style="text-decoration:none; font-size:12px; letter-spacing:.06em; color:#7fc4ff;">在新分頁開啟 ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WEB ============ -->
+    <section data-cat="web" data-screen-label="Web Design" style="padding:74px 0 0; display:none;">
+      <div class="i18n" data-zh="網頁設計 · 親手搭起的學習宇宙" data-en="Web Design · A learning universe, built by hand" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">網頁設計 · 親手搭起的學習宇宙</div>
+      <h1 class="i18n" data-zh="親手搭起的，學習工具。" data-en="Learning tools, built by hand." style="font-size:56px; font-weight:500; line-height:1.04; margin:14px 0 0; color:#eef4ff;">親手搭起的，學習工具。</h1>
+      <p class="i18n" data-zh="為了讓課堂真正運轉，我自建了一整套網頁——設計、前端、內容，一手包辦。每個頁面都有即時預覽，點一下就能進入。" data-en="To make a classroom truly run, I built a whole set of sites — design, front-end, content, all by hand. Every page has a live preview; click to enter." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 34px;">為了讓課堂真正運轉，我自建了一整套網頁——設計、前端、內容，一手包辦。每個頁面都有即時預覽，點一下就能進入。</p>
+
+        <div style="border-top:1px solid rgba(130,180,255,.16); padding:30px 0 6px;">
+          <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="竹簡樂府" data-en="Bamboo Yuefu" style="font-size:23px; font-weight:500; color:#eef4ff;">竹簡樂府</span><span class="i18n" data-zh="音樂 · 文化" data-en="Music · Culture" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">音樂 · 文化</span></div>
+          <p class="i18n" data-zh="以竹簡為題的互動網頁作品。" data-en="An interactive web piece themed on bamboo slips." style="font-size:13.5px; line-height:1.6; color:rgba(224,236,255,.62); margin:10px 0 18px; max-width:none;">以竹簡為題的互動網頁作品。</p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:14px;">
+            <a href="https://nb41f002.github.io/bamboo-music/" target="_blank" rel="noopener" style="position:relative; display:block; height:470px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/bamboo-music/" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="竹簡樂府 ↗" data-en="Open site ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">竹簡樂府 ↗</span></a>
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(130,180,255,.16); padding:30px 0 6px;">
+          <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="雙語營隊" data-en="Oyster Bilingual Camp" style="font-size:23px; font-weight:500; color:#eef4ff;">雙語營隊</span><span class="i18n" data-zh="教育 · 活動" data-en="Education · Event" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">教育 · 活動</span></div>
+          <p class="i18n" data-zh="雙語營隊的活動網站——主站、教師頁、任務、證書與識別證產生器，共五個頁面。" data-en="A bilingual-camp site — home, teacher page, missions, certificates and an ID-card forge: five pages in all." style="font-size:13.5px; line-height:1.6; color:rgba(224,236,255,.62); margin:10px 0 18px; max-width:none;">雙語營隊的活動網站——主站、教師頁、任務、證書與識別證產生器，共五個頁面。</p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:14px;">
+            <a href="https://nb41f002.github.io/oyster-camp/" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/oyster-camp/" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="主站 ↗" data-en="Home ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">主站 ↗</span></a>
+            <a href="https://nb41f002.github.io/oyster-camp/teacher" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/oyster-camp/teacher" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="教師頁 ↗" data-en="Teacher ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">教師頁 ↗</span></a>
+            <a href="https://nb41f002.github.io/oyster-camp/mission.html" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/oyster-camp/mission.html" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="任務 ↗" data-en="Mission ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">任務 ↗</span></a>
+            <a href="https://nb41f002.github.io/oyster-camp/certificate.html" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/oyster-camp/certificate.html" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="證書 ↗" data-en="Certificate ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">證書 ↗</span></a>
+            <a href="https://nb41f002.github.io/oyster-camp/id-card/id-card-forge.html" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/oyster-camp/id-card/id-card-forge.html" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="識別證產生器 ↗" data-en="ID-card forge ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">識別證產生器 ↗</span></a>
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(130,180,255,.16); padding:30px 0 6px;">
+          <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="圍圈文化" data-en="Circle Culture" style="font-size:23px; font-weight:500; color:#eef4ff;">圍圈文化</span><span class="i18n" data-zh="社會情緒 SEL" data-en="Social-Emotional" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">社會情緒 SEL</span></div>
+          <p class="i18n" data-zh="社會情緒學習——SEL、圍圈與情緒三個主題網站。" data-en="Social-emotional learning — three themed sites: SEL, Circle and Emotion." style="font-size:13.5px; line-height:1.6; color:rgba(224,236,255,.62); margin:10px 0 18px; max-width:none;">社會情緒學習——SEL、圍圈與情緒三個主題網站。</p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:14px;">
+            <a href="https://nb41f002.github.io/sel/" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/sel/" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="SEL ↗" data-en="SEL ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">SEL ↗</span></a>
+            <a href="https://nb41f002.github.io/circle/" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/circle/" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="圍圈 ↗" data-en="Circle ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">圍圈 ↗</span></a>
+            <a href="https://nb41f002.github.io/emotion/" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/emotion/" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="情緒 ↗" data-en="Emotion ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">情緒 ↗</span></a>
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(130,180,255,.16); padding:30px 0 6px;">
+          <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="FacDev 2026" data-en="FacDev 2026" style="font-size:23px; font-weight:500; color:#eef4ff;">FacDev 2026</span><span class="i18n" data-zh="研討會 · 工具" data-en="Conference · Tools" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">研討會 · 工具</span></div>
+          <p class="i18n" data-zh="研討會的自建工具：口說練習平台與問答系統。" data-en="Self-built conference tools: a speaking-practice platform and a Q&A system." style="font-size:13.5px; line-height:1.6; color:rgba(224,236,255,.62); margin:10px 0 18px; max-width:none;">研討會的自建工具：口說練習平台與問答系統。</p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:14px;">
+            <a href="https://nb41f002.github.io/0525/" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/0525/" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="口說練習 ↗" data-en="Speaking practice ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">口說練習 ↗</span></a>
+            <a href="https://nb41f002.github.io/FacDev2026QA/" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/FacDev2026QA/" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="問答工具 ↗" data-en="Q&A tool ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">問答工具 ↗</span></a>
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(130,180,255,.16); padding:30px 0 6px;">
+          <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="提示語鷹架網站" data-en="Prompt-Scaffolding Site" style="font-size:23px; font-weight:500; color:#eef4ff;">提示語鷹架網站</span><span class="i18n" data-zh="教學 · OER" data-en="Teaching · OER" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">教學 · OER</span></div>
+          <p class="i18n" data-zh="把概念意圖，橋接成結構化 AI 提示語的自建平台。" data-en="A self-built platform that bridges intent into structured AI prompts." style="font-size:13.5px; line-height:1.6; color:rgba(224,236,255,.62); margin:10px 0 18px; max-width:none;">把概念意圖，橋接成結構化 AI 提示語的自建平台。</p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:14px; margin-top:4px;">
+            <a href="https://sites.google.com/dcjh.tn.edu.tw/suno" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#dbe6f5; text-decoration:none;"><img src="assets/works/web-suno.png" alt="SUNO 歌詞提示詞產生器" loading="lazy" style="width:100%; height:100%; object-fit:cover; object-position:top center; display:block;"><span class="i18n" data-zh="SUNO 歌詞提示詞產生器 ↗" data-en="SUNO lyric-prompt generator ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">SUNO 歌詞提示詞產生器 ↗</span></a>
+          </div>
+        </div>
+
+      <p class="i18n" data-zh="＊ 預覽由各網站即時載入；「提示語鷹架網站」為 Google Sites，此處以截圖預覽，點按前往平台。" data-en="* Previews load live from each site; the Prompt-Scaffolding site is on Google Sites, shown here as a screenshot — click to open it." style="font-size:12px; line-height:1.6; color:rgba(190,214,255,.48); margin:30px 0 0;">＊ 預覽由各網站即時載入；「提示語鷹架網站」為 Google Sites，此處以截圖預覽，點按前往平台。</p>
+    </section>
+
+    <!-- ============ GRAPHIC ============ -->
+    <section data-cat="graphic" data-screen-label="Graphic Design" style="padding:74px 0 0; display:none;">
+      <div class="i18n" data-zh="平面設計 · 把意義排進版面" data-en="Graphic Design · Meaning, set into a page" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">平面設計 · 把意義排進版面</div>
+      <h1 class="i18n" data-zh="把美感，排列組合。" data-en="Aesthetics, arranged and combined." style="font-size:56px; font-weight:500; line-height:1.04; margin:14px 0 0; color:#eef4ff;">把美感，排列組合。</h1>
+      <p class="i18n" data-zh="書籍封面、視覺與編排——把抽象的概念，整理成讀者一眼就懂的畫面。" data-en="Book covers, visuals and layout — arranging abstract ideas into a picture a reader grasps at a glance." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 0;">書籍封面、視覺與編排——把抽象的概念，整理成讀者一眼就懂的畫面。</p>
+      <div style="margin-top:40px;">
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/miss-nobody.webp" alt="我是沒人要小姐 Miss Nobody" loading="lazy" data-zoom="assets/works/covers/miss-nobody.webp" data-gallery="graphic" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="display:flex; justify-content:space-between; margin-top:12px; font-size:11px; letter-spacing:.06em; color:rgba(190,214,255,.55);"><span class="i18n" data-zh="書籍封面設計 · 《我是沒人要小姐》" data-en="Book cover · Miss Nobody">書籍封面設計 · 《我是沒人要小姐》</span><span style="color:#6fb0f0;">01</span></div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:18px; margin-top:26px;">
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/remarriage.webp" alt="請問復婚可笑嗎" loading="lazy" data-zoom="assets/works/covers/remarriage.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="請問復婚可笑嗎" data-en="Is Remarriage Absurd?">請問復婚可笑嗎</span><span style="color:#6fb0f0;">05</span></figcaption></figure>
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/marnie.webp" alt="拜金小姐馬妮 Miss Marny" loading="lazy" data-zoom="assets/works/covers/marnie.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="拜金小姐馬妮" data-en="Miss Marny">拜金小姐馬妮</span><span style="color:#6fb0f0;">03</span></figcaption></figure>
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/star-roommate.webp" alt="我和明星同居了" loading="lazy" data-zoom="assets/works/covers/star-roommate.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="我和明星同居了" data-en="Living with a Star">我和明星同居了</span><span style="color:#6fb0f0;">04</span></figcaption></figure>
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/bad-woman.webp" alt="惡女失格" loading="lazy" data-zoom="assets/works/covers/bad-woman.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="惡女失格" data-en="Villainess, Disqualified">惡女失格</span><span style="color:#6fb0f0;">02</span></figcaption></figure>
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/queen.webp" alt="日輪女王 Queen of Majapahit" loading="lazy" data-zoom="assets/works/covers/queen.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="日輪女王" data-en="Queen of Majapahit">日輪女王</span><span style="color:#6fb0f0;">06</span></figcaption></figure>
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/life-reselect.webp" alt="人生重選" loading="lazy" data-zoom="assets/works/covers/life-reselect.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="人生重選" data-en="A Life, Rechosen">人生重選</span><span style="color:#6fb0f0;">07</span></figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ============ FASHION ============ -->
+    <section data-cat="fashion" data-screen-label="Fashion Design" style="padding:74px 0 0; display:none;">
+      <div class="i18n" data-zh="服裝設計 · 從一塊布開始" data-en="Fashion Design · It begins with cloth" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">服裝設計 · 從一塊布開始</div>
+      <h1 class="i18n" data-zh="我不只織出時尚，我也縫出需求。" data-en="I don't just weave fashion — I stitch for real needs." style="font-size:46px; font-weight:500; line-height:1.1; margin:14px 0 0; color:#eef4ff;">我不只織出時尚，我也縫出需求。</h1>
+      <p class="i18n" data-zh="輔仁大學織品服裝學系學士與碩士——從畢業展第一名的系列，到以研究回應高齡女性的穿著需求。這是「重新設計系統」最初的形體。" data-en="B.A. and M.A. in Textiles & Clothing, Fu Jen University — from a top-ranked graduation collection to research answering the dress needs of elderly women. The first form of 'redesigning systems.'" style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 0;">輔仁大學織品服裝學系學士與碩士——從畢業展第一名的系列，到以研究回應高齡女性的穿著需求。這是「重新設計系統」最初的形體。</p>
+
+      <!-- Project 1 · Graduation collection -->
+      <div style="border-top:1px solid rgba(130,180,255,.2); padding-top:20px; margin-top:38px; display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="畢業製作《Keep your coins, we want CHANGE》" data-en="Graduation Collection — Keep your coins, we want CHANGE" style="font-size:22px; font-weight:500; color:#eef4ff;">畢業製作《Keep your coins, we want CHANGE》</span><span class="i18n" data-zh="輔大織品 · 畢業展第一名" data-en="Fu Jen Textiles · ranked #1" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">輔大織品 · 畢業展第一名</span></div>
+        <span style="font-size:11px; letter-spacing:.1em; color:rgba(190,214,255,.4);">2015</span>
+      </div>
+      <p class="i18n" data-zh="以「反諺消費社會」為題的系列——報紙印花、解構剪裁與層疊結構，於校內展與校外展雙雙亮相。" data-en="A collection satirising consumer society — newsprint prints, deconstructed cuts and layered structures, shown at both the campus exhibition and an off-campus runway." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:12px 0 0; max-width:none;">以「反諺消費社會」為題的系列——報紙印花、解構剪裁與層疊結構，於校內展與校外展雙雙亮相。</p>
+      <div class="i18n" data-zh="外拍・棚拍" data-en="Location & studio" style="font-size:10.5px; letter-spacing:.16em; color:rgba(190,214,255,.5); margin:26px 0 12px;">外拍・棚拍</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(170px,1fr)); gap:14px;">
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-internal/n01.webp" loading="lazy" data-zoom="assets/works/grad-internal/n01.webp" data-gallery="grad-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-internal/n02.webp" loading="lazy" data-zoom="assets/works/grad-internal/n02.webp" data-gallery="grad-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-internal/n04.webp" loading="lazy" data-zoom="assets/works/grad-internal/n04.webp" data-gallery="grad-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-internal/n07.webp" loading="lazy" data-zoom="assets/works/grad-internal/n07.webp" data-gallery="grad-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-internal/n08.webp" loading="lazy" data-zoom="assets/works/grad-internal/n08.webp" data-gallery="grad-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-internal/n09.webp" loading="lazy" data-zoom="assets/works/grad-internal/n09.webp" data-gallery="grad-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+      </div>
+      <div class="i18n" data-zh="校外展 · 時裝週走秀" data-en="Off-campus · fashion-week runway" style="font-size:10.5px; letter-spacing:.16em; color:rgba(190,214,255,.5); margin:26px 0 12px;">校外展 · 時裝週走秀</div>
+      <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden; margin:6px 0 14px; position:relative;"><img src="assets/works/grad-external/group.jpg" loading="lazy" data-zoom="assets/works/grad-external/group.jpg" data-gallery="grad-runway" style="width:100%; aspect-ratio:16/10; object-fit:cover; object-position:center; display:block; cursor:zoom-in;"><span style="position:absolute; top:12px; left:12px; font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:#dcecff; background:rgba(6,12,28,.7); padding:5px 9px; border:1px solid rgba(130,180,255,.3); pointer-events:none;"><span class="i18n" data-zh="全體合照" data-en="Cast photo">全體合照</span></span></div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(170px,1fr)); gap:14px;">
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e02.webp" loading="lazy" data-zoom="assets/works/grad-external/e02.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e04.webp" loading="lazy" data-zoom="assets/works/grad-external/e04.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e05.webp" loading="lazy" data-zoom="assets/works/grad-external/e05.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e06.webp" loading="lazy" data-zoom="assets/works/grad-external/e06.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e07.webp" loading="lazy" data-zoom="assets/works/grad-external/e07.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e08.webp" loading="lazy" data-zoom="assets/works/grad-external/e08.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e09.webp" loading="lazy" data-zoom="assets/works/grad-external/e09.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e10.webp" loading="lazy" data-zoom="assets/works/grad-external/e10.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e11.webp" loading="lazy" data-zoom="assets/works/grad-external/e11.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e12.webp" loading="lazy" data-zoom="assets/works/grad-external/e12.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e13.webp" loading="lazy" data-zoom="assets/works/grad-external/e13.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e15.webp" loading="lazy" data-zoom="assets/works/grad-external/e15.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e16.webp" loading="lazy" data-zoom="assets/works/grad-external/e16.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e17.webp" loading="lazy" data-zoom="assets/works/grad-external/e17.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e19.webp" loading="lazy" data-zoom="assets/works/grad-external/e19.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e20.webp" loading="lazy" data-zoom="assets/works/grad-external/e20.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e21.webp" loading="lazy" data-zoom="assets/works/grad-external/e21.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/grad-external/e22.webp" loading="lazy" data-zoom="assets/works/grad-external/e22.webp" data-gallery="grad-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+      </div>
+
+      <!-- Project 2 · Jiangxi competition -->
+      <div style="border-top:1px solid rgba(130,180,255,.2); padding-top:20px; margin-top:52px; display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="江西紅衣坊杯" data-en="Jiangxi Hongyifang Cup" style="font-size:22px; font-weight:500; color:#eef4ff;">江西紅衣坊杯</span><span class="i18n" data-zh="主題・茗談" data-en="Theme · Ming-Tan" style="font-size:10px; letter-spacing:.12em; color:#bcd8ff; border:1px solid rgba(130,180,255,.4); padding:3px 10px; border-radius:999px;">主題・茗談</span><span class="i18n" data-zh="碩士 · 服裝設計競賽" data-en="M.A. · design competition" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">碩士 · 服裝設計競賽</span></div>
+      </div>
+      <p class="i18n" data-zh="以茶與禪為意象，塑造古典之美。" data-en="Shaped by images of tea and Zen — a gown series that sculpts a classical beauty." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:12px 0 0; max-width:none;">以茶與禪為意象，塑造古典之美。</p>
+      <div class="i18n" data-zh="外拍" data-en="Location shoot" style="font-size:10.5px; letter-spacing:.16em; color:rgba(190,214,255,.5); margin:26px 0 12px;">外拍</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(170px,1fr)); gap:14px;">
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/p01.webp" loading="lazy" data-zoom="assets/works/jiangxi/p01.webp" data-gallery="jiangxi-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/p02.webp" loading="lazy" data-zoom="assets/works/jiangxi/p02.webp" data-gallery="jiangxi-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/p03.webp" loading="lazy" data-zoom="assets/works/jiangxi/p03.webp" data-gallery="jiangxi-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/p04.webp" loading="lazy" data-zoom="assets/works/jiangxi/p04.webp" data-gallery="jiangxi-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/p05.webp" loading="lazy" data-zoom="assets/works/jiangxi/p05.webp" data-gallery="jiangxi-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/p08.webp" loading="lazy" data-zoom="assets/works/jiangxi/p08.webp" data-gallery="jiangxi-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/p09.webp" loading="lazy" data-zoom="assets/works/jiangxi/p09.webp" data-gallery="jiangxi-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/p10.webp" loading="lazy" data-zoom="assets/works/jiangxi/p10.webp" data-gallery="jiangxi-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/p11.webp" loading="lazy" data-zoom="assets/works/jiangxi/p11.webp" data-gallery="jiangxi-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/p06.webp" loading="lazy" data-zoom="assets/works/jiangxi/p06.webp" data-gallery="jiangxi-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/p07.webp" loading="lazy" data-zoom="assets/works/jiangxi/p07.webp" data-gallery="jiangxi-shoot" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+      </div>
+      <div class="i18n" data-zh="走秀" data-en="On the runway" style="font-size:10.5px; letter-spacing:.16em; color:rgba(190,214,255,.5); margin:26px 0 12px;">走秀</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(170px,1fr)); gap:14px;">
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/d00.webp" loading="lazy" data-zoom="assets/works/jiangxi/d00.webp" data-gallery="jiangxi-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/d01.webp" loading="lazy" data-zoom="assets/works/jiangxi/d01.webp" data-gallery="jiangxi-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/d02.webp" loading="lazy" data-zoom="assets/works/jiangxi/d02.webp" data-gallery="jiangxi-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/d03.webp" loading="lazy" data-zoom="assets/works/jiangxi/d03.webp" data-gallery="jiangxi-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/jiangxi/d04.webp" loading="lazy" data-zoom="assets/works/jiangxi/d04.webp" data-gallery="jiangxi-runway" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+      </div>
+
+      <!-- Project 3 · Thesis silver dresses -->
+      <div style="border-top:1px solid rgba(130,180,255,.2); padding-top:20px; margin-top:52px; display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="銀髮族連身裙" data-en="Dresses for Elderly Women" style="font-size:22px; font-weight:500; color:#eef4ff;">銀髮族連身裙</span><span class="i18n" data-zh="主題・Beyond" data-en="Theme · Beyond" style="font-size:10px; letter-spacing:.12em; color:#bcd8ff; border:1px solid rgba(130,180,255,.4); padding:3px 10px; border-radius:999px;">主題・Beyond</span><span class="i18n" data-zh="碩士論文 · 實證研究" data-en="M.A. thesis · field study" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">碩士論文 · 實證研究</span></div>
+      </div>
+      <p class="i18n" data-zh="碩士論文的成果——為北台灣高齡女性開發的連身裙，兼顧體態、機能與尊嚴，並以真人走秀驗證。" data-en="The outcome of my master's thesis — dresses developed for elderly women in northern Taiwan, balancing body, function and dignity, validated on a live runway." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:12px 0 16px; max-width:none;">碩士論文的成果——為北台灣高齡女性開發的連身裙，兼顧體態、機能與尊嚴，並以真人走秀驗證。</p>
+      <div class="vid" style="border:1px solid rgba(130,180,255,.18); background:#050a18; position:relative; margin:6px 0 14px;">
+        <video class="vid-el" preload="none" playsinline poster="assets/works/silver/poster.webp" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block;"><source src="assets/works/silver/runway.mp4" type="video/mp4"></video>
+        <button class="vid-play" type="button" aria-label="Play" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:78px; height:78px; border-radius:50%; border:1px solid rgba(190,220,255,.65); background:rgba(6,12,28,.5); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); color:#eaf3ff; font-size:24px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0 0 0 5px; transition:background .25s ease, transform .25s ease;">▶</button>
+        <span style="position:absolute; top:12px; left:12px; font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:#dcecff; background:rgba(6,12,28,.7); padding:5px 9px; border:1px solid rgba(130,180,255,.3); pointer-events:none;">▶ <span class="i18n" data-zh="走秀影片" data-en="Runway film">走秀影片</span></span>
+      </div>
+      <div class="i18n" data-zh="棚拍" data-en="Studio portraits" style="font-size:10.5px; letter-spacing:.16em; color:rgba(190,214,255,.5); margin:26px 0 12px;">棚拍</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(170px,1fr)); gap:14px;">
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/silver/s01.webp" loading="lazy" data-zoom="assets/works/silver/s01.webp" data-gallery="silver" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/silver/s02.webp" loading="lazy" data-zoom="assets/works/silver/s02.webp" data-gallery="silver" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/silver/s03.webp" loading="lazy" data-zoom="assets/works/silver/s03.webp" data-gallery="silver" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/silver/s04.webp" loading="lazy" data-zoom="assets/works/silver/s04.webp" data-gallery="silver" style="width:100%; aspect-ratio:3/4; object-fit:cover; display:block; cursor:zoom-in;"></div>
+      </div>
+
+      <!-- Project 4 · Taipei 101 uniform -->
+      <div style="border-top:1px solid rgba(130,180,255,.2); padding-top:20px; margin-top:52px; display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="101 觀景台制服設計" data-en="Taipei 101 Observatory Uniforms" style="font-size:22px; font-weight:500; color:#eef4ff;">101 觀景台制服設計</span><span class="i18n" data-zh="制服設計競賽" data-en="uniform design competition" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">制服設計競賽</span></div>
+      </div>
+      <p class="i18n" data-zh="為台北 101 觀景台設計的識別制服提案——以雲紋、銅錢釦與 101 線條，發展春夏／秋冬兩套系統。" data-en="A uniform-identity proposal for the Taipei 101 observatory — cloud motifs, coin buttons and '101' lines developed into spring-summer and autumn-winter systems." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:12px 0 16px; max-width:none;">為台北 101 觀景台設計的識別制服提案——以雲紋、銅錢釦與 101 線條，發展春夏／秋冬兩套系統。</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(240px,1fr)); gap:16px;">
+        <div style="border:1px solid rgba(130,180,255,.18); background:#eef2f8; overflow:hidden;"><img src="assets/works/uniform/u01.webp" loading="lazy" data-zoom="assets/works/uniform/u01.webp" data-gallery="uniform" style="width:100%; height:auto; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#eef2f8; overflow:hidden;"><img src="assets/works/uniform/u02.webp" loading="lazy" data-zoom="assets/works/uniform/u02.webp" data-gallery="uniform" style="width:100%; height:auto; display:block; cursor:zoom-in;"></div>
+        <div style="border:1px solid rgba(130,180,255,.18); background:#eef2f8; overflow:hidden;"><img src="assets/works/uniform/u03.webp" loading="lazy" data-zoom="assets/works/uniform/u03.webp" data-gallery="uniform" style="width:100%; height:auto; display:block; cursor:zoom-in;"></div>
+      </div>
+
+      <div class="i18n" data-zh="延伸閱讀" data-en="Documents" style="font-size:10.5px; letter-spacing:.16em; color:rgba(190,214,255,.5); margin:52px 0 12px;">延伸閱讀</div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;">
+        <a href="assets/docs/thesis-dress.pdf" target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:flex; justify-content:space-between; align-items:center; gap:14px; border:1px solid rgba(130,180,255,.2); background:rgba(8,18,40,.7); padding:22px 24px;"><div><div class="i18n" data-zh="碩士論文 · 線上瀏覽" data-en="Master's thesis · read online" style="font-size:10px; letter-spacing:.12em; color:rgba(190,214,255,.5); margin-bottom:6px;">碩士論文 · 線上瀏覽</div><div class="i18n" data-zh="臺灣北部女性銀髮族連身裙設計開發之研究" data-en="Design & development of dresses for elderly women in northern Taiwan" style="font-weight:500; font-size:15px; color:#eaf3ff;">臺灣北部女性銀髮族連身裙設計開發之研究</div></div><span style="color:#7fc4ff; font-size:18px;">↗</span></a>
+        <a href="assets/docs/garment-2016.pdf" target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:flex; justify-content:space-between; align-items:center; gap:14px; border:1px solid rgba(130,180,255,.2); background:rgba(8,18,40,.7); padding:22px 24px;"><div><div class="i18n" data-zh="機能服裝 · 線上瀏覽" data-en="Functional garment · read online" style="font-size:10px; letter-spacing:.12em; color:rgba(190,214,255,.5); margin-bottom:6px;">機能服裝 · 線上瀏覽</div><div class="i18n" data-zh="2016 骨科病患服裝設計" data-en="2016 orthopedic patient garment design" style="font-weight:500; font-size:15.5px; color:#eaf3ff;">2016 骨科病患服裝設計</div></div><span style="color:#7fc4ff; font-size:18px;">↗</span></a>
+      </div>
+    </section>
+
+    <!-- ============ MUSIC ============ -->
+    <section data-cat="music" data-screen-label="Music" style="padding:74px 0 0; display:none;">
+      <div class="i18n" data-zh="音樂創作 · 創作者 Wren" data-en="Music · The artist, Wren" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">音樂創作 · 創作者 Wren</div>
+      <h1 class="i18n" data-zh="我終於，找到了我的聲音。" data-en="I finally found my sound." style="font-size:54px; font-weight:500; line-height:1.06; margin:14px 0 0; color:#eef4ff;">我終於，找到了我的聲音。</h1>
+      <p class="i18n" data-zh="三層鷹架，帶領我和學生成為創作者。" data-en="Three tiers of scaffolding, guiding my students and me to become creators." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 0;">三層鷹架，帶領我和學生成為創作者。</p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:40px; align-items:start;">
+        <div>
+          <div class="i18n" data-zh="藝人 · Spotify" data-en="Artist · Spotify" style="font-size:11px; letter-spacing:.2em; color:#6fb0f0; margin-bottom:14px;">藝人 · Spotify</div>
+          <iframe title="Spotify" src="https://open.spotify.com/embed/artist/2nsWxxYgNaqRhrwjvzmH8M?utm_source=generator" width="100%" height="420" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px; display:block;"></iframe>
+        </div>
+        <div>
+          <div class="i18n" data-zh="音樂錄影帶" data-en="Music Videos" style="font-size:11px; letter-spacing:.2em; color:#6fb0f0; margin-bottom:14px;">音樂錄影帶</div>
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="position:relative; aspect-ratio:16/9; border:1px solid rgba(130,180,255,.2); background:#050a18; overflow:hidden;"><iframe src="https://www.youtube-nocookie.com/embed/2WV_zcBZQ-Q" title="MV 1" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe></div>
+            <div style="position:relative; aspect-ratio:16/9; border:1px solid rgba(130,180,255,.2); background:#050a18; overflow:hidden;"><iframe src="https://www.youtube-nocookie.com/embed/57aTGix7GQo" title="MV 2" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://padlet.com/wrencc/suno-rhtfkpphfi6c5unq" target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:flex; justify-content:space-between; align-items:center; gap:14px; border:1px solid rgba(130,180,255,.2); background:rgba(8,18,40,.7); padding:24px 26px; margin-top:24px;"><div><div class="i18n" data-zh="實證成果 · SUNO 學生作品集" data-en="Empirical outcome · SUNO student gallery" style="font-size:10px; letter-spacing:.1em; color:rgba(190,214,255,.5); margin-bottom:6px;">實證成果 · SUNO 學生作品集</div><div class="i18n" data-zh="505 首多語歌曲，6 週共創完成" data-en="505 multilingual songs, co-created in 6 weeks" style="font-weight:500; font-size:18px; color:#eaf3ff;">505 首多語歌曲，6 週共創完成</div></div><span style="font-size:34px; color:#bfe0ff; line-height:1;">505 ↗</span></a>
+    </section>
+
+    <!-- ============ IMAGE ============ -->
+    <section data-cat="image" data-screen-label="Image" style="padding:74px 0 0; display:none;">
+      <div class="i18n" data-zh="圖像創作 · 把概念具象化" data-en="Image · Giving the concept a form" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">圖像創作 · 把概念具象化</div>
+      <h1 class="i18n" data-zh="我終於，將概念具象化。" data-en="I finally gave the concept a form." style="font-size:56px; font-weight:500; line-height:1.04; margin:14px 0 0; color:#eef4ff;">我終於，將概念具象化。</h1>
+      <p class="i18n" data-zh="我以生成式 AI 為筆下的角色與故事賦形——武俠世界裡的人物、現代的場景，有些是靜幀，有些化為動態影像。同一個角色的靜圖與影片，便構成一組系列。下方也收錄我帶學生一起完成的 AI 繪圖作品集。" data-en="I use generative AI to give form to the characters and scenes in my fiction — figures from a wuxia world, moments from the present day; some as stills, some brought into motion. A character's still and its film together form one series. Below is also the AI-art gallery I made with my students." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 0;">我以生成式 AI 為筆下的角色與故事賦形——武俠世界裡的人物、現代的場景，有些是靜幀，有些化為動態影像。同一個角色的靜圖與影片，便構成一組系列。下方也收錄我帶學生一起完成的 AI 繪圖作品集。</p>
+
+      <!-- Series 1 -->
+      <div style="display:flex; align-items:baseline; gap:12px; margin:40px 0 14px; flex-wrap:wrap;"><span class="i18n" data-zh="請留步" data-en="Wait, Please Stay" style="font-size:18px; font-weight:500; color:#eef4ff;">請留步</span></div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,260px)); gap:16px;">
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/ai/anxing.webp" loading="lazy" data-zoom="assets/works/ai/anxing.webp" data-gallery="img-please" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block; cursor:zoom-in;"></div></figure>
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/ai/linhaoren.webp" loading="lazy" data-zoom="assets/works/ai/linhaoren.webp" data-gallery="img-please" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block; cursor:zoom-in;"></div></figure>
+        <figure style="margin:0;"><div class="vid" style="border:1px solid rgba(130,180,255,.18); background:#050a18; position:relative; overflow:hidden;"><video class="vid-el" preload="none" playsinline poster="assets/works/ai/poster-embrace.webp" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block;"><source src="assets/works/ai/embrace.mp4" type="video/mp4"></video><button class="vid-play" type="button" aria-label="Play" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:66px; height:66px; border-radius:50%; border:1px solid rgba(190,220,255,.65); background:rgba(6,12,28,.5); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); color:#eaf3ff; font-size:21px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0 0 0 4px; transition:background .25s ease, transform .25s ease;">▶</button></div></figure>
+      </div>
+
+      <!-- Series 2 -->
+      <div style="display:flex; align-items:baseline; gap:12px; margin:40px 0 14px; flex-wrap:wrap;"><span class="i18n" data-zh="女俠" data-en="The Swordswoman" style="font-size:18px; font-weight:500; color:#eef4ff;">女俠</span></div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,260px)); gap:16px;">
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/ai/scene-a.webp" loading="lazy" data-zoom="assets/works/ai/scene-a.webp" data-gallery="img-jianghu" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block; cursor:zoom-in;"></div></figure>
+        <figure style="margin:0;"><div class="vid" style="border:1px solid rgba(130,180,255,.18); background:#050a18; position:relative; overflow:hidden;"><video class="vid-el" preload="none" playsinline poster="assets/works/ai/poster-warrior.webp" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block;"><source src="assets/works/ai/warrior.mp4" type="video/mp4"></video><button class="vid-play" type="button" aria-label="Play" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:66px; height:66px; border-radius:50%; border:1px solid rgba(190,220,255,.65); background:rgba(6,12,28,.5); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); color:#eaf3ff; font-size:21px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0 0 0 4px; transition:background .25s ease, transform .25s ease;">▶</button></div></figure>
+      </div>
+
+      <!-- Series 3 -->
+      <div style="display:flex; align-items:baseline; gap:12px; margin:40px 0 14px; flex-wrap:wrap;"><span class="i18n" data-zh="隔窗" data-en="Across the Glass" style="font-size:18px; font-weight:500; color:#eef4ff;">隔窗</span></div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,260px)); gap:16px;">
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/ai/gemini-3.webp" loading="lazy" data-zoom="assets/works/ai/gemini-3.webp" data-gallery="img-window" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block; cursor:zoom-in;"></div></figure>
+        <figure style="margin:0;"><div class="vid" style="border:1px solid rgba(130,180,255,.18); background:#050a18; position:relative; overflow:hidden;"><video class="vid-el" preload="none" playsinline poster="assets/works/ai/poster-pharmacy.webp" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block;"><source src="assets/works/ai/pharmacy.mp4" type="video/mp4"></video><button class="vid-play" type="button" aria-label="Play" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:66px; height:66px; border-radius:50%; border:1px solid rgba(190,220,255,.65); background:rgba(6,12,28,.5); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); color:#eaf3ff; font-size:21px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0 0 0 4px; transition:background .25s ease, transform .25s ease;">▶</button></div></figure>
+      </div>
+
+      <!-- Series 4 -->
+      <div style="display:flex; align-items:baseline; gap:12px; margin:40px 0 14px; flex-wrap:wrap;"><span class="i18n" data-zh="角色設計" data-en="Character Design" style="font-size:18px; font-weight:500; color:#eef4ff;">角色設計</span></div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,260px)); gap:16px;">
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/ai/gemini-1.webp" loading="lazy" data-zoom="assets/works/ai/gemini-1.webp" data-gallery="img-char" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block; cursor:zoom-in;"></div></figure>
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/ai/gemini-2.webp" loading="lazy" data-zoom="assets/works/ai/gemini-2.webp" data-gallery="img-char" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block; cursor:zoom-in;"></div></figure>
+      </div>
+
+      <a href="https://padlet.com/wrencc/ai-c2gwyji2mf9sfann" target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:flex; justify-content:space-between; align-items:center; gap:14px; border:1px solid rgba(130,180,255,.2); background:rgba(8,18,40,.7); padding:24px 26px; margin-top:24px;"><div><div class="i18n" data-zh="學生 AI 繪圖作品集 · Padlet" data-en="Students' AI-art gallery · Padlet" style="font-size:10px; letter-spacing:.1em; color:rgba(190,214,255,.5); margin-bottom:6px;">學生 AI 繪圖作品集 · Padlet</div><div class="i18n" data-zh="438 件學生 AI 視覺創作" data-en="438 student AI artworks" style="font-weight:500; font-size:18px; color:#eaf3ff;">438 件學生 AI 視覺創作</div></div><span style="font-size:34px; color:#bfe0ff; line-height:1;">438 ↗</span></a>
+    </section>
+
+    <!-- ============ WRITING ============ -->
+    <section data-cat="writing" data-screen-label="Writing" style="padding:74px 0 0; display:none;">
+      <div class="i18n" data-zh="文字創作 · 以詩為劍，以詞為弦" data-en="Writing · Poems as blades, ci as strings" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">文字創作 · 以詩為劍，以詞為弦</div>
+      <h1 class="i18n" data-zh="以理性丈量，以詩意命名。" data-en="Measured by reason, named in poetry." style="font-size:56px; font-weight:500; line-height:1.04; margin:14px 0 0; color:#eef4ff;">以理性丈量，以詩意命名。</h1>
+      <p class="i18n" data-zh="一部古典詩詞創作集——以武俠與江湖入題，寫英雄、世道、情緣與天命。點選左側篇目，於捲軸上直行閱讀。" data-en="A collection of original classical-Chinese poetry — set in the world of wuxia and the jianghu: heroes, the ways of the world, fate and the mandate of heaven. Pick a title on the left to read it, column by column, in the original Chinese." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 34px;">一部古典詩詞創作集——以武俠與江湖入題，寫英雄、世道、情緣與天命。點選左側篇目，於捲軸上直行閱讀。</p>
+
+      <div data-poems style="display:grid; grid-template-columns:minmax(200px, 280px) minmax(0, 1fr); gap:22px; align-items:stretch;">
+        <div data-poem-list style="align-self:start; max-height:600px; overflow-y:auto; padding-right:6px;"></div>
+        <div data-poem-view style="position:relative; min-width:0; min-height:520px; display:flex; flex-direction:column; border:1px solid rgba(130,180,255,.2); background:linear-gradient(180deg, rgba(12,20,42,.72), rgba(8,14,32,.72)); box-shadow:inset 0 0 60px 6px rgba(60,120,220,.08); padding:32px 34px 24px;"></div>
+      </div>
+
+      <div style="margin-top:64px;">
+        <div class="i18n" data-zh="散文" data-en="Prose" style="font-size:12px; letter-spacing:.2em; color:#6fb0f0;">散文</div>
+        <article style="margin-top:18px; border:1px solid rgba(130,180,255,.2); background:linear-gradient(180deg, rgba(12,20,42,.72), rgba(8,14,32,.72)); box-shadow:inset 0 0 60px 6px rgba(60,120,220,.08); padding:46px 50px 44px;">
+          <h3 style="font-size:30px; font-weight:500; letter-spacing:.05em; color:#eef4ff; margin:0;">習慣翻新</h3>
+          <div>
+            <p style="font-size:16px; line-height:2.05; color:rgba(224,236,255,.78); margin:28px 0 0; text-indent:2em;">透明方形的玻璃水族箱裡，有一隻拖著橙黃雲彩般尾鰭的金魚在其中悠游。某一天，你因為要搬家了，新房子不夠放得下那巨型華麗的水族箱，於是你逼不得已將金魚移居在澄澈的球形水缸裡。</p>
+            <p style="font-size:16px; line-height:2.05; color:rgba(224,236,255,.78); margin:20px 0 0; text-indent:2em;">裡頭的條件和水族箱是一致的──同樣的水質、同樣的溫度、同樣的餌料、同樣的石頭、同樣的水草……甚至是同樣的打氣機，可是沒有幾天，金魚卻跳出魚缸死了。</p>
+            <p style="font-size:16px; line-height:2.05; color:rgba(224,236,255,.78); margin:20px 0 0; text-indent:2em;">其實動物和人類是一樣的，對於環境的變化相當敏感，或許我們只是一廂情願地以為魚缸的空間稍微縮小，但對金魚而言，卻是牠習慣隱匿的小角落被消滅了。就金魚的角度來看，牠必定認為自己將永遠受困於狹窄的弧形牢籠，就此失去那份理應存在的「自由」，所以牠才會妄想著跳脫魚缸，祈望能換得更大的空間四處悠游。</p>
+            <p style="font-size:16px; line-height:2.05; color:rgba(224,236,255,.78); margin:20px 0 0; text-indent:2em;">這一點和我們是一樣的。每當接觸一處新環境，我們常常會因為不能適應而想方設法逃避──當然，這是一種生存之道，卻非是最好的辦法，也許下場會比跳出魚缸的金魚還慘。</p>
+            <p style="font-size:16px; line-height:2.05; color:rgba(224,236,255,.78); margin:20px 0 0; text-indent:2em;">那到底要怎麼做才正確呢？</p>
+            <p style="font-size:16px; line-height:2.05; color:rgba(224,236,255,.78); margin:20px 0 0; text-indent:2em;">請試著「習慣翻新」吧。無論我們接觸新的環境抑或新的事物，「學習」往往是必不可缺的。新的東西並不可怕，可怕的是我們不願意去觸碰它、接納它。</p>
+            <p style="font-size:16px; line-height:2.05; color:rgba(224,236,255,.78); margin:20px 0 0; text-indent:2em;">當你從學生蛻變為一介社會人，又或轉換了職場。請不要畏懼，試著體驗新的一切。畢竟時序演進、四季更迭，我們所在的環境總是不斷地變化著，若不能習慣「翻新」，又該如何走完漫漫人生路呢？</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section data-cat="contact" data-screen-label="Contact" style="padding:74px 0 0; display:none;">
+      <div class="i18n" data-zh="聯絡我 · 一起重新設計" data-en="Contact · Let's redesign, together" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">聯絡我 · 一起重新設計</div>
+      <h1 class="i18n" data-zh="歡迎，一起把系統重新織起。" data-en="Let's reweave the system, together." style="font-size:64px; font-weight:500; line-height:1.0; margin:16px 0 0; color:#eef4ff; max-width:none;">歡迎，一起把系統重新織起。</h1>
+      <p class="i18n" data-zh="特別歡迎關於 K-12 生成式 AI 鷹架的跨校複製研究。" data-en="Especially open to cross-school replication studies on generative-AI scaffolding in K-12 education." style="font-size:16px; line-height:1.72; color:rgba(224,236,255,.72); max-width:none; margin:26px 0 0;">特別歡迎關於 K-12 生成式 AI 鷹架的跨校複製研究。</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:38px;">
+        <a href="https://www.linkedin.com/in/zy-zoeyeh/" target="_blank" rel="noopener" style="text-decoration:none; font-size:13px; letter-spacing:.06em; color:#08152e; background:#7fc4ff; padding:15px 26px;">LinkedIn ↗</a>
+        <a href="mailto:zoeyeh0822@gmail.com" class="i18n" data-zh="zoeyeh0822@gmail.com ↗" data-en="zoeyeh0822@gmail.com ↗" style="text-decoration:none; font-size:13px; letter-spacing:.06em; color:#dcecff; border:1px solid rgba(140,190,255,.4); padding:15px 26px;">zoeyeh0822@gmail.com ↗</a>
+      </div>
+      <div style="margin-top:80px; border-top:1px solid rgba(130,180,255,.2); padding:30px 0 0; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:center; gap:13px;"><span style="width:40px; height:40px; border-radius:9px; overflow:hidden; flex-shrink:0;"><img src="assets/favicon.png" alt="Zoe Yeh" style="width:100%; height:100%; object-fit:cover;"></span><div style="line-height:1.3;"><div style="font-size:19px; font-weight:500; color:#eaf3ff;">Zoe Yeh</div><div class="i18n" data-zh="Jung-Chen Yeh" data-en="Jung-Chen Yeh" style="font-size:10px; letter-spacing:.08em; color:rgba(190,214,255,.5);">Jung-Chen Yeh</div></div></div>
+        <div style="font-size:10px; letter-spacing:.05em; color:rgba(190,214,255,.5);">#GenerativeAI · #EducationalResearch · #K12 · #CrossDisciplinary</div>
+      </div>
+    </section>
+
+  </main>
+
+  <button data-totop type="button" aria-label="Back to top" style="position:fixed; right:26px; bottom:26px; z-index:60; width:48px; height:48px; border-radius:50%; border:1px solid rgba(150,200,255,.45); background:rgba(8,16,36,.72); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#cfe4ff; font-size:19px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity .35s ease, background .25s ease; box-shadow:0 6px 24px rgba(0,0,0,.35);">↑</button>
+
+  <!-- LIGHTBOX -->
+  <div class="lb" style="position:fixed; inset:0; z-index:120; display:none; align-items:center; justify-content:center;">
+    <div class="lb-bg" style="position:absolute; inset:0; background:rgba(4,8,18,.94); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);"></div>
+    <img class="lb-img" alt="" style="position:relative; max-width:92vw; max-height:88vh; object-fit:contain; box-shadow:0 24px 80px rgba(0,0,0,.6); border:1px solid rgba(130,180,255,.25); background:#0a1430;">
+    <button class="lb-close" type="button" aria-label="Close" style="position:absolute; top:20px; right:24px; width:44px; height:44px; border-radius:50%; border:1px solid rgba(190,220,255,.4); background:rgba(6,12,28,.6); color:#eaf3ff; font-size:20px; cursor:pointer; z-index:2;">✕</button>
+    <button class="lb-prev" type="button" aria-label="Previous" style="position:absolute; left:18px; top:50%; transform:translateY(-50%); width:52px; height:52px; border-radius:50%; border:1px solid rgba(190,220,255,.35); background:rgba(6,12,28,.55); color:#eaf3ff; font-size:26px; cursor:pointer; z-index:2; display:flex; align-items:center; justify-content:center; padding-bottom:3px;">‹</button>
+    <button class="lb-next" type="button" aria-label="Next" style="position:absolute; right:18px; top:50%; transform:translateY(-50%); width:52px; height:52px; border-radius:50%; border:1px solid rgba(190,220,255,.35); background:rgba(6,12,28,.55); color:#eaf3ff; font-size:26px; cursor:pointer; z-index:2; display:flex; align-items:center; justify-content:center; padding-bottom:3px;">›</button>
+    <div class="lb-count" style="position:absolute; bottom:22px; left:50%; transform:translateX(-50%); font-size:12px; letter-spacing:.14em; color:rgba(200,222,255,.72);"></div>
+  </div>
+
+  <!-- MUSIC PLAYER (shared playback with the star-map) -->
+  <div class="wk-player" style="position:fixed; left:24px; bottom:24px; z-index:80; user-select:none; font-family:'Noto Serif TC',serif;">
+    <div class="wk-tracklist" style="position:absolute; left:0; bottom:calc(100% + 10px); min-width:250px; display:none; flex-direction:column; gap:2px; padding:8px; border:1px solid rgba(140,190,255,.4); border-radius:14px; background:rgba(8,16,36,.95); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); box-shadow:0 12px 34px rgba(0,0,0,.45);"></div>
+    <div style="display:flex; align-items:center; gap:9px; padding:9px 12px; border:1px solid rgba(140,190,255,.4); border-radius:999px; background:rgba(8,16,36,.72); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);">
+      <span class="wk-play" title="播放 / 暫停" style="display:flex; align-items:flex-end; gap:2px; width:15px; height:13px; cursor:pointer;">
+        <i style="display:block; width:2.6px; height:30%; background:#6fb0f0; animation:wk-eq .85s ease-in-out infinite; animation-play-state:paused;"></i>
+        <i style="display:block; width:2.6px; height:80%; background:#bfe0ff; animation:wk-eq .85s ease-in-out infinite .22s; animation-play-state:paused;"></i>
+        <i style="display:block; width:2.6px; height:50%; background:#6fb0f0; animation:wk-eq .85s ease-in-out infinite .44s; animation-play-state:paused;"></i>
+      </span>
+      <span class="wk-track-name" title="選擇曲目" style="font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:rgba(224,236,255,.9); cursor:pointer; max-width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">—</span>
+      <span style="width:1px; height:13px; background:rgba(140,190,255,.35);"></span>
+      <span class="wk-next i18n" data-zh="下一首" data-en="Next" style="font-size:10px; letter-spacing:.1em; color:rgba(200,222,255,.75); cursor:pointer; padding:3px 8px; border-radius:999px; transition:background .25s ease, color .25s ease;">下一首</span>
+      <span class="wk-shuf i18n" data-zh="隨機" data-en="Shuffle" style="font-size:10px; letter-spacing:.1em; color:rgba(200,222,255,.75); cursor:pointer; padding:3px 8px; border-radius:999px; transition:background .25s ease, color .25s ease;">隨機</span>
+      <span class="wk-mute i18n" data-zh="靜音" data-en="Mute" style="font-size:10px; letter-spacing:.1em; color:rgba(200,222,255,.75); cursor:pointer; padding:3px 8px; border-radius:999px; transition:background .25s ease, color .25s ease;">靜音</span>
+    </div>
+  </div>
+  <audio class="wk-song" preload="metadata"></audio>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const root = document.querySelector('[data-root]');
+    if (!root) return;
+
+    // ---- music player (shared playback with the star-map via localStorage) ----
+    (() => {
+      const TRACKS = [
+        { t: 'The Rationality of the Starry Sky', src: 'assets/music/the-rationality-of-the-starry-sky.mp3' },
+        { t: 'Floating Stardust', src: 'assets/music/floating-stardust.mp3' },
+        { t: 'The Solitary Stargazer', src: 'assets/music/the-solitary-stargazer.mp3' },
+        { t: 'Whispers of Dark Matter', src: 'assets/music/whispers-of-dark-matter.mp3' },
+        { t: 'Poetic Fall', src: 'assets/music/poetic-fall.mp3' }
+      ];
+      const audio = root.querySelector('.wk-song');
+      const wrap = root.querySelector('.wk-player');
+      if (!audio || !wrap || wrap._b) return; wrap._b = true;
+      const playBtn = wrap.querySelector('.wk-play');
+      const nameEl = wrap.querySelector('.wk-track-name');
+      const listEl = wrap.querySelector('.wk-tracklist');
+      const nextBtn = wrap.querySelector('.wk-next');
+      const shufBtn = wrap.querySelector('.wk-shuf');
+      const muteBtn = wrap.querySelector('.wk-mute');
+      const eqBars = playBtn.querySelectorAll('i');
+      const setEq = (on) => eqBars.forEach(b => { b.style.animationPlayState = on ? 'running' : 'paused'; });
+      let st = { i: 0, muted: false, shuffle: false, time: 0, playing: false };
+      try { st = Object.assign(st, JSON.parse(localStorage.getItem('fy-music') || '{}')); } catch (e) {}
+      if (!(st.i >= 0 && st.i < TRACKS.length)) st.i = 0;
+      const save = () => { try { localStorage.setItem('fy-music', JSON.stringify({ i: st.i, muted: !!st.muted, shuffle: !!st.shuffle, time: audio.currentTime || 0, playing: !audio.paused })); } catch (e) {} };
+      const btnOn = (b, on) => { b.style.color = on ? '#08152e' : 'rgba(200,222,255,.75)'; b.style.background = on ? '#7fc4ff' : 'transparent'; };
+      const toggleList = (open) => { const show = open != null ? open : (listEl.style.display === 'none' || !listEl.style.display); listEl.style.display = show ? 'flex' : 'none'; };
+      const renderList = () => {
+        listEl.innerHTML = '';
+        TRACKS.forEach((tr, i) => {
+          const d = document.createElement('div');
+          d.textContent = tr.t;
+          const cur = i === st.i;
+          d.style.cssText = 'padding:9px 13px; border-radius:9px; cursor:pointer; font-size:11.5px; letter-spacing:.06em; white-space:nowrap; transition:background .2s ease;' + (cur ? 'color:#bfe0ff; background:rgba(127,196,255,.16);' : 'color:rgba(224,236,255,.82); background:transparent;');
+          d.addEventListener('mouseenter', () => { if (i !== st.i) d.style.background = 'rgba(127,196,255,.09)'; });
+          d.addEventListener('mouseleave', () => { if (i !== st.i) d.style.background = 'transparent'; });
+          d.addEventListener('click', (e) => { e.stopPropagation(); setTrack(i, true); toggleList(false); });
+          listEl.appendChild(d);
+        });
+      };
+      const seekTo = (t) => { const go = () => { try { if (t > 0 && isFinite(audio.duration) && t < audio.duration) audio.currentTime = t; } catch (e) {} }; if (audio.readyState >= 1) go(); else audio.addEventListener('loadedmetadata', go, { once: true }); };
+      const setTrack = (i, play, atTime) => {
+        st.i = i; save();
+        nameEl.textContent = TRACKS[i].t;
+        renderList();
+        audio.src = TRACKS[i].src;
+        if (atTime) seekTo(atTime);
+        if (play) audio.play().catch(() => {});
+      };
+      const pickNext = (play) => {
+        let n;
+        if (st.shuffle && TRACKS.length > 1) { do { n = Math.floor(Math.random() * TRACKS.length); } while (n === st.i); }
+        else n = (st.i + 1) % TRACKS.length;
+        setTrack(n, play);
+      };
+      audio.volume = 0.7;
+      audio.muted = !!st.muted;
+      audio.addEventListener('play', () => { setEq(true); save(); });
+      audio.addEventListener('pause', () => { setEq(false); save(); });
+      audio.addEventListener('ended', () => pickNext(true));
+      let _lt = 0;
+      audio.addEventListener('timeupdate', () => { const t = Date.now(); if (t - _lt > 1500) { _lt = t; save(); } });
+      playBtn.addEventListener('click', (e) => { e.stopPropagation(); if (audio.paused) audio.play().catch(() => {}); else audio.pause(); });
+      nameEl.addEventListener('click', (e) => { e.stopPropagation(); toggleList(); });
+      nextBtn.addEventListener('click', (e) => { e.stopPropagation(); pickNext(!audio.paused); });
+      shufBtn.addEventListener('click', (e) => { e.stopPropagation(); st.shuffle = !st.shuffle; save(); btnOn(shufBtn, st.shuffle); });
+      muteBtn.addEventListener('click', (e) => { e.stopPropagation(); st.muted = !st.muted; save(); audio.muted = st.muted; btnOn(muteBtn, st.muted); });
+      wrap.addEventListener('click', (e) => e.stopPropagation());
+      document.addEventListener('click', () => toggleList(false));
+      btnOn(shufBtn, st.shuffle); btnOn(muteBtn, st.muted);
+      // load the saved track at the saved position, and resume if it was playing
+      setTrack(st.i, false, st.time);
+      if (st.playing) {
+        const tryPlay = () => audio.play().catch(() => {});
+        tryPlay();
+        const resume = () => { if (audio.paused) tryPlay(); window.removeEventListener('pointerdown', resume); window.removeEventListener('keydown', resume); window.removeEventListener('scroll', resume); };
+        window.addEventListener('pointerdown', resume, { once: true });
+        window.addEventListener('keydown', resume, { once: true });
+        window.addEventListener('scroll', resume, { once: true, passive: true });
+      }
+    })();
+
+    // ---- fixed header offset ----
+    const hdr = root.querySelector('header');
+    const mainEl = root.querySelector('main');
+    const setHdrPad = () => { if (hdr && mainEl) mainEl.style.paddingTop = hdr.offsetHeight + 'px'; };
+    setHdrPad();
+    window.addEventListener('resize', setHdrPad);
+
+    // ---- back to top ----
+    const toTop = root.querySelector('[data-totop]');
+    if (toTop && !toTop._b) {
+      toTop._b = true;
+      const onSc = () => { const on = (window.scrollY || 0) > 420; toTop.style.opacity = on ? '1' : '0'; toTop.style.pointerEvents = on ? 'auto' : 'none'; };
+      window.addEventListener('scroll', onSc, { passive: true });
+      onSc();
+      toTop.addEventListener('click', () => { try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); } });
+      toTop.addEventListener('mouseenter', () => { toTop.style.background = 'rgba(24,48,96,.85)'; });
+      toTop.addEventListener('mouseleave', () => { toTop.style.background = 'rgba(8,16,36,.72)'; });
+    }
+
+    // ---- starfield ----
+    const sky = root.querySelector('.wk-stars');
+    if (sky && !sky._b) {
+      sky._b = true;
+      const rnd = (a, b) => a + Math.random() * (b - a);
+      let h = '';
+      for (let i = 0; i < 150; i++) {
+        const x = rnd(0, 100).toFixed(2), y = rnd(0, 100).toFixed(2), s = rnd(0.6, 2.2).toFixed(2);
+        h += '<i style="position:absolute;left:' + x + '%;top:' + y + '%;width:' + s + 'px;height:' + s + 'px;border-radius:50%;background:#dbecff;box-shadow:0 0 ' + (s * 2.4).toFixed(1) + 'px rgba(130,195,255,.7);animation:wk-tw ' + rnd(2.4, 6).toFixed(2) + 's ease-in-out infinite ' + (-rnd(0, 6)).toFixed(2) + 's;"></i>';
+      }
+      sky.innerHTML = h;
+    }
+
+    // ---- CV timeline (bilingual, built from data) ----
+    const cv = root.querySelector('[data-cvlist]');
+    if (cv && !cv._b) {
+      cv._b = true;
+      const rows = [
+        ['\u201911\u2014\u201915', '\u670d\u88dd\u8a2d\u8a08\u5b78\u58eb', 'B.A. Fashion Design', '\u8f14\u4ec1\u5927\u5b78\u7e54\u54c1\u670d\u88dd\u5b78\u7cfb \u00b7 \u7b2c 42 \u5c46\u7562\u696d\u5c55\u7b2c\u4e00\u540d', 'Fu Jen University \u00b7 ranked #1, 42nd graduation exhibition', '\u8a2d\u8a08', 'Design'],
+        ['\u201915\u2014\u201919', '\u7e54\u54c1\u670d\u88dd\u78a9\u58eb', 'M.A. Textiles & Clothing', '\u8a2d\u8a08\u8207\u6587\u5316\u7d44 \u00b7 \u5317\u53f0\u7063\u9ad8\u9f61\u5973\u6027\u670d\u88dd\u958b\u767c', 'Design & culture \u00b7 dress design for elderly women', '\u7814\u7a76', 'Research'],
+        ['\u201920\u2014\u201921', '\u6559\u80b2\u884c\u653f\u4eba\u54e1', 'Educational Administration Staff', '\u65b0\u5317\u5e02\u6b63\u7fa9\u570b\u5c0f \u00b7 \u8e0f\u5165 K-12 \u6559\u80b2', 'Zhengyi Elementary, New Taipei \u00b7 first step into K-12', '\u884c\u653f', 'Admin'],
+        ['\u201921\u2014\u201923', '\u7814\u8b80\u6559\u80b2\u884c\u653f', 'Studying Educational Administration', '\u81ea\u4e3b\u9032\u4fee \u00b7 \u70ba\u5168\u9762\u8f49\u5165\u6559\u80b2\u5967\u57fa', 'Independent study \u00b7 preparing to move fully into education', '\u9032\u4fee', 'Study'],
+        ['\u201923\u2014\u201924', '\u570b\u5c0f\u4e94\u5e74\u7d1a\u5c0e\u5e2b', 'Fifth-Grade Homeroom Teacher', '\u81fa\u5357\u5e02\u5f8c\u71df\u570b\u5c0f \u00b7 \u5dee\u7570\u5316\u6559\u5b78 \u00b7 \u6307\u5c0e\u5b78\u751f\u7372\u5beb\u4f5c\u734e', 'Houying Elementary, Tainan \u00b7 differentiated instruction \u00b7 student writing-contest wins', '\u6559\u5b78', 'Teaching'],
+        ['\u201924\u2014\u201925', '\u8cc7\u8a0a\u79d1\u6280\u6559\u5e2b', 'Information Technology Teacher', '\u81fa\u5357\u5e02\u5927\u6a4b\u570b\u4e2d \u00b7 18 \u73ed \u00b7 \u751f\u6210\u5f0f AI \u4e09\u5c64\u9df9\u67b6', 'Daqiao Junior High, Tainan \u00b7 18 classes \u00b7 GenAI three-tier scaffolding', '\u6559\u5b78', 'Teaching'],
+        ['\u201925\u2014\u201927', '\u6559\u80b2\u884c\u653f\u78a9\u58eb', 'M.A. Educational Administration', '\u5357\u81fa\u79d1\u6280\u5927\u5b78 \u00b7 \u73ed\u6392\u7b2c\u4e00 \u00b7 2026 \u56db\u5834\u7814\u8a0e\u6703\u9304\u53d6', 'Southern Taiwan Univ. of Science & Technology \u00b7 ranked #1 \u00b7 4 conferences accepted in 2026', '\u7814\u7a76', 'Research']
+      ];
+      cv.innerHTML = rows.map(r =>
+        '<div style="display:grid; grid-template-columns:110px 1fr auto; gap:24px; align-items:baseline; padding:20px 0; border-bottom:1px solid rgba(130,180,255,.14);">'
+        + '<span style="font-size:12px; color:#6fb0f0;">' + r[0] + '</span>'
+        + '<div><div class="i18n" data-zh="' + r[1] + '" data-en="' + r[2] + '" style="font-weight:500; font-size:17px; color:#eaf3ff;">' + r[1] + '</div>'
+        + '<div class="i18n" data-zh="' + r[3] + '" data-en="' + r[4] + '" style="font-size:13px; color:rgba(224,236,255,.6); margin-top:3px;">' + r[3] + '</div></div>'
+        + '<span class="i18n" data-zh="' + r[5] + '" data-en="' + r[6] + '" style="font-size:10px; letter-spacing:.08em; color:rgba(190,214,255,.42);">' + r[5] + '</span></div>'
+      ).join('');
+    }
+
+    // ---- i18n ----
+    let lang = 'zh';
+    try { lang = localStorage.getItem('zoe_lang') || 'zh'; } catch (e) {}
+    if (lang !== 'en' && lang !== 'zh') lang = 'zh';
+    let curLang = lang;
+    const applyLang = (l) => {
+      curLang = l;
+      root.querySelectorAll('.i18n').forEach((n) => {
+        const v = n.getAttribute(l === 'en' ? 'data-en' : 'data-zh');
+        if (v != null) n.innerHTML = v;
+      });
+      root.querySelectorAll('[data-lang-btn]').forEach((b) => {
+        const on = b.getAttribute('data-lang-btn') === l;
+        b.style.background = on ? '#7fc4ff' : 'transparent';
+        b.style.color = on ? '#08152e' : 'rgba(190,214,255,.7)';
+      });
+      try { document.documentElement.lang = (l === 'en' ? 'en' : 'zh-Hant'); } catch (e) {}
+      try { localStorage.setItem('zoe_lang', l); } catch (e) {}
+      setHdrPad();
+    };
+    root.querySelectorAll('[data-lang-btn]').forEach((b) => {
+      b.addEventListener('click', (e) => { e.preventDefault(); applyLang(b.getAttribute('data-lang-btn')); });
+    });
+    applyLang(lang);
+
+    // ---- poems (文字創作) ----
+    (function () {
+      const wrap = root.querySelector('[data-poems]');
+      if (!wrap || wrap._b) return; wrap._b = true;
+      const listEl = wrap.querySelector('[data-poem-list]');
+      const viewEl = wrap.querySelector('[data-poem-view]');
+      if (!listEl || !viewEl) return;
+      const G = [
+        { gz:'英雄悲歌', ge:'Elegies for a Hero', ps:[
+          { t:'之一', ls:['戰者狂，傲視凡塵氣魄盪；','武者盲，弒生何謂義膽壯；','謀者昂，巧謀利計持於掌；','智者望，殫危亂世皆能擋。'] },
+          { t:'之二', ls:['煙渺荒墳致誰慟？','無從追憶恨天長。','昔者昧愚不成章，','今者濁心效魔皇。'] },
+          { t:'之三', ls:['魂泣鬼嚎何止亡，','魔火亂世致誰殤？','武鬼擎劍局浩蕩。','飄渺輕魄道何傷？'] },
+          { t:'之四', ls:['魔擾世間人恓惶，','塗炭生靈面皆黃；','風唳雨泣局難臆，','眾生劫禍竟未央。'] },
+          { t:'之五', ls:['馬鳴嘶嘯云滄桑，','崩巖殘峻成阻障。','夢醒徒存此迷惘，','情緣錯付何淒涼？'] }
+        ]},
+        { gz:'世道', ge:'The Ways of the World', ps:[
+          { t:'之一', ls:['人似浮雲飄不定，','但求此生閑也靜；','一世名利黃粱夢，','人事風雨化成影。'] },
+          { t:'之二', ls:['江湖本是多情關，情關難解己身難；','人謂情義難兩全，世局那勘定明暗；','天下王者多不眷，無情無義有何難？'] },
+          { t:'之三', ls:['身在江湖心難容，','難容天下勢不同。','豈有紛擾難平靖？','淒苦百姓盼安寧。'] },
+          { t:'之四', ls:['人生苦短，相聚是緣，別離難免。','繁華世間，令己浩歎，難消沉念。'] }
+        ]},
+        { gz:'長歌', ge:'The Long Song', ps:[
+          { t:'江湖難', ls:['應是江湖難，身處江湖難；','人心若冰霰，人間已凝寒。','抬頭望嵯山，惘茫此塵寰；','觀星心晦暗，飲水知冷暖。','珠銀豈賞玩？富貴貪得難。','富人酒肉歡，窮者盼靖安。','干戈年連年，生靈畢塗炭；','武者棄鋏劍，文者庸雄辯。','雄傑難自擔，百姓惡知安？','匹夫皆忌憚，智者心錯亂。','命運因迍邅，歲年不復返；','世事局一盤，難料令己嘆。','與君聚江南，明朝折柳散；','思如猛浪翻，愁似河水氾。','情義何難斷？世事豈決判？','不如登山巒，清意致心閑。','訪山欲尋仙，盼喻何良善；','品行若菡萏，世俗已稀罕。','峻林路蜿蜒，綠藤繞樹纏；','慢遊清湖畔，忽明人性面。','惡人存罪愆，唯恐露伈俔；','非及良德面，不解其悔憾。','齊籠鳥檻猿，人眾盡愔闇；','不願同反叛，任憑霸者喚。','世人過爛漫，何人一身膽？','明者皆嗟歎，時事之流轉。','與僧偶然見，僧予我一言，','如見人之短，應予其一諫。','山不可無泉，心不可黲淡；','與君共時艱，冀君知快然。','吾雇一舢舨，艄公泊岸邊；','見水清海晏，忽驚濤裂岸；','霽海不迴環，人心實傾險。','遊子思故園，譬若南歸雁；','故友於塞邊，握手互寒暄；','惜情如雲煙，愁思似深淵。','霾隱過年半，恬適心自滿。','人云江湖難，吾謂江湖難。'] }
+        ]},
+        { gz:'詞 · 曲牌', ge:'Ci — to a Set Tune', ps:[
+          { t:'暗香', tune:'浪淘沙', ls:['暗香吐柔嫚，思意還滿。','白瓣寒澹心沉酖。','伊人已去衣漸寬，歲暮荏苒。','風起盡闌珊，情緣空散。','猶見當日霞帔冠。','醉上心頭欲迷酣，此情已淡。'] },
+          { t:'梅落', tune:'一翦梅', ls:['雪冽清泠暗香留，六出飄岫，','朔氣侵骨緊絨裘。','何日君願把情收？','情海蕩游，難消閨愁。','凝眸但觀花雨奏，獨上宮樓，','月下殘影剜心鈎。','何日君明妾真意？','夤夜幽柔，情豈逝流。'] }
+        ]},
+        { gz:'短章', ge:'Short Verses', ps:[
+          { t:'故地', ls:['神女島上會神女，罪者神女何來緣？','夕月湖畔觀夕月，天濤飛塵行鍘龑。','風刀谷內風如刀，地獄閻羅心晦暗。','惜浪灘前欲惜浪，暗潮波濤表吾言。'] },
+          { t:'情緣', ls:['命君鑄刀劍，石磨輾磨轉，滴血凝神劍。','思君十來年，令吾愁腸斷，何來續情緣？'] },
+          { t:'天命', ls:['此願如煙渺，與君居湖畔，','天命難違背，傷君又有誰？','神女豈矜貴，君死心如灰，','相聚不知年，何來再相見？'] },
+          { t:'月影難隨', ls:['望月月不回，','如月影難隨。'] },
+          { t:'蒼音', ls:['蒼音玄妙，白虹飄渺；','玄宗之道，力抗飄搖。'] }
+        ]},
+        { gz:'墨曲 · 天罪歎', ge:'The Ink Song & Heaven\u2019s Lament', ps:[
+          { t:'墨曲悲', ls:['玄宗絃中玄，玄中已違背。','撥絃道曲悲，再彈心更悲。','墨曲淨塵寰，一彈墨曲悲。','莫怪苦百姓，魔成其首罪。','茫茫人世間，運命如落暉。','難消此孤清，欽羨山翠微。','焉知過年歲，生靈更憔悴。','魔火如洪水，戡斬難應對。','自當奏墨曲，道誰心中悲？'] },
+          { t:'悼墨塵音', ls:['世塵如墨傳一音，青埂冷峰現奇人。','為斷魔火獻其身，遊走江湖心已韌。','道魔相對擾紛紛，世道傾覆難放任。','枯葉凋萎定歸根，人死蓋棺道理真。','道者身消抗魔神，墨曲不再喻乾坤。','臥雪眠雲有何人？萬丈超絕渺紅塵。','消魔除業表道心，志氣已定堪撼人。','業火再現令汝嗔，魔者猖狂局混沌。','惡人混跡散風塵，誓消魔業創汝身。','自古魔為禍之本，悲嘆道者身已殞。'] },
+          { t:'天罪歎之一', ls:['魔擾世間，棄天治天；','百姓何安，誰能力挽？','黑羽漫遍，蒼音之玄，','力抵棄天，捨身一戰。','武林中原，群俠哀歎，','再現梵天，盼能靖安。','風痕之劍，戡斬魔亂，','先天心寒，難過此關。','贖罪刀劍，赭心悔憾，','素挽狂瀾，伏龍湖岸。','柳生證劍，身陷兩難，','雅僧說禪，無稽之談。','孽人罪愆，生靈塗炭，','造化傾險，邪正難判。','棄天棄天，天罪之歎。'] },
+          { t:'天罪歎之二', ls:['棄天歸天，世局慢緩。','浪成問劍，死國之探。','雅僧眾天，來將恐患。','正邪難斷，燃薺之嘆。','天狼守蓮，素心不返。','伏月情緣，學海阻斷。','冰烈心絆，火中雪寒。','閻王意奸，茶心惶顫。','天罪之關，天啓何安？'] }
+        ]}
+      ];
+      const renderView = (grp, p) => {
+        const labZh = grp.gz + (p.tune ? ' · ' + p.tune : '');
+        const labEn = grp.ge + (p.tune ? ' · ' + p.tune : '');
+        let cols = '<div style="writing-mode:vertical-rl; margin-left:auto; letter-spacing:.02em;">';
+        cols += '<div style="font-size:27px; color:#bcd8ff; line-height:2.5;">' + p.t + '</div>';
+        if (p.tune) cols += '<div style="font-size:13px; color:#6fb0f0; line-height:2.3; letter-spacing:.24em;">' + p.tune + '</div>';
+        p.ls.forEach(function (l) { cols += '<div style="font-size:20px; color:#e8f0ff; line-height:2.05;">' + l + '</div>'; });
+        cols += '</div>';
+        viewEl.innerHTML =
+          '<div class="i18n" data-zh="' + labZh + '" data-en="' + labEn + '" style="font-size:11px; letter-spacing:.2em; color:#6fb0f0; margin-bottom:22px; flex-shrink:0;">' + (curLang === 'en' ? labEn : labZh) + '</div>'
+          + '<div class="poem-scroll" style="flex:1; display:flex; align-items:center; overflow-x:auto; overflow-y:hidden; padding-bottom:6px;">' + cols + '</div>';
+        const sc = viewEl.querySelector('.poem-scroll');
+        if (sc) {
+          sc.scrollLeft = sc.scrollWidth;
+          if (sc.scrollWidth - sc.clientWidth > 8) {
+            const hint = document.createElement('div');
+            hint.textContent = (curLang === 'en' ? '← scroll to read on' : '← 向左捲動，續讀');
+            hint.style.cssText = 'position:absolute; left:34px; bottom:9px; font-size:10px; letter-spacing:.14em; color:rgba(190,214,255,.5); pointer-events:none;';
+            viewEl.appendChild(hint);
+          }
+        }
+      };
+      let html = '';
+      G.forEach(function (grp, gi) {
+        html += '<div class="i18n" data-zh="' + grp.gz + '" data-en="' + grp.ge + '" style="font-size:11px; letter-spacing:.18em; color:rgba(190,214,255,.5); margin:' + (gi === 0 ? '0' : '22px') + ' 0 10px;">' + (curLang === 'en' ? grp.ge : grp.gz) + '</div>';
+        grp.ps.forEach(function (p, pi) {
+          const tn = p.tune ? '<span style="font-size:11px; color:#6fb0f0; letter-spacing:.14em; margin-left:9px;">' + p.tune + '</span>' : '';
+          html += '<div class="poem-chip" data-gi="' + gi + '" data-pi="' + pi + '" style="padding:10px 14px; border:1px solid rgba(130,180,255,.22); border-radius:5px; cursor:pointer; font-size:14px; color:rgba(200,220,255,.8); margin-bottom:8px; transition:background .2s ease, border-color .2s ease, color .2s ease;">' + p.t + tn + '</div>';
+        });
+      });
+      listEl.innerHTML = html;
+      const chips = Array.prototype.slice.call(listEl.querySelectorAll('.poem-chip'));
+      const pick = function (chip) {
+        const gi = +chip.getAttribute('data-gi'), pi = +chip.getAttribute('data-pi');
+        renderView(G[gi], G[gi].ps[pi]);
+        chips.forEach(function (c) {
+          const on = c === chip;
+          c.style.background = on ? 'rgba(127,196,255,.16)' : 'transparent';
+          c.style.borderColor = on ? 'rgba(127,196,255,.55)' : 'rgba(130,180,255,.22)';
+          c.style.color = on ? '#eaf3ff' : 'rgba(200,220,255,.8)';
+        });
+      };
+      chips.forEach(function (c) { c.addEventListener('click', function () { pick(c); }); });
+      if (chips[0]) pick(chips[0]);
+    })();
+
+    // ---- reading room (lazy) ----
+    const rr = root.querySelector('[data-rr]');
+    let rrInit = false;
+    const rrDefault = () => {
+      if (!rr || rrInit) return; rrInit = true;
+      const chips = Array.prototype.slice.call(rr.querySelectorAll('.rr-chip'));
+      const frame = rr.querySelector('.rr-frame');
+      const openLink = rr.querySelector('.rr-open');
+      const pick = (chip) => {
+        const src = chip.getAttribute('data-doc');
+        if (frame) frame.src = src;
+        if (openLink) openLink.href = src;
+        chips.forEach((c) => {
+          const on = c === chip;
+          c.style.background = on ? 'rgba(127,196,255,.16)' : 'transparent';
+          c.style.color = on ? '#eaf3ff' : 'rgba(190,214,255,.7)';
+          c.style.borderColor = on ? 'rgba(127,196,255,.55)' : 'rgba(130,180,255,.25)';
+        });
+      };
+      chips.forEach((c) => c.addEventListener('click', () => pick(c)));
+      if (chips[0]) pick(chips[0]);
+    };
+
+    // ---- web previews (loaded + scaled to desktop layout on first open) ----
+    const scaleFrame = (f) => {
+      const wrap = f.parentElement;
+      if (!wrap) return;
+      const w = wrap.clientWidth || 320;
+      f.style.transform = 'scale(' + (w / 1280) + ')';
+    };
+    let webFrames = [];
+    let webInit = false;
+    const loadWeb = () => {
+      if (webInit) return; webInit = true;
+      webFrames = Array.prototype.slice.call(root.querySelectorAll('.wp-frame[data-src]'));
+      webFrames.forEach((f) => { scaleFrame(f); f.src = f.getAttribute('data-src'); });
+    };
+    window.addEventListener('resize', () => webFrames.forEach((f) => scaleFrame(f)));
+
+    // ---- video play buttons ----
+    root.querySelectorAll('.vid').forEach((w) => {
+      if (w._vb) return; w._vb = true;
+      const v = w.querySelector('.vid-el');
+      const btn = w.querySelector('.vid-play');
+      if (!v || !btn) return;
+      const start = (e) => { if (e) { e.preventDefault(); e.stopPropagation(); } v.controls = true; const p = v.play(); if (p && p.catch) p.catch(() => {}); btn.style.opacity = '0'; btn.style.pointerEvents = 'none'; };
+      btn.addEventListener('click', start);
+      w.addEventListener('click', (e) => { if (v.paused && v.currentTime === 0) start(e); });
+      v.addEventListener('play', () => { btn.style.opacity = '0'; btn.style.pointerEvents = 'none'; });
+      btn.addEventListener('mouseenter', () => { btn.style.background = 'rgba(20,44,86,.72)'; btn.style.transform = 'translate(-50%,-50%) scale(1.08)'; });
+      btn.addEventListener('mouseleave', () => { btn.style.background = 'rgba(6,12,28,.5)'; btn.style.transform = 'translate(-50%,-50%) scale(1)'; });
+    });
+
+    // ---- lightbox (graphic + fashion + image stills) ----
+    (() => {
+      const lb = root.querySelector('.lb');
+      if (!lb || lb._b) return; lb._b = true;
+      const imgEl = lb.querySelector('.lb-img');
+      const countEl = lb.querySelector('.lb-count');
+      const prevB = lb.querySelector('.lb-prev');
+      const nextB = lb.querySelector('.lb-next');
+      const closeB = lb.querySelector('.lb-close');
+      let group = [], idx = 0;
+      const show = () => {
+        const el = group[idx]; if (!el) return;
+        imgEl.src = el.getAttribute('data-zoom');
+        imgEl.alt = el.getAttribute('alt') || '';
+        const many = group.length > 1;
+        prevB.style.display = many ? 'flex' : 'none';
+        nextB.style.display = many ? 'flex' : 'none';
+        countEl.textContent = many ? (idx + 1) + ' / ' + group.length : '';
+      };
+      const open = (el) => {
+        const g = el.getAttribute('data-gallery');
+        group = Array.prototype.slice.call(root.querySelectorAll('[data-zoom]' + (g ? '[data-gallery="' + g + '"]' : '')));
+        idx = Math.max(0, group.indexOf(el));
+        lb.style.display = 'flex';
+        try { document.body.style.overflow = 'hidden'; } catch (e) {}
+        show();
+      };
+      const close = () => { lb.style.display = 'none'; imgEl.src = ''; try { document.body.style.overflow = ''; } catch (e) {} };
+      const step = (d) => { if (!group.length) return; idx = (idx + d + group.length) % group.length; show(); };
+      root.querySelectorAll('[data-zoom]').forEach((el) => { el.addEventListener('click', (e) => { e.preventDefault(); open(el); }); });
+      prevB.addEventListener('click', (e) => { e.stopPropagation(); step(-1); });
+      nextB.addEventListener('click', (e) => { e.stopPropagation(); step(1); });
+      closeB.addEventListener('click', (e) => { e.stopPropagation(); close(); });
+      lb.querySelector('.lb-bg').addEventListener('click', close);
+      imgEl.addEventListener('click', (e) => e.stopPropagation());
+      const onKey = (e) => {
+        if (!lb.style.display || lb.style.display === 'none') return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') step(-1);
+        else if (e.key === 'ArrowRight') step(1);
+      };
+      document.addEventListener('keydown', onKey);
+      this._offLb = () => document.removeEventListener('keydown', onKey);
+    })();
+
+    // ---- routing ----
+    const cats = Array.prototype.slice.call(root.querySelectorAll('[data-cat]'));
+    const tabs = Array.prototype.slice.call(root.querySelectorAll('[data-tab]'));
+    const valid = cats.map((c) => c.getAttribute('data-cat'));
+    const route = () => {
+      let key = (location.hash || '').replace('#', '');
+      if (valid.indexOf(key) === -1) key = 'about';
+      cats.forEach((c) => {
+        const on = c.getAttribute('data-cat') === key;
+        c.style.display = on ? '' : 'none';
+        if (on) { c.style.animation = 'none'; void c.offsetWidth; c.style.animation = 'wk-rise .6s cubic-bezier(.2,.7,.2,1) both'; }
+      });
+      tabs.forEach((t) => {
+        const on = t.getAttribute('data-tab') === key;
+        t.style.background = on ? '#7fc4ff' : 'transparent';
+        t.style.color = on ? '#08152e' : 'rgba(190,214,255,.66)';
+      });
+      if (key === 'journal') rrDefault();
+      if (key === 'web') loadWeb();
+      try { window.scrollTo(0, 0); } catch (e) {}
+    };
+    route();
+    window.addEventListener('hashchange', route);
+    this._off = () => window.removeEventListener('hashchange', route);
+  }
+  componentWillUnmount() { if (this._off) this._off(); if (this._offLb) this._offLb(); }
+}
+</script>
+</body>
+</html>
