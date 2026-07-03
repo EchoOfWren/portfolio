@@ -21,8 +21,21 @@
   @keyframes wk-tw{0%,100%{opacity:.18}50%{opacity:1}}
   @keyframes wk-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   @keyframes wk-eq{0%,100%{height:22%}50%{height:100%}}
+  @media (max-width:760px){
+    main{ padding-left:20px !important; padding-right:20px !important; }
+    section[data-cat] h1{ font-size:33px !important; line-height:1.22 !important; }
+    section[data-cat] blockquote{ font-size:21px !important; }
+    .wk-2col{ grid-template-columns:1fr !important; }
+    .wk-4col{ grid-template-columns:1fr 1fr !important; }
+    [data-poems]{ grid-template-columns:1fr !important; }
+    [data-poem-list]{ max-height:340px !important; }
+    [data-poem-view]{ padding:22px 18px 18px !important; min-height:430px !important; }
+    .wk-rr-grid{ grid-template-columns:1fr !important; }
+    .wk-rr-viewer{ display:none !important; }
+    button[data-totop]{ bottom:96px !important; right:14px !important; }
+  }
 </style>
-<script src="image-slot.js"></script>
+<link rel="preload" href="assets/fonts/NotoSerifTC-Medium.ttf" as="font" type="font/ttf" crossorigin>
 <template id="__bundler_thumbnail" data-bg-color="#0a1430">
   <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><circle cx="600" cy="400" r="190" fill="none" stroke="#7fc4ff" stroke-width="5"/><circle cx="600" cy="400" r="150" fill="none" stroke="rgba(127,196,255,.4)" stroke-width="2"/><text x="600" y="440" font-family="Georgia,serif" font-size="150" fill="#dcecff" text-anchor="middle">Z</text></svg>
 </template>
@@ -61,7 +74,7 @@
     <!-- ============ ABOUT ============ -->
     <section data-cat="about" data-screen-label="About" style="padding:74px 0 0;">
       <div class="i18n" data-zh="關於 · 在 0 與 1 之間" data-en="About · Between 0 and 1" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">關於 · 在 0 與 1 之間</div>
-      <div style="display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:54px; align-items:center; margin-top:26px;">
+      <div style="margin-top:26px;">
         <div>
           <h1 class="i18n" data-zh="0 與 1 的距離" data-en="The distance between 0 and 1" style="font-size:64px; font-weight:500; line-height:1.06; letter-spacing:.01em; margin:0; color:#eef4ff;">0 與 1 的距離</h1>
           <div class="i18n" data-zh="從 0 到 1" data-en="From 0 to 1" style="font-size:21px; color:#8fc8ff; letter-spacing:.06em; margin:16px 0 0;">從 0 到 1</div>
@@ -72,12 +85,11 @@
             <span class="i18n" data-zh="設計" data-en="Design">設計</span>
           </div>
         </div>
-        <image-slot id="zoe_portrait" style="width:100%; height:auto; aspect-ratio:3/4; display:block;" shape="rounded" radius="4" placeholder="人像 / Portrait"></image-slot>
       </div>
 
       <blockquote class="i18n" data-zh="「給我一個失靈的系統——一塊布、五百人的課堂、一套僵化的機制——我會找到那條，重新織起它的線。」" data-en="&ldquo;Give me a system that fails — a length of cloth, a class of five hundred, a mechanism grown rigid — and I will find the thread that reweaves it.&rdquo;" style="margin:70px 0 0; font-size:33px; font-weight:300; line-height:1.4; color:#dce8ff; max-width:none;">「給我一個失靈的系統——一塊布、五百人的課堂、一套僵化的機制——我會找到那條，重新織起它的線。」</blockquote>
 
-      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:58px; border-top:1px solid rgba(130,180,255,.22);">
+      <div class="wk-4col" style="display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:58px; border-top:1px solid rgba(130,180,255,.22);">
         <div style="padding:26px 22px 30px; border-right:1px solid rgba(130,180,255,.12);"><div style="font-size:11px; color:#6fb0f0; margin-bottom:14px;">01</div><div class="i18n" data-zh="布料" data-en="Fabric" style="font-size:24px; margin-bottom:10px; color:#eaf3ff;">布料</div><p class="i18n" data-zh="織品與服裝設計——賦予原始材料結構與形體。" data-en="Textile & garment design — giving raw material structure and form." style="font-size:13px; line-height:1.64; color:rgba(224,236,255,.6); margin:0;">織品與服裝設計——賦予原始材料結構與形體。</p></div>
         <div style="padding:26px 22px 30px; border-right:1px solid rgba(130,180,255,.12);"><div style="font-size:11px; color:#6fb0f0; margin-bottom:14px;">02</div><div class="i18n" data-zh="轉向" data-en="Pivot" style="font-size:24px; margin-bottom:10px; color:#eaf3ff;">轉向</div><p class="i18n" data-zh="把同一套設計方法，從服裝帶進教育與生成式 AI。" data-en="Carrying one design method from fashion into education and generative AI." style="font-size:13px; line-height:1.64; color:rgba(224,236,255,.6); margin:0;">把同一套設計方法，從服裝帶進教育與生成式 AI。</p></div>
         <div style="padding:26px 22px 30px; border-right:1px solid rgba(130,180,255,.12);"><div style="font-size:11px; color:#6fb0f0; margin-bottom:14px;">03</div><div class="i18n" data-zh="課堂" data-en="Classroom" style="font-size:24px; margin-bottom:10px; color:#eaf3ff;">課堂</div><p class="i18n" data-zh="與近 500 位學生，一同透過 GenAI，將概念具象化。" data-en="Giving concepts a form, together with nearly 500 students, through GenAI." style="font-size:13px; line-height:1.64; color:rgba(224,236,255,.6); margin:0;">與近 500 位學生，一同透過 GenAI，將概念具象化。</p></div>
@@ -103,7 +115,7 @@
         <h3 class="i18n" data-zh="概念具象化困境" data-en="The Conceptual Materialization Dilemma" style="font-weight:500; font-size:30px; line-height:1.2; margin:0 0 12px; color:#eef4ff;">概念具象化困境</h3>
         <p class="i18n" data-zh="當生成式 AI 幾乎能生成一切，創作的門檻便從「技術執行」位移到「概念表達」——學生真正的瓶頸，不再是工具，而是說不清楚自己想要什麼。我以此為核心，重新設計課堂的認知鷹架。" data-en="When generative AI can make almost anything, the barrier to creation shifts from technical execution to conceptual articulation — a student's real bottleneck is no longer the tool, but being unable to say what they want. I made this the core of the cognitive scaffolding I redesigned for the classroom." style="font-size:15px; line-height:1.75; color:rgba(224,236,255,.74); margin:0; max-width:none;">當生成式 AI 幾乎能生成一切，創作的門檻便從「技術執行」位移到「概念表達」——學生真正的瓶頸，不再是工具，而是說不清楚自己想要什麼。我以此為核心，重新設計課堂的認知鷹架。</p>
       </div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:44px;">
+      <div class="wk-2col" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:44px;">
         <div style="border:1px solid rgba(130,180,255,.18); background:rgba(120,160,255,.05); padding:26px 24px;"><div style="font-size:11px; color:#6fb0f0; margin-bottom:12px;">01</div><h3 class="i18n" data-zh="教師於 AI 賦能課堂之專業轉化" data-en="Teachers' professional transformation in AI-empowered classrooms" style="font-weight:500; font-size:21px; line-height:1.3; margin:0 0 9px; color:#eaf3ff;">教師於 AI 賦能課堂之專業轉化</h3><p class="i18n" data-zh="以行動研究，將生成式 AI 繪圖融入國中資訊科技，探討教師角色的轉變。" data-en="An action-research study weaving GenAI image-making into junior-high IT, tracing how the teacher's role transforms." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:0;">以行動研究，將生成式 AI 繪圖融入國中資訊科技，探討教師角色的轉變。</p></div>
         <div style="border:1px solid rgba(130,180,255,.18); background:rgba(120,160,255,.05); padding:26px 24px;"><div style="font-size:11px; color:#6fb0f0; margin-bottom:12px;">02</div><h3 class="i18n" data-zh="基於 ADDIE 模型之生成式 AI 繪圖教案設計" data-en="GenAI image lesson design, based on the ADDIE model" style="font-weight:500; font-size:21px; line-height:1.3; margin:0 0 9px; color:#eaf3ff;">基於 ADDIE 模型之生成式 AI 繪圖教案設計</h3><p class="i18n" data-zh="以 ADDIE 設計跨領域教案，並自建提示詞鷹架平台，協助不同學習風格的學生。" data-en="A cross-disciplinary curriculum on the ADDIE model, with a self-built prompt-scaffolding platform for diverse learners." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:0;">以 ADDIE 設計跨領域教案，並自建提示詞鷹架平台，協助不同學習風格的學生。</p></div>
         <div style="border:1px solid rgba(130,180,255,.18); background:rgba(120,160,255,.05); padding:26px 24px;"><div style="font-size:11px; color:#6fb0f0; margin-bottom:12px;">03</div><h3 class="i18n" data-zh="從聆聽者到創作者：生成式 AI 音樂" data-en="From listeners to creators: GenAI music" style="font-weight:500; font-size:21px; line-height:1.3; margin:0 0 9px; color:#eaf3ff;">從聆聽者到創作者：生成式 AI 音樂</h3><p class="i18n" data-zh="用三層認知鷹架，讓沒有音樂背景的學生以 SUNO AI 創作多語原創歌曲。" data-en="A three-tier scaffolding that let students with no musical training compose original multilingual songs with SUNO AI." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:0;">用三層認知鷹架，讓沒有音樂背景的學生以 SUNO AI 創作多語原創歌曲。</p></div>
@@ -113,26 +125,29 @@
       <!-- READING ROOM -->
       <div data-rr style="margin-top:56px;">
         <div class="i18n" data-zh="線上閱覽室 · 論文、海報、簡報" data-en="Reading room · papers, posters, talks" style="font-size:12px; letter-spacing:.2em; color:#6fb0f0; margin-bottom:20px;">線上閱覽室 · 論文、海報、簡報</div>
-        <div style="display:grid; grid-template-columns:minmax(300px, 380px) 1fr; gap:22px; align-items:start;">
+        <div class="wk-rr-grid" style="display:grid; grid-template-columns:minmax(300px, 380px) 1fr; gap:22px; align-items:start;">
           <div>
             <div class="i18n" data-zh="論文" data-en="Papers" style="font-size:11px; letter-spacing:.18em; color:rgba(190,214,255,.5); margin:0 0 9px;">論文</div>
-            <div class="rr-chip i18n" data-doc="assets/docs/paper-addie.pdf" data-zh="基於 ADDIE 模型之生成式 AI 繪圖跨領域教案設計：以國中資訊科技為例（全文）" data-en="Lesson plans integrating generative-AI image tools into junior-high IT, based on the ADDIE model (full paper)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">基於 ADDIE 模型之生成式 AI 繪圖跨領域教案設計：以國中資訊科技為例（全文）</div>
+            <div class="rr-chip i18n" data-doc="assets/docs/paper-addie-full.pdf" data-zh="基於 ADDIE 模型之生成式 AI 繪圖跨領域教案設計：以國中資訊科技為例（全文）" data-en="Lesson plans integrating generative-AI image tools into junior-high IT, based on the ADDIE model (full paper)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">基於 ADDIE 模型之生成式 AI 繪圖跨領域教案設計：以國中資訊科技為例（全文）</div>
             <div class="rr-chip i18n" data-doc="assets/docs/abstract-addie.pdf" data-zh="基於 ADDIE 模型之生成式 AI 繪圖跨領域教案設計（摘要）" data-en="Integrating generative-AI image tools into junior-high IT — ADDIE model (abstract)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">基於 ADDIE 模型之生成式 AI 繪圖跨領域教案設計（摘要）</div>
             <div class="rr-chip i18n" data-doc="assets/docs/abstract-genai-music.pdf" data-zh="從聆聽者到創作者：以生成式 AI 音樂工具跨越音樂不平等（摘要）" data-en="From listeners to creators: bridging musical inequality through generative-AI music tools (abstract)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">從聆聽者到創作者：以生成式 AI 音樂工具跨越音樂不平等（摘要）</div>
             <div class="rr-chip i18n" data-doc="assets/docs/abstract-c09-en.pdf" data-zh="AI 賦能時代下的教師角色重塑：情緒領導與鷹架建構（英文摘要）" data-en="Reshaping the teacher's role in an age of AI empowerment (English abstract)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">AI 賦能時代下的教師角色重塑：情緒領導與鷹架建構（英文摘要）</div>
+            <div class="rr-chip i18n" data-doc="assets/docs/abstract-c09-zh.pdf" data-zh="AI 賦能時代下的教師角色重塑：情緒領導與鷹架建構（中文摘要）" data-en="Reshaping the teacher's role in an age of AI empowerment (Chinese abstract)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">AI 賦能時代下的教師角色重塑：情緒領導與鷹架建構（中文摘要）</div>
+            <div class="rr-chip i18n" data-doc="assets/docs/thesis-dress-full.pdf" data-zh="臺灣北部女性銀髮族連身裙設計開發之研究（碩士論文全文）" data-en="Design &amp; development of dresses for elderly women in northern Taiwan (Master's thesis, full text)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">臺灣北部女性銀髮族連身裙設計開發之研究（碩士論文全文）</div>
             <div class="i18n" data-zh="海報" data-en="Posters" style="font-size:11px; letter-spacing:.18em; color:rgba(190,214,255,.5); margin:20px 0 9px;">海報</div>
             <div class="rr-chip i18n" data-doc="assets/docs/poster-facdev.pdf" data-zh="從聆聽者到創作者（FacDev 2026 海報）" data-en="From listeners to creators (FacDev 2026 poster)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">從聆聽者到創作者（FacDev 2026 海報）</div>
             <div class="rr-chip i18n" data-doc="assets/docs/poster-c09.pdf" data-zh="AI 賦能時代下的教師角色重塑（C09 海報）" data-en="Reshaping the teacher's role in an age of AI empowerment (C09 poster)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">AI 賦能時代下的教師角色重塑（C09 海報）</div>
+            <div class="rr-chip i18n" data-doc="assets/docs/poster-addie.pdf" data-zh="基於 ADDIE 模型之生成式 AI 繪圖跨領域教案設計（研討會海報）" data-en="Lesson plans integrating generative-AI image tools — ADDIE model (conference poster)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">基於 ADDIE 模型之生成式 AI 繪圖跨領域教案設計（研討會海報）</div>
             <div class="i18n" data-zh="口頭簡報" data-en="Talks" style="font-size:11px; letter-spacing:.18em; color:rgba(190,214,255,.5); margin:20px 0 9px;">口頭簡報</div>
             <div class="rr-chip i18n" data-doc="assets/docs/talk-facdev-en.pdf" data-zh="從聆聽者到創作者（FacDev 2026 口頭簡報 · 英文）" data-en="From listeners to creators (FacDev 2026 talk, English)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">從聆聽者到創作者（FacDev 2026 口頭簡報 · 英文）</div>
             <div class="rr-chip i18n" data-doc="assets/docs/talk-defense.pdf" data-zh="臺灣北部女性銀髮族連身裙設計開發之研究（碩士口試簡報）" data-en="Design & development of dresses for elderly women in northern Taiwan (Master's defense)" style="padding:12px 14px; border:1px solid rgba(130,180,255,.2); border-radius:5px; cursor:pointer; font-size:13px; line-height:1.5; color:rgba(200,220,255,.78); margin-bottom:8px;">臺灣北部女性銀髮族連身裙設計開發之研究（碩士口試簡報）</div>
           </div>
-          <div>
+          <div class="wk-rr-viewer">
             <div style="border:1px solid rgba(130,180,255,.2); background:#0a1024;">
               <iframe class="rr-frame" title="Document viewer" style="display:block; width:100%; height:760px; border:0; background:#0a1024;"></iframe>
             </div>
             <div style="display:flex; justify-content:flex-end; margin-top:10px;">
-              <a class="rr-open i18n" href="assets/docs/paper-addie.pdf" target="_blank" rel="noopener" data-zh="在新分頁開啟 ↗" data-en="Open in new tab ↗" style="text-decoration:none; font-size:12px; letter-spacing:.06em; color:#7fc4ff;">在新分頁開啟 ↗</a>
+              <a class="rr-open i18n" href="assets/docs/paper-addie-full.pdf" target="_blank" rel="noopener" data-zh="在新分頁開啟 ↗" data-en="Open in new tab ↗" style="text-decoration:none; font-size:12px; letter-spacing:.06em; color:#7fc4ff;">在新分頁開啟 ↗</a>
             </div>
           </div>
         </div>
@@ -313,8 +328,8 @@
 
       <div class="i18n" data-zh="延伸閱讀" data-en="Documents" style="font-size:10.5px; letter-spacing:.16em; color:rgba(190,214,255,.5); margin:52px 0 12px;">延伸閱讀</div>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;">
-        <a href="assets/docs/thesis-dress.pdf" target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:flex; justify-content:space-between; align-items:center; gap:14px; border:1px solid rgba(130,180,255,.2); background:rgba(8,18,40,.7); padding:22px 24px;"><div><div class="i18n" data-zh="碩士論文 · 線上瀏覽" data-en="Master's thesis · read online" style="font-size:10px; letter-spacing:.12em; color:rgba(190,214,255,.5); margin-bottom:6px;">碩士論文 · 線上瀏覽</div><div class="i18n" data-zh="臺灣北部女性銀髮族連身裙設計開發之研究" data-en="Design & development of dresses for elderly women in northern Taiwan" style="font-weight:500; font-size:15px; color:#eaf3ff;">臺灣北部女性銀髮族連身裙設計開發之研究</div></div><span style="color:#7fc4ff; font-size:18px;">↗</span></a>
+      <div class="wk-2col" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;">
+        <a href="assets/docs/thesis-dress-full.pdf" target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:flex; justify-content:space-between; align-items:center; gap:14px; border:1px solid rgba(130,180,255,.2); background:rgba(8,18,40,.7); padding:22px 24px;"><div><div class="i18n" data-zh="碩士論文 · 線上瀏覽" data-en="Master's thesis · read online" style="font-size:10px; letter-spacing:.12em; color:rgba(190,214,255,.5); margin-bottom:6px;">碩士論文 · 線上瀏覽</div><div class="i18n" data-zh="臺灣北部女性銀髮族連身裙設計開發之研究" data-en="Design & development of dresses for elderly women in northern Taiwan" style="font-weight:500; font-size:15px; color:#eaf3ff;">臺灣北部女性銀髮族連身裙設計開發之研究</div></div><span style="color:#7fc4ff; font-size:18px;">↗</span></a>
         <a href="assets/docs/garment-2016.pdf" target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:flex; justify-content:space-between; align-items:center; gap:14px; border:1px solid rgba(130,180,255,.2); background:rgba(8,18,40,.7); padding:22px 24px;"><div><div class="i18n" data-zh="機能服裝 · 線上瀏覽" data-en="Functional garment · read online" style="font-size:10px; letter-spacing:.12em; color:rgba(190,214,255,.5); margin-bottom:6px;">機能服裝 · 線上瀏覽</div><div class="i18n" data-zh="2016 骨科病患服裝設計" data-en="2016 orthopedic patient garment design" style="font-weight:500; font-size:15.5px; color:#eaf3ff;">2016 骨科病患服裝設計</div></div><span style="color:#7fc4ff; font-size:18px;">↗</span></a>
       </div>
     </section>
@@ -325,7 +340,7 @@
       <h1 class="i18n" data-zh="我終於，找到了我的聲音。" data-en="I finally found my sound." style="font-size:54px; font-weight:500; line-height:1.06; margin:14px 0 0; color:#eef4ff;">我終於，找到了我的聲音。</h1>
       <p class="i18n" data-zh="三層鷹架，帶領我和學生成為創作者。" data-en="Three tiers of scaffolding, guiding my students and me to become creators." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 0;">三層鷹架，帶領我和學生成為創作者。</p>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:40px; align-items:start;">
+      <div class="wk-2col" style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:40px; align-items:start;">
         <div>
           <div class="i18n" data-zh="藝人 · Spotify" data-en="Artist · Spotify" style="font-size:11px; letter-spacing:.2em; color:#6fb0f0; margin-bottom:14px;">藝人 · Spotify</div>
           <iframe title="Spotify" src="https://open.spotify.com/embed/artist/2nsWxxYgNaqRhrwjvzmH8M?utm_source=generator" width="100%" height="420" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px; display:block;"></iframe>
@@ -718,10 +733,15 @@ class Component extends DCLogic {
       const chips = Array.prototype.slice.call(rr.querySelectorAll('.rr-chip'));
       const frame = rr.querySelector('.rr-frame');
       const openLink = rr.querySelector('.rr-open');
-      const pick = (chip) => {
+      const isMobile = window.matchMedia('(max-width:760px)').matches;
+      const pick = (chip, user) => {
         const src = chip.getAttribute('data-doc');
-        if (frame) frame.src = src;
-        if (openLink) openLink.href = src;
+        if (isMobile) {
+          if (user) { try { window.open(src, '_blank', 'noopener'); } catch (e) {} }
+        } else {
+          if (frame) frame.src = src;
+          if (openLink) openLink.href = src;
+        }
         chips.forEach((c) => {
           const on = c === chip;
           c.style.background = on ? 'rgba(127,196,255,.16)' : 'transparent';
@@ -729,8 +749,8 @@ class Component extends DCLogic {
           c.style.borderColor = on ? 'rgba(127,196,255,.55)' : 'rgba(130,180,255,.25)';
         });
       };
-      chips.forEach((c) => c.addEventListener('click', () => pick(c)));
-      if (chips[0]) pick(chips[0]);
+      chips.forEach((c) => c.addEventListener('click', () => pick(c, true)));
+      if (chips[0]) pick(chips[0], false);
     };
 
     // ---- web previews (loaded + scaled to desktop layout on first open) ----

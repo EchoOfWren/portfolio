@@ -14,10 +14,15 @@
 <title>Zoe Yeh</title>
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/favicon-512.png">
+<link rel="preload" href="assets/fonts/NotoSerifTC-Medium.ttf" as="font" type="font/ttf" crossorigin>
 <style>
   @font-face{font-family:'Noto Serif TC';src:url('assets/fonts/NotoSerifTC-Medium.ttf') format('truetype');font-weight:300 700;font-style:normal;font-display:swap;}
   *{box-sizing:border-box;}
   html,body{margin:0;background:#160d05;}
+  @media (max-width:700px){
+    .fy-back-btn{ right:14px !important; bottom:96px !important; }
+    .fy-player{ left:12px !important; bottom:16px !important; }
+  }
   @keyframes fy-dust{0%{transform:translate3d(0,0,0);opacity:0}12%{opacity:.6}82%{opacity:.3}100%{transform:translate3d(var(--dx,14px),-170px,0);opacity:0}}
   @keyframes fy-shimmer{0%,100%{opacity:.55}50%{opacity:.92}}
   @keyframes fy-hint{0%,100%{opacity:.55;transform:translateY(0)}50%{opacity:1;transform:translateY(3px)}}
@@ -66,7 +71,7 @@
           <div style="position:absolute; left:1000px; top:70px; width:150px; height:172px; border:1px solid rgba(140,205,255,.34); background:transparent;"></div>
           <div style="position:absolute; left:150px; top:325px; width:150px; height:172px; border:1px solid rgba(140,205,255,.34); background:transparent;"></div>
           <div style="position:absolute; left:870px; top:325px; width:150px; height:172px; border:1px solid rgba(140,205,255,.34); background:transparent;"></div>
-          <div style="position:absolute; left:330px; top:520px; width:150px; height:172px; border:1px solid rgba(140,205,255,.34); background:transparent;"></div>
+          <div style="position:absolute; left:220px; top:520px; width:150px; height:172px; border:1px solid rgba(140,205,255,.34); background:transparent;"></div>
           <div style="position:absolute; left:535px; top:575px; width:150px; height:172px; border:1px solid rgba(140,205,255,.34); background:transparent;"></div>
           <div style="position:absolute; left:890px; top:575px; width:150px; height:172px; border:1px solid rgba(140,205,255,.34); background:transparent;"></div>
           <div style="position:absolute; left:690px; top:70px; width:150px; height:172px; border:1px solid rgba(140,205,255,.34); background:transparent;"></div>
@@ -397,6 +402,37 @@ class Component extends DCLogic {
     const wall = world && world.querySelector('.fy-artwall');
     if (!wall || wall._float) return; wall._float = true;
     const rnd = (a, b) => a + Math.random() * (b - a);
+    // --- mobile: re-lay the constellation into a scrollable 2-column column ---
+    const vw = window.innerWidth || 1200;
+    if (vw <= 700) {
+      const s = Math.max(0.45, Math.min(1, (vw - 24) / 620));
+      const pos = [
+        [175, 20, 270, 300],
+        [30, 400, 250, 280], [340, 400, 250, 280],
+        [30, 760, 250, 280], [340, 760, 250, 280],
+        [30, 1120, 250, 280], [340, 1120, 250, 280],
+        [30, 1480, 250, 280], [340, 1480, 250, 280],
+        [175, 1840, 270, 300]
+      ];
+      // children order: about, cv, journal, web, graphic, fashion, music, image, contact, writing
+      const order = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      Array.prototype.forEach.call(wall.children, (f, i) => {
+        const p = pos[order[i]] || pos[0];
+        f.style.left = p[0] + 'px'; f.style.top = p[1] + 'px';
+        f.style.width = p[2] + 'px'; f.style.height = p[3] + 'px';
+      });
+      wall.style.width = '620px';
+      wall.style.height = '2240px';
+      wall.style.left = '50%';
+      wall.style.top = '90px';
+      wall.style.margin = '0 0 0 -' + (620 * s / 2).toFixed(0) + 'px';
+      wall.style.transformOrigin = 'top left';
+      wall.style.transform = 'scale(' + s + ')';
+      const scene = world.parentElement;
+      if (scene) { scene.style.overflowY = 'auto'; scene.style.webkitOverflowScrolling = 'touch'; scene.style.perspective = 'none'; }
+      world.style.position = 'relative';
+      world.style.height = (90 + 2240 * s + 180).toFixed(0) + 'px';
+    }
     const cats = [{k:'about',zh:'關於',en:'About'},{k:'cv',zh:'履歷',en:'CV'},{k:'journal',zh:'研究',en:'Research'},{k:'web',zh:'網頁設計',en:'Web'},{k:'graphic',zh:'平面設計',en:'Graphic'},{k:'fashion',zh:'服裝設計',en:'Fashion'},{k:'music',zh:'音樂創作',en:'Music'},{k:'image',zh:'圖像創作',en:'Image'},{k:'contact',zh:'聯絡',en:'Contact'},{k:'writing',zh:'文字創作',en:'Writing'}];
     Array.prototype.forEach.call(wall.children, (f, idx) => {
       const w = f.offsetWidth, h = f.offsetHeight;
