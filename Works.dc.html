@@ -28,8 +28,9 @@
     .wk-2col{ grid-template-columns:1fr !important; }
     .wk-4col{ grid-template-columns:1fr 1fr !important; }
     [data-poems]{ grid-template-columns:1fr !important; }
-    [data-poem-list]{ max-height:340px !important; }
-    [data-poem-view]{ padding:22px 18px 18px !important; min-height:430px !important; }
+    [data-poem-list]{ max-height:none !important; overflow:visible !important; }
+    [style*="minmax(200px,260px)"]{ grid-template-columns:1fr !important; }
+    .wk-contact a{ flex:1 1 100%; display:flex; justify-content:center; box-sizing:border-box; }
     .wk-rr-grid{ grid-template-columns:1fr !important; }
     .wk-rr-viewer{ display:none !important; }
     button[data-totop]{ bottom:96px !important; right:14px !important; }
@@ -161,6 +162,16 @@
       <p class="i18n" data-zh="為了讓課堂真正運轉，我自建了一整套網頁——設計、前端、內容，一手包辦。每個頁面都有即時預覽，點一下就能進入。" data-en="To make a classroom truly run, I built a whole set of sites — design, front-end, content, all by hand. Every page has a live preview; click to enter." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 34px;">為了讓課堂真正運轉，我自建了一整套網頁——設計、前端、內容，一手包辦。每個頁面都有即時預覽，點一下就能進入。</p>
 
         <div style="border-top:1px solid rgba(130,180,255,.16); padding:30px 0 6px;">
+          <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="研究小卡" data-en="Research Cards" style="font-size:23px; font-weight:500; color:#eef4ff;">研究小卡</span><span class="i18n" data-zh="研討會 · 學術" data-en="Conference · Academic" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">研討會 · 學術</span></div>
+          <p class="i18n" data-zh="為研討會設計的網站——研究小卡主站，以及高師大、清大、陽明交大三場研討會的專屬頁面。" data-en="Sites designed for conferences — the Research Cards hub, plus dedicated pages for the NKNU, NTHU and NYCU 2026 conferences." style="font-size:13.5px; line-height:1.6; color:rgba(224,236,255,.62); margin:10px 0 18px; max-width:none;">為研討會設計的網站——研究小卡主站，以及高師大、清大、陽明交大三場研討會的專屬頁面。</p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:14px;">
+            <a href="https://nb41f002.github.io/research-cards/" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/research-cards/" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="研究小卡主站 ↗" data-en="Research Cards ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">研究小卡主站 ↗</span></a>
+            <a href="https://nb41f002.github.io/research-cards/nknu-2026.html" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/research-cards/nknu-2026.html" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="高師大 2026 ↗" data-en="NKNU 2026 ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">高師大 2026 ↗</span></a>
+            <a href="https://nb41f002.github.io/research-cards/nthu-2026.html" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/research-cards/nthu-2026.html" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="清大 2026 ↗" data-en="NTHU 2026 ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">清大 2026 ↗</span></a>
+            <a href="https://nb41f002.github.io/research-cards/nycu-2026.html" target="_blank" rel="noopener" style="position:relative; display:block; height:300px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430; text-decoration:none;"><iframe class="wp-frame" data-src="https://nb41f002.github.io/research-cards/nycu-2026.html" scrolling="no" style="width:1280px; height:1700px; border:0; transform-origin:top left; pointer-events:none; background:#0a1430;"></iframe><span class="i18n" data-zh="陽明交大 2026 ↗" data-en="NYCU 2026 ↗" style="position:absolute; left:0; right:0; bottom:0; padding:9px 12px; background:linear-gradient(transparent, rgba(6,12,28,.92)); font-size:12px; color:#dcecff;">陽明交大 2026 ↗</span></a>
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(130,180,255,.16); padding:30px 0 6px;">
           <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="竹簡樂府" data-en="Bamboo Yuefu" style="font-size:23px; font-weight:500; color:#eef4ff;">竹簡樂府</span><span class="i18n" data-zh="音樂 · 文化" data-en="Music · Culture" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">音樂 · 文化</span></div>
           <p class="i18n" data-zh="以竹簡為題的互動網頁作品。" data-en="An interactive web piece themed on bamboo slips." style="font-size:13.5px; line-height:1.6; color:rgba(224,236,255,.62); margin:10px 0 18px; max-width:none;">以竹簡為題的互動網頁作品。</p>
           <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:14px;">
@@ -214,15 +225,15 @@
       <p class="i18n" data-zh="書籍封面、視覺與編排——把抽象的概念，整理成讀者一眼就懂的畫面。" data-en="Book covers, visuals and layout — arranging abstract ideas into a picture a reader grasps at a glance." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 0;">書籍封面、視覺與編排——把抽象的概念，整理成讀者一眼就懂的畫面。</p>
       <div style="margin-top:40px;">
         <div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/miss-nobody.webp" alt="我是沒人要小姐 Miss Nobody" loading="lazy" data-zoom="assets/works/covers/miss-nobody.webp" data-gallery="graphic" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block; cursor:zoom-in;"></div>
-        <div style="display:flex; justify-content:space-between; margin-top:12px; font-size:11px; letter-spacing:.06em; color:rgba(190,214,255,.55);"><span class="i18n" data-zh="書籍封面設計 · 《我是沒人要小姐》" data-en="Book cover · Miss Nobody">書籍封面設計 · 《我是沒人要小姐》</span><span style="color:#6fb0f0;">01</span></div>
+        <div style="display:flex; justify-content:space-between; margin-top:12px; font-size:11px; letter-spacing:.06em; color:rgba(190,214,255,.55);"><span class="i18n" data-zh="書籍封面設計 · 《我是沒人要小姐》" data-en="Book cover · Miss Nobody">書籍封面設計 · 《我是沒人要小姐》</span></div>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:18px; margin-top:26px;">
-        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/remarriage.webp" alt="請問復婚可笑嗎" loading="lazy" data-zoom="assets/works/covers/remarriage.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="請問復婚可笑嗎" data-en="Is Remarriage Absurd?">請問復婚可笑嗎</span><span style="color:#6fb0f0;">05</span></figcaption></figure>
-        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/marnie.webp" alt="拜金小姐馬妮 Miss Marny" loading="lazy" data-zoom="assets/works/covers/marnie.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="拜金小姐馬妮" data-en="Miss Marny">拜金小姐馬妮</span><span style="color:#6fb0f0;">03</span></figcaption></figure>
-        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/star-roommate.webp" alt="我和明星同居了" loading="lazy" data-zoom="assets/works/covers/star-roommate.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="我和明星同居了" data-en="Living with a Star">我和明星同居了</span><span style="color:#6fb0f0;">04</span></figcaption></figure>
-        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/bad-woman.webp" alt="惡女失格" loading="lazy" data-zoom="assets/works/covers/bad-woman.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="惡女失格" data-en="Villainess, Disqualified">惡女失格</span><span style="color:#6fb0f0;">02</span></figcaption></figure>
-        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/queen.webp" alt="日輪女王 Queen of Majapahit" loading="lazy" data-zoom="assets/works/covers/queen.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="日輪女王" data-en="Queen of Majapahit">日輪女王</span><span style="color:#6fb0f0;">06</span></figcaption></figure>
-        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/life-reselect.webp" alt="人生重選" loading="lazy" data-zoom="assets/works/covers/life-reselect.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="人生重選" data-en="A Life, Rechosen">人生重選</span><span style="color:#6fb0f0;">07</span></figcaption></figure>
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/remarriage.webp" alt="請問復婚可笑嗎" loading="lazy" data-zoom="assets/works/covers/remarriage.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="請問復婚可笑嗎" data-en="Is Remarriage Absurd?">請問復婚可笑嗎</span></figcaption></figure>
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/marnie.webp" alt="拜金小姐馬妮 Miss Marny" loading="lazy" data-zoom="assets/works/covers/marnie.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="拜金小姐馬妮" data-en="Miss Marny">拜金小姐馬妮</span></figcaption></figure>
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/star-roommate.webp" alt="我和明星同居了" loading="lazy" data-zoom="assets/works/covers/star-roommate.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="我和明星同居了" data-en="Living with a Star">我和明星同居了</span></figcaption></figure>
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/bad-woman.webp" alt="惡女失格" loading="lazy" data-zoom="assets/works/covers/bad-woman.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="惡女失格" data-en="Villainess, Disqualified">惡女失格</span></figcaption></figure>
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/queen.webp" alt="日輪女王 Queen of Majapahit" loading="lazy" data-zoom="assets/works/covers/queen.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="日輪女王" data-en="Queen of Majapahit">日輪女王</span></figcaption></figure>
+        <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/covers/life-reselect.webp" alt="人生重選" loading="lazy" data-zoom="assets/works/covers/life-reselect.webp" data-gallery="graphic" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in;"></div><figcaption style="display:flex; justify-content:space-between; margin-top:10px; font-size:11px; letter-spacing:.05em; color:rgba(190,214,255,.6);"><span class="i18n" data-zh="人生重選" data-en="A Life, Rechosen">人生重選</span></figcaption></figure>
       </div>
     </section>
 
@@ -230,11 +241,11 @@
     <section data-cat="fashion" data-screen-label="Fashion Design" style="padding:74px 0 0; display:none;">
       <div class="i18n" data-zh="服裝設計 · 從一塊布開始" data-en="Fashion Design · It begins with cloth" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">服裝設計 · 從一塊布開始</div>
       <h1 class="i18n" data-zh="我不只織出時尚，我也縫出需求。" data-en="I don't just weave fashion — I stitch for real needs." style="font-size:46px; font-weight:500; line-height:1.1; margin:14px 0 0; color:#eef4ff;">我不只織出時尚，我也縫出需求。</h1>
-      <p class="i18n" data-zh="輔仁大學織品服裝學系學士與碩士——從畢業展第一名的系列，到以研究回應高齡女性的穿著需求。這是「重新設計系統」最初的形體。" data-en="B.A. and M.A. in Textiles & Clothing, Fu Jen University — from a top-ranked graduation collection to research answering the dress needs of elderly women. The first form of 'redesigning systems.'" style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 0;">輔仁大學織品服裝學系學士與碩士——從畢業展第一名的系列，到以研究回應高齡女性的穿著需求。這是「重新設計系統」最初的形體。</p>
+      <p class="i18n" data-zh="輔仁大學織品服裝學系學士與碩士——從《Keep your coins, we want CHANGE》系列，到以研究回應高齡女性的穿著需求。這是「重新設計系統」最初的形體。" data-en="B.A. and M.A. in Textiles & Clothing, Fu Jen University — from the “Keep your coins, we want CHANGE” collection to research answering the dress needs of elderly women. The first form of 'redesigning systems.'" style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 0;">輔仁大學織品服裝學系學士與碩士——從《Keep your coins, we want CHANGE》系列，到以研究回應高齡女性的穿著需求。這是「重新設計系統」最初的形體。</p>
 
       <!-- Project 1 · Graduation collection -->
       <div style="border-top:1px solid rgba(130,180,255,.2); padding-top:20px; margin-top:38px; display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap;">
-        <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="畢業製作《Keep your coins, we want CHANGE》" data-en="Graduation Collection — Keep your coins, we want CHANGE" style="font-size:22px; font-weight:500; color:#eef4ff;">畢業製作《Keep your coins, we want CHANGE》</span><span class="i18n" data-zh="輔大織品 · 畢業展第一名" data-en="Fu Jen Textiles · ranked #1" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">輔大織品 · 畢業展第一名</span></div>
+        <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="《Keep your coins, we want CHANGE》" data-en="“Keep your coins, we want CHANGE”" style="font-size:22px; font-weight:500; color:#eef4ff;">《Keep your coins, we want CHANGE》</span><span class="i18n" data-zh="輔大織品・畢業製作" data-en="Fu Jen Textiles · graduation collection" style="font-size:10px; letter-spacing:.12em; color:#bcd8ff; border:1px solid rgba(130,180,255,.4); padding:3px 10px; border-radius:999px;">輔大織品・畢業製作</span><span class="i18n" data-zh="畢業展第一名" data-en="1st place, graduation show" style="font-size:10px; letter-spacing:.12em; color:#eccf86; border:1px solid rgba(236,207,134,.45); padding:3px 10px; border-radius:999px;">畢業展第一名</span></div>
         <span style="font-size:11px; letter-spacing:.1em; color:rgba(190,214,255,.4);">2015</span>
       </div>
       <p class="i18n" data-zh="以「反諺消費社會」為題的系列——報紙印花、解構剪裁與層疊結構，於校內展與校外展雙雙亮相。" data-en="A collection satirising consumer society — newsprint prints, deconstructed cuts and layered structures, shown at both the campus exhibition and an off-campus runway." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:12px 0 0; max-width:none;">以「反諺消費社會」為題的系列——報紙印花、解構剪裁與層疊結構，於校內展與校外展雙雙亮相。</p>
@@ -272,7 +283,7 @@
 
       <!-- Project 2 · Jiangxi competition -->
       <div style="border-top:1px solid rgba(130,180,255,.2); padding-top:20px; margin-top:52px; display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap;">
-        <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="江西紅衣坊杯" data-en="Jiangxi Hongyifang Cup" style="font-size:22px; font-weight:500; color:#eef4ff;">江西紅衣坊杯</span><span class="i18n" data-zh="主題・茗談" data-en="Theme · Ming-Tan" style="font-size:10px; letter-spacing:.12em; color:#bcd8ff; border:1px solid rgba(130,180,255,.4); padding:3px 10px; border-radius:999px;">主題・茗談</span><span class="i18n" data-zh="優秀獎・最佳工藝獎" data-en="Award of Excellence · Best Craftsmanship" style="font-size:10px; letter-spacing:.12em; color:#eccf86; border:1px solid rgba(236,207,134,.45); padding:3px 10px; border-radius:999px;">優秀獎・最佳工藝獎</span></div>
+        <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="《茗談》" data-en="“Ming Tan” — Tea Talk" style="font-size:22px; font-weight:500; color:#eef4ff;">《茗談》</span><span class="i18n" data-zh="江西紅衣坊杯" data-en="Jiangxi Hongyifang Cup" style="font-size:10px; letter-spacing:.12em; color:#bcd8ff; border:1px solid rgba(130,180,255,.4); padding:3px 10px; border-radius:999px;">江西紅衣坊杯</span><span class="i18n" data-zh="優秀獎・最佳工藝獎" data-en="Award of Excellence · Best Craftsmanship" style="font-size:10px; letter-spacing:.12em; color:#eccf86; border:1px solid rgba(236,207,134,.45); padding:3px 10px; border-radius:999px;">優秀獎・最佳工藝獎</span></div>
       </div>
       <p class="i18n" data-zh="以茶與禪為意象，塑造古典之美。" data-en="Shaped by images of tea and Zen — a gown series that sculpts a classical beauty." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:12px 0 0; max-width:none;">以茶與禪為意象，塑造古典之美。</p>
       <div class="i18n" data-zh="外拍" data-en="Location shoot" style="font-size:10.5px; letter-spacing:.16em; color:rgba(190,214,255,.5); margin:26px 0 12px;">外拍</div>
@@ -300,7 +311,7 @@
 
       <!-- Project 3 · Thesis silver dresses -->
       <div style="border-top:1px solid rgba(130,180,255,.2); padding-top:20px; margin-top:52px; display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap;">
-        <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="2017 新北市機能紡織 i 時尚秀" data-en="2017 New Taipei Functional Textile i-Fashion Show" style="font-size:22px; font-weight:500; color:#eef4ff;">2017 新北市機能紡織 i 時尚秀</span><span class="i18n" data-zh="主題・Beyond" data-en="Theme · Beyond" style="font-size:10px; letter-spacing:.12em; color:#bcd8ff; border:1px solid rgba(130,180,255,.4); padding:3px 10px; border-radius:999px;">主題・Beyond</span><span class="i18n" data-zh="銀髮族連衣裙設計（運用機能紡織布料）" data-en="Elderly women's dress design (functional textiles)" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">銀髮族連衣裙設計（運用機能紡織布料）</span></div>
+        <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="《Beyond》" data-en="“Beyond”" style="font-size:22px; font-weight:500; color:#eef4ff;">《Beyond》</span><span class="i18n" data-zh="2017 新北市機能紡織 i 時尚秀" data-en="2017 New Taipei Functional Textile i-Fashion Show" style="font-size:10px; letter-spacing:.12em; color:#bcd8ff; border:1px solid rgba(130,180,255,.4); padding:3px 10px; border-radius:999px;">2017 新北市機能紡織 i 時尚秀</span><span class="i18n" data-zh="銀髮族連衣裙設計（運用機能紡織布料）" data-en="Elderly women's dress design (functional textiles)" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">銀髮族連衣裙設計（運用機能紡織布料）</span></div>
       </div>
       <p class="i18n" data-zh="碩士論文的成果——為北台灣高齡女性開發的連身裙，兼顧體態、機能與尊嚴，並以真人走秀驗證。" data-en="The outcome of my master's thesis — dresses developed for elderly women in northern Taiwan, balancing body, function and dignity, validated on a live runway." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:12px 0 16px; max-width:none;">碩士論文的成果——為北台灣高齡女性開發的連身裙，兼顧體態、機能與尊嚴，並以真人走秀驗證。</p>
       <div class="vid" style="border:1px solid rgba(130,180,255,.18); background:#050a18; position:relative; margin:6px 0 14px;">
@@ -318,7 +329,7 @@
 
       <!-- Project 4 · Taipei 101 uniform -->
       <div style="border-top:1px solid rgba(130,180,255,.2); padding-top:20px; margin-top:52px; display:flex; align-items:baseline; justify-content:space-between; gap:14px; flex-wrap:wrap;">
-        <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="101 觀景台制服設計" data-en="Taipei 101 Observatory Uniforms" style="font-size:22px; font-weight:500; color:#eef4ff;">101 觀景台制服設計</span><span class="i18n" data-zh="制服設計競賽" data-en="uniform design competition" style="font-size:10.5px; letter-spacing:.14em; color:#6fb0f0;">制服設計競賽</span><span class="i18n" data-zh="佳作" data-en="Honorable Mention" style="font-size:10px; letter-spacing:.12em; color:#eccf86; border:1px solid rgba(236,207,134,.45); padding:3px 10px; border-radius:999px;">佳作</span></div>
+        <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;"><span class="i18n" data-zh="《觀》" data-en="“Guan” — Observe" style="font-size:22px; font-weight:500; color:#eef4ff;">《觀》</span><span class="i18n" data-zh="台北 101 觀景台制服設計競賽" data-en="Taipei 101 Observatory uniform competition" style="font-size:10px; letter-spacing:.12em; color:#bcd8ff; border:1px solid rgba(130,180,255,.4); padding:3px 10px; border-radius:999px;">台北 101 觀景台制服設計競賽</span><span class="i18n" data-zh="佳作" data-en="Honorable Mention" style="font-size:10px; letter-spacing:.12em; color:#eccf86; border:1px solid rgba(236,207,134,.45); padding:3px 10px; border-radius:999px;">佳作</span></div>
       </div>
       <p class="i18n" data-zh="為台北 101 觀景台設計的識別制服提案——以雲紋、銅錢釦與 101 線條，發展春夏／秋冬兩套系統。" data-en="A uniform-identity proposal for the Taipei 101 observatory — cloud motifs, coin buttons and '101' lines developed into spring-summer and autumn-winter systems." style="font-size:13.5px; line-height:1.62; color:rgba(224,236,255,.62); margin:12px 0 16px; max-width:none;">為台北 101 觀景台設計的識別制服提案——以雲紋、銅錢釦與 101 線條，發展春夏／秋冬兩套系統。</p>
       <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(240px,1fr)); gap:16px;">
@@ -362,7 +373,7 @@
     <section data-cat="image" data-screen-label="Image" style="padding:74px 0 0; display:none;">
       <div class="i18n" data-zh="圖像創作 · 把概念具象化" data-en="Image · Giving the concept a form" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">圖像創作 · 把概念具象化</div>
       <h1 class="i18n" data-zh="我終於，將概念具象化。" data-en="I finally gave the concept a form." style="font-size:56px; font-weight:500; line-height:1.04; margin:14px 0 0; color:#eef4ff;">我終於，將概念具象化。</h1>
-      <p class="i18n" data-zh="我以生成式 AI 為筆下的角色與故事賦形——武俠世界裡的人物、現代的場景，有些是靜幀，有些化為動態影像。同一個角色的靜圖與影片，便構成一組系列。下方也收錄我帶學生一起完成的 AI 繪圖作品集。" data-en="I use generative AI to give form to the characters and scenes in my fiction — figures from a wuxia world, moments from the present day; some as stills, some brought into motion. A character's still and its film together form one series. Below is also the AI-art gallery I made with my students." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 0;">我以生成式 AI 為筆下的角色與故事賦形——武俠世界裡的人物、現代的場景，有些是靜幀，有些化為動態影像。同一個角色的靜圖與影片，便構成一組系列。下方也收錄我帶學生一起完成的 AI 繪圖作品集。</p>
+      <p class="i18n" data-zh="我以生成式 AI 為筆下的角色與故事賦形——武俠世界裡的人物、現代的場景，有些是靜幀，有些化為動態影像。下方也收錄我帶學生一起完成的 AI 繪圖作品集。" data-en="I use generative AI to give form to the characters and scenes in my fiction — figures from a wuxia world, moments from the present day; some as stills, some brought into motion. Below is also the AI-art gallery I made with my students." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 0;">我以生成式 AI 為筆下的角色與故事賦形——武俠世界裡的人物、現代的場景，有些是靜幀，有些化為動態影像。下方也收錄我帶學生一起完成的 AI 繪圖作品集。</p>
 
       <!-- Series 1 -->
       <div style="display:flex; align-items:baseline; gap:12px; margin:40px 0 14px; flex-wrap:wrap;"><span class="i18n" data-zh="請留步" data-en="Wait, Please Stay" style="font-size:18px; font-weight:500; color:#eef4ff;">請留步</span></div>
@@ -400,7 +411,7 @@
     <section data-cat="writing" data-screen-label="Writing" style="padding:74px 0 0; display:none;">
       <div class="i18n" data-zh="文字創作 · 以詩為劍，以詞為弦" data-en="Writing · Poems as blades, ci as strings" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">文字創作 · 以詩為劍，以詞為弦</div>
       <h1 class="i18n" data-zh="以理性丈量，以詩意命名。" data-en="Measured by reason, named in poetry." style="font-size:56px; font-weight:500; line-height:1.04; margin:14px 0 0; color:#eef4ff;">以理性丈量，以詩意命名。</h1>
-      <p class="i18n" data-zh="一部古典詩詞創作集——以武俠與江湖入題，寫英雄、世道、情緣與天命。點選左側篇目，於捲軸上直行閱讀。" data-en="A collection of original classical-Chinese poetry — set in the world of wuxia and the jianghu: heroes, the ways of the world, fate and the mandate of heaven. Pick a title on the left to read it, column by column, in the original Chinese." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 34px;">一部古典詩詞創作集——以武俠與江湖入題，寫英雄、世道、情緣與天命。點選左側篇目，於捲軸上直行閱讀。</p>
+      <p class="i18n" data-zh="一部古典詩詞創作集——以武俠與江湖入題，寫英雄、世道、情緣與天命。" data-en="A collection of original classical-Chinese poetry — set in the world of wuxia and the jianghu: heroes, the ways of the world, fate and the mandate of heaven." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 34px;">一部古典詩詞創作集——以武俠與江湖入題，寫英雄、世道、情緣與天命。</p>
 
       <div data-poems style="display:grid; grid-template-columns:minmax(200px, 280px) minmax(0, 1fr); gap:22px; align-items:stretch;">
         <div data-poem-list style="align-self:start; max-height:600px; overflow-y:auto; padding-right:6px;"></div>
@@ -429,9 +440,9 @@
       <div class="i18n" data-zh="聯絡我 · 一起重新設計" data-en="Contact · Let's redesign, together" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">聯絡我 · 一起重新設計</div>
       <h1 class="i18n" data-zh="歡迎，一起把系統重新織起。" data-en="Let's reweave the system, together." style="font-size:64px; font-weight:500; line-height:1.0; margin:16px 0 0; color:#eef4ff; max-width:none;">歡迎，一起把系統重新織起。</h1>
       <p class="i18n" data-zh="特別歡迎關於 K-12 生成式 AI 鷹架的跨校複製研究。" data-en="Especially open to cross-school replication studies on generative-AI scaffolding in K-12 education." style="font-size:16px; line-height:1.72; color:rgba(224,236,255,.72); max-width:none; margin:26px 0 0;">特別歡迎關於 K-12 生成式 AI 鷹架的跨校複製研究。</p>
-      <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:38px;">
+      <div class="wk-contact" style="display:flex; flex-wrap:wrap; gap:14px; margin-top:38px;">
         <a href="https://www.linkedin.com/in/zy-zoeyeh/" target="_blank" rel="noopener" style="text-decoration:none; font-size:13px; letter-spacing:.06em; color:#08152e; background:#7fc4ff; padding:15px 26px;">LinkedIn ↗</a>
-        <a href="/cdn-cgi/l/email-protection#f882979d819d90c8c0cacab89f95999194d69b9795" class="i18n" data-zh="zoeyeh0822@gmail.com ↗" data-en="zoeyeh0822@gmail.com ↗" style="text-decoration:none; font-size:13px; letter-spacing:.06em; color:#dcecff; border:1px solid rgba(140,190,255,.4); padding:15px 26px;"><span class="__cf_email__" data-cfemail="ef95808a968a87dfd7ddddaf88828e8683c18c8082">[email&#160;protected]</span> ↗</a>
+        <a href="/cdn-cgi/l/email-protection#2d5742485448451d151f1f6d4a404c4441034e4240" class="i18n" data-zh="zoeyeh0822@gmail.com ↗" data-en="zoeyeh0822@gmail.com ↗" style="text-decoration:none; font-size:13px; letter-spacing:.06em; color:#dcecff; border:1px solid rgba(140,190,255,.4); padding:15px 26px;"><span class="__cf_email__" data-cfemail="bfc5d0dac6dad78f878d8dffd8d2ded6d391dcd0d2">[email&#160;protected]</span> ↗</a>
       </div>
       <div style="margin-top:80px; border-top:1px solid rgba(130,180,255,.2); padding:30px 0 0; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;">
         <div style="display:flex; align-items:center; gap:13px;"><span style="width:40px; height:40px; border-radius:9px; overflow:hidden; flex-shrink:0;"><img src="assets/favicon.png" alt="Zoe Yeh" style="width:100%; height:100%; object-fit:cover;"></span><div style="line-height:1.3;"><div style="font-size:19px; font-weight:500; color:#eaf3ff;">Zoe Yeh</div><div class="i18n" data-zh="Jung-Chen Yeh" data-en="Jung-Chen Yeh" style="font-size:10px; letter-spacing:.08em; color:rgba(190,214,255,.5);">Jung-Chen Yeh</div></div></div>
@@ -704,52 +715,49 @@ class Component extends DCLogic {
         }
       };
 
-      // ===== MOBILE: tap a title to expand the poem inline (accordion) =====
+      // ===== MOBILE: pick a poem from a dropdown menu =====
       if (isMobile) {
         viewEl.style.display = 'none';
-        const mobileLines = function (p) {
-          let h = '<div style="padding:4px 4px 18px;">';
-          if (p.tune) h += '<div style="font-size:12px; color:#6fb0f0; letter-spacing:.24em; text-align:center; margin-bottom:12px;">' + p.tune + '</div>';
-          p.ls.forEach(function (l) { h += '<div style="font-size:17px; color:#e8f0ff; line-height:2.15; text-align:center;">' + l + '</div>'; });
-          h += '</div>';
-          return h;
-        };
-        let html = '';
-        G.forEach(function (grp, gi) {
-          html += '<div class="i18n" data-zh="' + grp.gz + '" data-en="' + grp.ge + '" style="font-size:11px; letter-spacing:.18em; color:rgba(190,214,255,.5); margin:' + (gi === 0 ? '0' : '22px') + ' 0 10px;">' + (curLang === 'en' ? grp.ge : grp.gz) + '</div>';
-          grp.ps.forEach(function (p, pi) {
-            const tn = p.tune ? '<span style="font-size:11px; color:#6fb0f0; letter-spacing:.14em; margin-left:9px;">' + p.tune + '</span>' : '';
-            html += '<div class="m-poem" style="border:1px solid rgba(130,180,255,.22); border-radius:6px; margin-bottom:8px; overflow:hidden;">'
-              + '<div class="m-head" data-gi="' + gi + '" data-pi="' + pi + '" style="display:flex; align-items:center; justify-content:space-between; padding:13px 15px; cursor:pointer; font-size:15px; color:rgba(200,220,255,.85);"><span>' + p.t + tn + '</span><span class="m-caret" style="color:#6fb0f0; font-size:13px; transition:transform .25s ease;">＋</span></div>'
-              + '<div class="m-body" style="max-height:0; overflow:hidden; transition:max-height .35s ease; border-top:0 solid rgba(130,180,255,.16);">' + mobileLines(p) + '</div>'
-              + '</div>';
-          });
-        });
-        listEl.innerHTML = html;
+        listEl.innerHTML = '';
         listEl.style.maxHeight = 'none';
-        const heads = Array.prototype.slice.call(listEl.querySelectorAll('.m-head'));
-        heads.forEach(function (head) {
-          head.addEventListener('click', function () {
-            const box = head.parentElement;
-            const body = box.querySelector('.m-body');
-            const caret = head.querySelector('.m-caret');
-            const open = body.style.maxHeight && body.style.maxHeight !== '0px';
-            // close all
-            heads.forEach(function (h) {
-              const b = h.parentElement.querySelector('.m-body');
-              const c = h.querySelector('.m-caret');
-              b.style.maxHeight = '0px'; b.style.borderTopWidth = '0';
-              c.textContent = '＋'; c.style.transform = 'none';
-              h.parentElement.style.borderColor = 'rgba(130,180,255,.22)';
-            });
-            if (!open) {
-              body.style.maxHeight = body.scrollHeight + 40 + 'px';
-              body.style.borderTopWidth = '1px';
-              caret.textContent = '－';
-              box.style.borderColor = 'rgba(127,196,255,.5)';
-            }
+        const selWrap = document.createElement('div');
+        selWrap.style.cssText = 'position:relative;';
+        const sel = document.createElement('select');
+        sel.style.cssText = 'width:100%; appearance:none; -webkit-appearance:none; background:#0a1430; border:1px solid rgba(130,180,255,.38); border-radius:6px; color:#dcecff; font-family:inherit; font-size:15px; padding:14px 42px 14px 14px; outline:none;';
+        G.forEach(function (grp, gi) {
+          const og = document.createElement('optgroup');
+          og.label = (curLang === 'en' ? grp.ge : grp.gz);
+          grp.ps.forEach(function (p, pi) {
+            const o = document.createElement('option');
+            o.value = gi + '-' + pi;
+            o.textContent = p.t + (p.tune ? '（' + p.tune + '）' : '');
+            og.appendChild(o);
           });
+          sel.appendChild(og);
         });
+        const caret = document.createElement('span');
+        caret.textContent = '▾';
+        caret.style.cssText = 'position:absolute; right:15px; top:50%; transform:translateY(-50%); color:#7fc4ff; pointer-events:none; font-size:13px;';
+        selWrap.appendChild(sel); selWrap.appendChild(caret);
+        const box = document.createElement('div');
+        box.style.cssText = 'margin-top:12px; border:1px solid rgba(130,180,255,.22); border-radius:6px; background:rgba(10,20,48,.5); padding:24px 16px 20px;';
+        const show = function (gi, pi) {
+          const grp = G[gi], p = grp.ps[pi];
+          let h = '<div style="text-align:center; font-size:11px; letter-spacing:.2em; color:#6fb0f0; margin-bottom:6px;">' + (curLang === 'en' ? grp.ge : grp.gz) + '</div>'
+            + '<div style="text-align:center; font-size:21px; color:#bcd8ff; margin-bottom:4px;">' + p.t + '</div>';
+          if (p.tune) h += '<div style="text-align:center; font-size:12px; letter-spacing:.24em; color:#6fb0f0;">' + p.tune + '</div>';
+          h += '<div style="margin-top:14px;">';
+          p.ls.forEach(function (l) { h += '<div style="font-size:17px; color:#e8f0ff; line-height:2.1; text-align:center;">' + l + '</div>'; });
+          h += '</div>';
+          box.innerHTML = h;
+        };
+        sel.addEventListener('change', function () {
+          const parts = sel.value.split('-');
+          show(+parts[0], +parts[1]);
+        });
+        listEl.appendChild(selWrap);
+        listEl.appendChild(box);
+        show(0, 0);
         return;
       }
 
@@ -790,7 +798,27 @@ class Component extends DCLogic {
       const pick = (chip, user) => {
         const src = chip.getAttribute('data-doc');
         if (isMobile) {
-          if (user) { try { window.open(src, '_blank', 'noopener'); } catch (e) {} }
+          if (user) {
+            const wasOpen = chip._open;
+            chips.forEach((c) => { if (c._panel) c._panel.style.display = 'none'; c._open = false; });
+            if (!wasOpen) {
+              if (!chip._panel) {
+                const p = document.createElement('div');
+                p.style.cssText = 'margin:-2px 0 10px; border:1px solid rgba(130,180,255,.28); background:#0a1024;';
+                let abs = src;
+                try { abs = new URL(src, location.href).href; } catch (e) {}
+                const viewer = 'https://docs.google.com/gview?embedded=1&url=' + encodeURIComponent(abs);
+                p.innerHTML = '<iframe src="' + viewer + '" style="display:block; width:100%; height:60vh; border:0; background:#0a1024;"></iframe>'
+                  + '<div style="display:flex; justify-content:space-between; align-items:center; gap:10px; padding:8px 10px; border-top:1px solid rgba(130,180,255,.18);">'
+                  + '<span style="font-size:10.5px; color:rgba(190,214,255,.45);">若未顯示，請點右側 →</span>'
+                  + '<a href="' + src + '" target="_blank" rel="noopener" style="font-size:12px; color:#7fc4ff; text-decoration:none; white-space:nowrap;">在新分頁開啟 ↗</a></div>';
+                chip.parentNode.insertBefore(p, chip.nextSibling);
+                chip._panel = p;
+              }
+              chip._panel.style.display = 'block';
+              chip._open = true;
+            }
+          }
         } else {
           if (frame) frame.src = src;
           if (openLink) openLink.href = src;
