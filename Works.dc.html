@@ -215,7 +215,7 @@
           </div>
         </div>
 
-      <p class="i18n" data-zh="＊ 預覽由各網站即時載入；「提示語鷹架網站」為 Google Sites，此處以截圖預覽，點按前往平台。" data-en="* Previews load live from each site; the Prompt-Scaffolding site is on Google Sites, shown here as a screenshot — click to open it." style="font-size:12px; line-height:1.6; color:rgba(190,214,255,.48); margin:30px 0 0;">＊ 預覽由各網站即時載入；「提示語鷹架網站」為 Google Sites，此處以截圖預覽，點按前往平台。</p>
+      <p class="i18n" data-zh="＊ 桌面版預覽由各網站即時載入，手機版點按卡片前往各站；「提示語鷹架網站」為 Google Sites，此處以截圖預覽，點按前往平台。" data-en="* On desktop, previews load live from each site; on mobile, tap a card to open it; the Prompt-Scaffolding site is on Google Sites, shown here as a screenshot — click to open it." style="font-size:12px; line-height:1.6; color:rgba(190,214,255,.48); margin:30px 0 0;">＊ 桌面版預覽由各網站即時載入，手機版點按卡片前往各站；「提示語鷹架網站」為 Google Sites，此處以截圖預覽，點按前往平台。</p>
     </section>
 
     <!-- ============ GRAPHIC ============ -->
@@ -372,14 +372,14 @@
       <div class="wk-2col" style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:40px; align-items:start;">
         <div>
           <div class="i18n" data-zh="藝人 · Spotify" data-en="Artist · Spotify" style="font-size:11px; letter-spacing:.2em; color:#6fb0f0; margin-bottom:14px;">藝人 · Spotify</div>
-          <iframe title="Spotify" src="https://open.spotify.com/embed/artist/2nsWxxYgNaqRhrwjvzmH8M?utm_source=generator" width="100%" height="420" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px; display:block;"></iframe>
+          <iframe title="Spotify" data-src="https://open.spotify.com/embed/artist/2nsWxxYgNaqRhrwjvzmH8M?utm_source=generator" width="100%" height="420" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px; display:block;"></iframe>
         </div>
         <div>
           <div class="i18n" data-zh="音樂錄影帶" data-en="Music Videos" style="font-size:11px; letter-spacing:.2em; color:#6fb0f0; margin-bottom:14px;">音樂錄影帶</div>
           <div style="display:flex; flex-direction:column; gap:16px;">
-            <div style="position:relative; aspect-ratio:16/9; border:1px solid rgba(130,180,255,.2); background:#050a18; overflow:hidden;"><iframe src="https://www.youtube-nocookie.com/embed/2WV_zcBZQ-Q" title="MV 1" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe></div>
-            <div style="position:relative; aspect-ratio:16/9; border:1px solid rgba(130,180,255,.2); background:#050a18; overflow:hidden;"><iframe src="https://www.youtube-nocookie.com/embed/57aTGix7GQo" title="MV 2" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe></div>
-            <div style="position:relative; aspect-ratio:16/9; border:1px solid rgba(130,180,255,.2); background:#050a18; overflow:hidden;"><iframe src="https://www.youtube-nocookie.com/embed/bdsnEt-3uLo" title="MV 3" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe></div>
+            <div style="position:relative; aspect-ratio:16/9; border:1px solid rgba(130,180,255,.2); background:#050a18; overflow:hidden;"><iframe data-src="https://www.youtube-nocookie.com/embed/2WV_zcBZQ-Q" title="MV 1" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe></div>
+            <div style="position:relative; aspect-ratio:16/9; border:1px solid rgba(130,180,255,.2); background:#050a18; overflow:hidden;"><iframe data-src="https://www.youtube-nocookie.com/embed/57aTGix7GQo" title="MV 2" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe></div>
+            <div style="position:relative; aspect-ratio:16/9; border:1px solid rgba(130,180,255,.2); background:#050a18; overflow:hidden;"><iframe data-src="https://www.youtube-nocookie.com/embed/bdsnEt-3uLo" title="MV 3" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe></div>
           </div>
         </div>
       </div>
@@ -817,27 +817,7 @@ class Component extends DCLogic {
       const pick = (chip, user) => {
         const src = chip.getAttribute('data-doc');
         if (isMobile) {
-          if (user) {
-            const wasOpen = chip._open;
-            chips.forEach((c) => { if (c._panel) c._panel.style.display = 'none'; c._open = false; });
-            if (!wasOpen) {
-              if (!chip._panel) {
-                const p = document.createElement('div');
-                p.style.cssText = 'margin:-2px 0 10px; border:1px solid rgba(130,180,255,.28); background:#0a1024;';
-                let abs = src;
-                try { abs = new URL(src, location.href).href; } catch (e) {}
-                const viewer = 'https://docs.google.com/gview?embedded=1&url=' + encodeURIComponent(abs);
-                p.innerHTML = '<iframe src="' + viewer + '" style="display:block; width:100%; height:60vh; border:0; background:#0a1024;"></iframe>'
-                  + '<div style="display:flex; justify-content:space-between; align-items:center; gap:10px; padding:8px 10px; border-top:1px solid rgba(130,180,255,.18);">'
-                  + '<span style="font-size:10.5px; color:rgba(190,214,255,.45);">若未顯示，請點右側 →</span>'
-                  + '<a href="' + src + '" target="_blank" rel="noopener" style="font-size:12px; color:#7fc4ff; text-decoration:none; white-space:nowrap;">在新分頁開啟 ↗</a></div>';
-                chip.parentNode.insertBefore(p, chip.nextSibling);
-                chip._panel = p;
-              }
-              chip._panel.style.display = 'block';
-              chip._open = true;
-            }
-          }
+          if (user) { try { window.open(src, '_blank'); } catch (e) {} }
         } else {
           if (frame) frame.src = src;
           if (openLink) openLink.href = src;
@@ -865,7 +845,30 @@ class Component extends DCLogic {
     const loadWeb = () => {
       if (webInit) return; webInit = true;
       webFrames = Array.prototype.slice.call(root.querySelectorAll('.wp-frame[data-src]'));
+      if (window.matchMedia('(max-width:760px)').matches) {
+        webFrames.forEach((f) => {
+          const a = f.parentElement;
+          f.remove();
+          if (!a) return;
+          a.style.height = 'auto';
+          a.style.background = 'rgba(10,20,48,.5)';
+          const lab = a.querySelector('span');
+          if (lab) { lab.style.position = 'static'; lab.style.background = 'none'; lab.style.display = 'block'; lab.style.padding = '17px 15px'; lab.style.fontSize = '14.5px'; }
+        });
+        webFrames = [];
+        return;
+      }
       webFrames.forEach((f) => { scaleFrame(f); f.src = f.getAttribute('data-src'); });
+    };
+    let musicInit = false;
+    const loadMusic = () => {
+      if (musicInit) return; musicInit = true;
+      root.querySelectorAll('section[data-cat="music"] iframe[data-src]').forEach((f) => { f.src = f.getAttribute('data-src'); });
+    };
+    const unloadMusic = () => {
+      if (!musicInit || !window.matchMedia('(max-width:760px)').matches) return;
+      musicInit = false;
+      root.querySelectorAll('section[data-cat="music"] iframe[data-src]').forEach((f) => { f.src = 'about:blank'; });
     };
     window.addEventListener('resize', () => webFrames.forEach((f) => scaleFrame(f)));
 
@@ -947,6 +950,7 @@ class Component extends DCLogic {
       });
       if (key === 'journal') rrDefault();
       if (key === 'web') loadWeb();
+      if (key === 'music') loadMusic(); else unloadMusic();
       try { window.scrollTo(0, 0); } catch (e) {}
     };
     route();
