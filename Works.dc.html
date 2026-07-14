@@ -33,6 +33,7 @@
     .wk-contact a{ flex:1 1 100%; display:flex; justify-content:center; box-sizing:border-box; }
     .wk-rr-grid{ grid-template-columns:1fr !important; }
     .wk-rr-viewer{ display:none !important; }
+    .wk-imgrid{ grid-template-columns:repeat(2, minmax(0,1fr)) !important; }
     button[data-totop]{ bottom:96px !important; right:14px !important; }
   }
 </style>
@@ -215,7 +216,7 @@
           </div>
         </div>
 
-      <p class="i18n" data-zh="＊ 桌面版預覽由各網站即時載入，手機版點按卡片前往各站；「提示語鷹架網站」為 Google Sites，此處以截圖預覽，點按前往平台。" data-en="* On desktop, previews load live from each site; on mobile, tap a card to open it; the Prompt-Scaffolding site is on Google Sites, shown here as a screenshot — click to open it." style="font-size:12px; line-height:1.6; color:rgba(190,214,255,.48); margin:30px 0 0;">＊ 桌面版預覽由各網站即時載入，手機版點按卡片前往各站；「提示語鷹架網站」為 Google Sites，此處以截圖預覽，點按前往平台。</p>
+      <p class="i18n" data-zh="＊ 桌面版預覽由各網站即時載入，手機版以截圖預覽，點按前往各站；「提示語鷹架網站」為 Google Sites，此處以截圖預覽，點按前往平台。" data-en="* On desktop, previews load live from each site; on mobile, previews are screenshots — tap to open; the Prompt-Scaffolding site is on Google Sites, shown here as a screenshot — click to open it." style="font-size:12px; line-height:1.6; color:rgba(190,214,255,.48); margin:30px 0 0;">＊ 桌面版預覽由各網站即時載入，手機版以截圖預覽，點按前往各站；「提示語鷹架網站」為 Google Sites，此處以截圖預覽，點按前往平台。</p>
     </section>
 
     <!-- ============ GRAPHIC ============ -->
@@ -395,7 +396,7 @@
 
       <!-- Series 1 -->
       <div style="display:flex; align-items:baseline; gap:12px; margin:40px 0 14px; flex-wrap:wrap;"><span class="i18n" data-zh="請留步" data-en="Wait, Please Stay" style="font-size:18px; font-weight:500; color:#eef4ff;">請留步</span></div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,260px)); gap:16px;">
+      <div class="wk-imgrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,260px)); gap:16px;">
         <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/ai/anxing.webp" loading="lazy" data-zoom="assets/works/ai/anxing.webp" data-gallery="img-please" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block; cursor:zoom-in;"></div></figure>
         <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/ai/linhaoren.webp" loading="lazy" data-zoom="assets/works/ai/linhaoren.webp" data-gallery="img-please" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block; cursor:zoom-in;"></div></figure>
         <figure style="margin:0;"><div class="vid" style="border:1px solid rgba(130,180,255,.18); background:#050a18; position:relative; overflow:hidden;"><video class="vid-el" preload="none" playsinline poster="assets/works/ai/poster-embrace.webp" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block;"><source src="assets/works/ai/embrace.mp4" type="video/mp4"></video><button class="vid-play" type="button" aria-label="Play" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:66px; height:66px; border-radius:50%; border:1px solid rgba(190,220,255,.65); background:rgba(6,12,28,.5); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); color:#eaf3ff; font-size:21px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0 0 0 4px; transition:background .25s ease, transform .25s ease;">▶</button></div></figure>
@@ -403,21 +404,21 @@
 
       <!-- Series 2 -->
       <div style="display:flex; align-items:baseline; gap:12px; margin:40px 0 14px; flex-wrap:wrap;"><span class="i18n" data-zh="女俠" data-en="The Swordswoman" style="font-size:18px; font-weight:500; color:#eef4ff;">女俠</span></div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,260px)); gap:16px;">
+      <div class="wk-imgrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,260px)); gap:16px;">
         <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/ai/scene-a.webp" loading="lazy" data-zoom="assets/works/ai/scene-a.webp" data-gallery="img-jianghu" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block; cursor:zoom-in;"></div></figure>
         <figure style="margin:0;"><div class="vid" style="border:1px solid rgba(130,180,255,.18); background:#050a18; position:relative; overflow:hidden;"><video class="vid-el" preload="none" playsinline poster="assets/works/ai/poster-warrior.webp" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block;"><source src="assets/works/ai/warrior.mp4" type="video/mp4"></video><button class="vid-play" type="button" aria-label="Play" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:66px; height:66px; border-radius:50%; border:1px solid rgba(190,220,255,.65); background:rgba(6,12,28,.5); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); color:#eaf3ff; font-size:21px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0 0 0 4px; transition:background .25s ease, transform .25s ease;">▶</button></div></figure>
       </div>
 
       <!-- Series 3 -->
       <div style="display:flex; align-items:baseline; gap:12px; margin:40px 0 14px; flex-wrap:wrap;"><span class="i18n" data-zh="隔窗" data-en="Across the Glass" style="font-size:18px; font-weight:500; color:#eef4ff;">隔窗</span></div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,260px)); gap:16px;">
+      <div class="wk-imgrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,260px)); gap:16px;">
         <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/ai/gemini-3.webp" loading="lazy" data-zoom="assets/works/ai/gemini-3.webp" data-gallery="img-window" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block; cursor:zoom-in;"></div></figure>
         <figure style="margin:0;"><div class="vid" style="border:1px solid rgba(130,180,255,.18); background:#050a18; position:relative; overflow:hidden;"><video class="vid-el" preload="none" playsinline poster="assets/works/ai/poster-pharmacy.webp" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block;"><source src="assets/works/ai/pharmacy.mp4" type="video/mp4"></video><button class="vid-play" type="button" aria-label="Play" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:66px; height:66px; border-radius:50%; border:1px solid rgba(190,220,255,.65); background:rgba(6,12,28,.5); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); color:#eaf3ff; font-size:21px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0 0 0 4px; transition:background .25s ease, transform .25s ease;">▶</button></div></figure>
       </div>
 
       <!-- Series 4 -->
       <div style="display:flex; align-items:baseline; gap:12px; margin:40px 0 14px; flex-wrap:wrap;"><span class="i18n" data-zh="角色設計" data-en="Character Design" style="font-size:18px; font-weight:500; color:#eef4ff;">角色設計</span></div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,260px)); gap:16px;">
+      <div class="wk-imgrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,260px)); gap:16px;">
         <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/ai/gemini-1.webp" loading="lazy" data-zoom="assets/works/ai/gemini-1.webp" data-gallery="img-char" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block; cursor:zoom-in;"></div></figure>
         <figure style="margin:0;"><div style="border:1px solid rgba(130,180,255,.18); background:#0a1430; overflow:hidden;"><img src="assets/works/ai/gemini-2.webp" loading="lazy" data-zoom="assets/works/ai/gemini-2.webp" data-gallery="img-char" style="width:100%; aspect-ratio:2/3; object-fit:cover; display:block; cursor:zoom-in;"></div></figure>
       </div>
@@ -848,17 +849,39 @@ class Component extends DCLogic {
       if (window.matchMedia('(max-width:760px)').matches) {
         webFrames.forEach((f) => {
           const a = f.parentElement;
+          const url = f.getAttribute('data-src');
           f.remove();
           if (!a) return;
-          a.style.height = 'auto';
-          a.style.background = 'rgba(10,20,48,.5)';
-          const lab = a.querySelector('span');
-          if (lab) { lab.style.position = 'static'; lab.style.background = 'none'; lab.style.display = 'block'; lab.style.padding = '17px 15px'; lab.style.fontSize = '14.5px'; }
+          a.style.height = '235px';
+          const shot = 'https://s0.wp.com/mshots/v1/' + encodeURIComponent(url) + '?w=760';
+          const img = document.createElement('img');
+          img.alt = '';
+          img.loading = 'lazy';
+          img.style.cssText = 'width:100%; height:100%; object-fit:cover; object-position:top center; display:block; background:#0a1430;';
+          img.src = shot;
+          let tries = 0;
+          const timer = setInterval(() => {
+            tries += 1;
+            if (tries > 4) { clearInterval(timer); return; }
+            img.src = shot + '&r=' + tries;
+          }, 7000);
+          a.insertBefore(img, a.firstChild);
         });
         webFrames = [];
         return;
       }
-      webFrames.forEach((f) => { scaleFrame(f); f.src = f.getAttribute('data-src'); });
+      const io = ('IntersectionObserver' in window) ? new IntersectionObserver((ents) => {
+        ents.forEach((en) => {
+          if (!en.isIntersecting) return;
+          const f = en.target;
+          io.unobserve(f);
+          if (!f.src) { scaleFrame(f); f.src = f.getAttribute('data-src'); }
+        });
+      }, { rootMargin: '600px 0px' }) : null;
+      webFrames.forEach((f) => {
+        scaleFrame(f);
+        if (io) { io.observe(f); } else { f.src = f.getAttribute('data-src'); }
+      });
     };
     let musicInit = false;
     const loadMusic = () => {
