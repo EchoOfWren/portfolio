@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>文章專區 · Journal — Zoe Yeh</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon-512.png">
+<link rel="preload" href="assets/fonts/NotoSerifTC-Medium.ttf" as="font" type="font/ttf" crossorigin>
+<style>
+  @font-face{font-family:'Noto Serif TC';src:url('assets/fonts/NotoSerifTC-Medium.ttf') format('truetype');font-weight:300 700;font-style:normal;font-display:swap;}
+  *{box-sizing:border-box;}
+  html,body{margin:0;background:#050a18;}
+  a{color:#9fd0ff;}
+  a:hover{color:#dcecff;}
+  ::selection{background:#274a86;color:#eaf3ff;}
+  @keyframes jn-tw{0%,100%{opacity:.18}50%{opacity:1}}
+  @keyframes jn-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  @media (max-width:760px){
+    .jn-pad{padding-left:20px !important; padding-right:20px !important;}
+    .jn-hero h1{font-size:38px !important; line-height:1.18 !important;}
+    .jn-row{grid-template-columns:1fr !important;}
+    .jn-cover{height:190px !important;}
+    .jn-article h1{font-size:32px !important; line-height:1.2 !important;}
+  }
+
+.archived-article{font-size:17px;line-height:1.95;color:#dce6f7;overflow-wrap:anywhere}
+.archived-article p{margin:24px 0}.archived-article h2,.archived-article h3{line-height:1.45;margin:40px 0 18px;color:#eef4ff}
+.archived-article img{display:block;max-width:100%;height:auto;margin:24px auto;border-radius:6px}
+.archived-article figure{margin:32px 0}.archived-article figcaption{font-size:13px;color:#b6c9e8;line-height:1.7}
+.archived-article blockquote{border-left:2px solid #7fc4ff;margin:28px 0;padding-left:24px}
+.archived-article table{display:block;overflow-x:auto}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+<template id="__bundler_thumbnail" data-bg-color="#0a1430">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect x="330" y="180" width="540" height="440" rx="10" fill="none" stroke="#7fc4ff" stroke-width="6"/><path d="M400,290 H800 M400,370 H800 M400,450 H700" stroke="rgba(220,236,255,.7)" stroke-width="16" stroke-linecap="round"/></svg>
+</template>
+</helmet>
+
+<div data-root style="position:relative; min-height:100vh; background:radial-gradient(125% 90% at 28% 6%, #14274f 0%, #0a1430 46%, #050a18 100%); color:#e8f0ff; font-family:'Noto Serif TC',serif; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <div class="jn-stars" style="position:fixed; inset:0; pointer-events:none; z-index:0;"></div>
+  <div style="position:fixed; inset:0; pointer-events:none; z-index:0; background:radial-gradient(60% 40% at 78% 90%, rgba(70,130,230,.10), transparent 70%);"></div>
+
+  <header style="position:fixed; top:0; left:0; right:0; z-index:30; backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); background:rgba(6,12,28,.66); border-bottom:1px solid rgba(130,180,255,.14);">
+    <div class="jn-pad" style="max-width:1080px; margin:0 auto; padding:12px 34px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+      <div style="display:flex; gap:18px; align-items:center; flex-wrap:wrap;">
+        <a href="index.html?enter=1" class="i18n" data-zh="← 返回星圖" data-en="← Back to the star-map" style="text-decoration:none; font-size:12.5px; letter-spacing:.12em; color:rgba(190,214,255,.82); white-space:nowrap;">← 返回星圖</a>
+        <a href="Works.dc.html#about" class="i18n" data-zh="作品集" data-en="Portfolio" style="text-decoration:none; font-size:12.5px; letter-spacing:.1em; color:rgba(190,214,255,.6);">作品集</a>
+        <a href="contact-card.html" class="i18n" data-zh="電子名片" data-en="Contact card" style="text-decoration:none; font-size:12.5px; letter-spacing:.1em; color:rgba(190,214,255,.6);">電子名片</a>
+      </div>
+      <span style="display:inline-flex; align-items:center; border:1px solid rgba(130,180,255,.3); border-radius:999px; overflow:hidden; cursor:pointer;">
+        <span data-lang-btn="zh" style="padding:6px 12px; font-size:12px; background:#7fc4ff; color:#08152e;">中</span>
+        <span data-lang-btn="en" style="padding:6px 12px; font-size:12px; background:transparent; color:rgba(190,214,255,.7);">EN</span>
+      </span>
+    </div>
+  </header>
+
+  <main class="jn-pad" style="position:relative; z-index:1; max-width:1080px; margin:0 auto; padding:104px 34px 120px;">
+
+    <section data-view="list" class="jn-hero" style="animation:jn-rise .7s cubic-bezier(.2,.7,.2,1) both;">
+      <div class="i18n" data-zh="文章專區 · 完整敘事的存放處" data-en="Journal · where the long form is kept whole" style="font-size:11.5px; letter-spacing:.22em; color:#6fb0f0;">文章專區 · 完整敘事的存放處</div>
+      <h1 class="i18n" data-zh="長文，不該只活在動態牆上。" data-en="Long-form writing shouldn't only live on a feed." style="font-size:56px; font-weight:500; line-height:1.04; margin:16px 0 0; color:#eef4ff;">長文，不該只活在動態牆上。</h1>
+      <p class="i18n" data-zh="這裡保存 LinkedIn 上的長文原貌——教學現場的反思、AI 工具從無到有的過程、研討會從投稿到上台的歷程。每一篇都標註原發表語言、原發文日期與原文連結。" data-en="This is where the LinkedIn long-form pieces are kept intact — reflections from the classroom, the making of AI tools from nothing, and the road from submission to podium. Each carries its original language, posting date and source link." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); margin:22px 0 0; max-width:780px;">這裡保存 LinkedIn 上的長文原貌——教學現場的反思、AI 工具從無到有的過程、研討會從投稿到上台的歷程。每一篇都標註原發表語言、原發文日期與原文連結。</p>
+
+      <div data-notice style="display:none; border:1px solid rgba(127,196,255,.36); background:linear-gradient(135deg, rgba(120,170,255,.11), rgba(120,160,255,.03)); padding:20px 24px; margin-top:34px;">
+        <div class="i18n" data-zh="資料狀態" data-en="Data status" style="font-size:10.5px; letter-spacing:.22em; color:#6fb0f0; margin-bottom:10px;">資料狀態</div>
+        <p class="i18n" data-zh="本頁版面已完成，文章全文與原圖正在逐篇核對；標示「待匯入」的項目為版面佔位，不含任何實際內容。核對完成後，只需更新 assets/journal/articles.json 即可上線，無須改動頁面。" data-en="The layout is finished; the full texts and original images are being verified one by one. Items marked ‘pending import’ are placeholders and contain no real content. Once verified, publishing takes only an update to assets/journal/articles.json — the page itself needs no change." style="font-size:13.5px; line-height:1.7; color:rgba(224,236,255,.72); margin:0;">本頁版面已完成，文章全文與原圖正在逐篇核對；標示「待匯入」的項目為版面佔位，不含任何實際內容。核對完成後，只需更新 assets/journal/articles.json 即可上線，無須改動頁面。</p>
+      </div>
+
+      <div data-filters style="display:flex; flex-wrap:wrap; gap:8px; margin-top:40px;"></div>
+      <div data-list style="margin-top:26px; border-top:1px solid rgba(130,180,255,.22);"></div>
+      <div data-empty style="display:none; padding:56px 0; text-align:center; font-size:14px; color:rgba(190,214,255,.5);"></div>
+    </section>
+
+    <section data-view="article" class="jn-article" style="display:none;"></section>
+  </main>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const root = document.querySelector('[data-root]');
+    if (!root) return;
+    this.root = root;
+    this.lang = this.readLang();
+    this.filter = 'all';
+    this.stars(root);
+    this.bindLang(root);
+    this.load();
+    window.addEventListener('hashchange', this._hh = () => this.route());
+  }
+  componentWillUnmount() { if (this._hh) window.removeEventListener('hashchange', this._hh); }
+
+  readLang() {
+    let l = 'zh';
+    try { l = localStorage.getItem('zoe_lang') || 'zh'; } catch (e) {}
+    return (l === 'en' || l === 'zh') ? l : 'zh';
+  }
+
+  bindLang(root) {
+    const apply = (l) => {
+      this.lang = l;
+      document.documentElement.lang = l === 'en' ? 'en' : 'zh-Hant';
+      root.querySelectorAll('.i18n').forEach((n) => {
+        const t = n.getAttribute(l === 'en' ? 'data-en' : 'data-zh');
+        if (t != null) n.textContent = t;
+      });
+      root.querySelectorAll('[data-lang-btn]').forEach((b) => {
+        const on = b.getAttribute('data-lang-btn') === l;
+        b.style.background = on ? '#7fc4ff' : 'transparent';
+        b.style.color = on ? '#08152e' : 'rgba(190,214,255,.7)';
+      });
+      try { localStorage.setItem('zoe_lang', l); } catch (e) {}
+      if (this.data) { this.renderFilters(); this.route(); }
+    };
+    this._applyLang = apply;
+    root.querySelectorAll('[data-lang-btn]').forEach((b) => {
+      b.addEventListener('click', (e) => { e.stopPropagation(); apply(b.getAttribute('data-lang-btn')); });
+    });
+    apply(this.lang);
+  }
+
+  async load() {
+    const empty = this.root.querySelector('[data-empty]');
+    try {
+      const res = await fetch('assets/journal/articles.json', { cache: 'no-cache' });
+      if (!res.ok) throw new Error(res.status);
+      this.data = await res.json();
+    } catch (e) {
+      if (empty) {
+        empty.style.display = 'block';
+        empty.textContent = this.lang === 'en'
+          ? 'Could not load assets/journal/articles.json — serve this page over http(s), not from the file system.'
+          : '無法載入 assets/journal/articles.json——請以 http(s) 開啟本頁，而非直接開啟本機檔案。';
+      }
+      return;
+    }
+    const notice = this.root.querySelector('[data-notice]');
+    if (notice && (this.data.articles || []).some(a => a.status !== 'published')) notice.style.display = 'block';
+    this.renderFilters();
+    this.route();
+  }
+
+  t(o) { if (!o) return ''; return (this.lang === 'en' ? (o.en || o.zh) : (o.zh || o.en)) || ''; }
+
+  cat(key) { return ((this.data && this.data.categories) || []).find(c => c.key === key); }
+
+  fmtDate(d) {
+    if (!d) return this.lang === 'en' ? 'Date pending' : '日期待核對';
+    const p = String(d).split('-');
+    if (p.length < 3) return d;
+    return this.lang === 'en'
+      ? new Date(d + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+      : p[0] + ' 年 ' + Number(p[1]) + ' 月 ' + Number(p[2]) + ' 日';
+  }
+
+  langBadge(l) {
+    const map = { zh: { zh: '中文', en: 'Chinese' }, en: { zh: '英文', en: 'English' }, bilingual: { zh: '中英雙語', en: 'Bilingual' } };
+    return this.t(map[l] || map.zh);
+  }
+
+  renderFilters() {
+    const box = this.root.querySelector('[data-filters]');
+    if (!box) return;
+    const all = { key: 'all', zh: '全部', en: 'All' };
+    const cats = [all].concat((this.data.categories || []));
+    box.innerHTML = '';
+    cats.forEach((c) => {
+      const n = (this.data.articles || []).filter(a => c.key === 'all' || a.category === c.key).length;
+      const b = document.createElement('button');
+      const on = this.filter === c.key;
+      b.textContent = this.t(c) + '　' + n;
+      b.style.cssText = 'font-family:inherit; font-size:13px; letter-spacing:.06em; padding:10px 18px; min-height:44px; cursor:pointer; border-radius:999px; transition:border-color .25s ease, background .25s ease, color .25s ease;'
+        + (on ? 'border:1px solid #7fc4ff; background:#7fc4ff; color:#08152e;' : 'border:1px solid rgba(130,180,255,.28); background:transparent; color:rgba(200,222,255,.78);');
+      b.addEventListener('click', () => { this.filter = c.key; this.renderFilters(); this.renderList(); });
+      box.appendChild(b);
+    });
+  }
+
+  route() {
+    const m = (location.hash || '').match(/^#a\/(.+)$/);
+    const listView = this.root.querySelector('[data-view="list"]');
+    const artView = this.root.querySelector('[data-view="article"]');
+    const art = m && (this.data.articles || []).find(a => a.id === decodeURIComponent(m[1]) && a.status === 'published');
+    if (art) {
+      listView.style.display = 'none';
+      artView.style.display = 'block';
+      this.renderArticle(art, artView);
+      window.scrollTo(0, 0);
+    } else {
+      artView.style.display = 'none';
+      artView.innerHTML = '';
+      listView.style.display = 'block';
+      this.renderList();
+    }
+  }
+
+  coverNode(a, h) {
+    const d = document.createElement('div');
+    d.className = 'jn-cover';
+    d.style.cssText = 'position:relative; height:' + h + 'px; overflow:hidden; border:1px solid rgba(130,180,255,.2); background:#0a1430;';
+    if (a.cover && a.cover.src) {
+      d.innerHTML = '<img src="' + a.cover.src + '" alt="' + String(a.cover.alt || '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;') + '" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">';
+    } else {
+      d.innerHTML = '<div style="position:absolute; inset:0; background:radial-gradient(120% 100% at 30% 10%, rgba(70,130,230,.22), rgba(10,20,48,0) 70%);"></div>'
+        + '<div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:11px; letter-spacing:.2em; color:rgba(190,214,255,.42);">'
+        + (this.lang === 'en' ? 'COVER PENDING' : '封面待匯入') + '</div>';
+    }
+    return d;
+  }
+
+  renderList() {
+    const box = this.root.querySelector('[data-list]');
+    const empty = this.root.querySelector('[data-empty]');
+    if (!box) return;
+    box.innerHTML = '';
+    const items = (this.data.articles || []).filter(a => this.filter === 'all' || a.category === this.filter);
+    if (!items.length) {
+      empty.style.display = 'block';
+      empty.textContent = this.lang === 'en' ? 'Nothing here yet.' : '這個分類目前沒有文章。';
+      return;
+    }
+    empty.style.display = 'none';
+    items.forEach((a) => {
+      const pending = a.status !== 'published';
+      const row = document.createElement(pending ? 'div' : 'a');
+      if (!pending) { row.href = '#a/' + encodeURIComponent(a.id); row.style.textDecoration = 'none'; }
+      row.className = 'jn-row';
+      row.style.cssText += 'display:grid; grid-template-columns:minmax(0,300px) 1fr; gap:26px; align-items:start; padding:30px 0; border-bottom:1px solid rgba(130,180,255,.14); color:inherit; transition:background .25s ease;';
+      row.appendChild(this.coverNode(a, 168));
+
+      const c = this.cat(a.category);
+      const meta = document.createElement('div');
+      meta.style.cssText = 'min-width:0;';
+      const line = document.createElement('div');
+      line.style.cssText = 'display:flex; flex-wrap:wrap; align-items:center; gap:12px; font-size:11px; letter-spacing:.14em; color:#6fb0f0;';
+      line.innerHTML = '<span>' + (c ? this.t(c) : '') + '</span>'
+        + '<span style="color:rgba(130,180,255,.4);">/</span><span style="color:rgba(190,214,255,.6);">' + this.langBadge(a.lang) + '</span>'
+        + '<span style="color:rgba(130,180,255,.4);">/</span><span style="color:rgba(190,214,255,.6);">' + this.fmtDate(a.date) + '</span>'
+        + (pending ? '<span style="border:1px solid rgba(130,180,255,.35); border-radius:999px; padding:3px 10px; font-size:10px; letter-spacing:.16em; color:rgba(190,214,255,.7);">' + (this.lang === 'en' ? 'PENDING IMPORT' : '待匯入') + '</span>' : '');
+      meta.appendChild(line);
+
+      const h = document.createElement('h2');
+      h.textContent = this.t(a.title);
+      h.style.cssText = 'font-size:26px; font-weight:500; line-height:1.28; margin:12px 0 0; color:' + (pending ? 'rgba(224,236,255,.6)' : '#eef4ff') + ';';
+      meta.appendChild(h);
+
+      const p = document.createElement('p');
+      p.textContent = this.t(a.summary);
+      p.style.cssText = 'font-size:14px; line-height:1.7; color:rgba(224,236,255,.62); margin:12px 0 0;';
+      meta.appendChild(p);
+
+      if ((a.tags || []).length) {
+        const tg = document.createElement('div');
+        tg.style.cssText = 'display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;';
+        a.tags.forEach(t => {
+          const s = document.createElement('span');
+          s.textContent = t;
+          s.style.cssText = 'font-size:11px; letter-spacing:.08em; color:rgba(190,214,255,.6); border:1px solid rgba(130,180,255,.2); padding:5px 11px;';
+          tg.appendChild(s);
+        });
+        meta.appendChild(tg);
+      }
+
+      if (!pending) {
+        const go = document.createElement('div');
+        go.className = 'i18n';
+        go.textContent = this.lang === 'en' ? 'Read in full ↗' : '讀全文 ↗';
+        go.style.cssText = 'font-size:13px; letter-spacing:.08em; color:#7fc4ff; margin-top:16px;';
+        meta.appendChild(go);
+        row.addEventListener('mouseenter', () => { row.style.background = 'rgba(127,196,255,.05)'; });
+        row.addEventListener('mouseleave', () => { row.style.background = 'transparent'; });
+      }
+      row.appendChild(meta);
+      box.appendChild(row);
+    });
+  }
+
+  renderArticle(a, view) {
+    view.innerHTML = '';
+    const back = document.createElement('a');
+    back.href = '#';
+    back.textContent = this.lang === 'en' ? '← All articles' : '← 回文章列表';
+    back.style.cssText = 'display:inline-block; text-decoration:none; font-size:12.5px; letter-spacing:.12em; color:rgba(190,214,255,.8); margin-bottom:30px;';
+    view.appendChild(back);
+
+    const c = this.cat(a.category);
+    const kicker = document.createElement('div');
+    kicker.style.cssText = 'font-size:11px; letter-spacing:.2em; color:#6fb0f0;';
+    kicker.textContent = (c ? this.t(c) : '') + ' · ' + this.langBadge(a.lang) + ' · ' + this.fmtDate(a.date);
+    view.appendChild(kicker);
+
+    const h = document.createElement('h1');
+    h.textContent = this.t(a.title);
+    h.style.cssText = 'font-size:52px; font-weight:500; line-height:1.06; margin:18px 0 0; color:#eef4ff; max-width:900px;';
+    view.appendChild(h);
+
+    if (this.t(a.summary)) {
+      const p = document.createElement('p');
+      p.textContent = this.t(a.summary);
+      p.style.cssText = 'font-size:17px; line-height:1.76; color:rgba(224,236,255,.72); margin:22px 0 0; max-width:760px;';
+      view.appendChild(p);
+    }
+
+    if (a.cover && a.cover.src) {
+      const fig = document.createElement('figure');
+      fig.style.cssText = 'margin:40px 0 0;';
+      fig.appendChild(this.coverNode(a, 420));
+      const cap = this.t(a.cover.caption);
+      if (cap) {
+        const fc = document.createElement('figcaption');
+        fc.textContent = cap;
+        fc.style.cssText = 'font-size:12px; line-height:1.6; color:rgba(190,214,255,.55); margin-top:10px;';
+        fig.appendChild(fc);
+      }
+      view.appendChild(fig);
+    }
+
+    const body = document.createElement('div');
+    body.style.cssText = 'margin-top:44px; max-width:720px;';
+    (a.body || []).forEach((b) => {
+      if (b.type === 'archive') {
+        const e = document.createElement('div');
+        e.className = 'archived-article';
+        e.innerHTML = b.html; // Locally imported, strictly allowlisted HTML.
+        body.appendChild(e);
+      } else if (b.type === 'h2') {
+        const e = document.createElement('h2');
+        e.textContent = this.t(b);
+        e.style.cssText = 'font-size:28px; font-weight:500; line-height:1.3; margin:48px 0 0; color:#eaf3ff;';
+        body.appendChild(e);
+      } else if (b.type === 'quote') {
+        const e = document.createElement('blockquote');
+        e.textContent = this.t(b);
+        e.style.cssText = 'margin:44px 0 0; padding-left:22px; border-left:1px solid rgba(127,196,255,.5); font-size:22px; font-weight:300; line-height:1.5; color:#dce8ff;';
+        body.appendChild(e);
+      } else if (b.type === 'list') {
+        const e = document.createElement('ul');
+        e.style.cssText = 'margin:22px 0 0; padding-left:22px; display:grid; gap:10px;';
+        (b.items || []).forEach(it => {
+          const li = document.createElement('li');
+          li.textContent = this.t(it);
+          li.style.cssText = 'font-size:16px; line-height:1.8; color:rgba(224,236,255,.78);';
+          e.appendChild(li);
+        });
+        body.appendChild(e);
+      } else if (b.type === 'image') {
+        const fig = document.createElement('figure');
+        fig.style.cssText = 'margin:44px 0 0;';
+        fig.innerHTML = '<img src="' + b.src + '" alt="' + (b.alt || '') + '" loading="lazy" style="width:100%; display:block; border:1px solid rgba(130,180,255,.2);">';
+        const cap = this.t(b.caption);
+        if (cap) {
+          const fc = document.createElement('figcaption');
+          fc.textContent = cap;
+          fc.style.cssText = 'font-size:12px; line-height:1.6; color:rgba(190,214,255,.55); margin-top:10px;';
+          fig.appendChild(fc);
+        }
+        body.appendChild(fig);
+      } else {
+        const e = document.createElement('p');
+        e.textContent = this.t(b);
+        e.style.cssText = 'font-size:17px; line-height:1.9; color:rgba(224,236,255,.82); margin:22px 0 0;';
+        body.appendChild(e);
+      }
+    });
+    view.appendChild(body);
+
+    if (a.source && a.source.url) {
+      const s = document.createElement('a');
+      s.href = a.source.url;
+      s.target = '_blank';
+      s.rel = 'noopener';
+      s.textContent = (this.lang === 'en' ? 'Original post on ' : '原文發表於 ') + (a.source.platform || 'LinkedIn') + ' ↗';
+      s.style.cssText = 'display:inline-block; margin-top:52px; padding:14px 22px; min-height:48px; text-decoration:none; font-size:13.5px; letter-spacing:.06em; color:#dcecff; border:1px solid rgba(140,190,255,.42);';
+      view.appendChild(s);
+    }
+  }
+
+  stars(root) {
+    const box = root.querySelector('.jn-stars');
+    if (!box || box._s) return; box._s = true;
+    const rnd = (a, b) => a + Math.random() * (b - a);
+    let html = '';
+    for (let i = 0; i < 150; i++) {
+      const s = rnd(0.7, 2.1).toFixed(2);
+      html += '<i style="position:absolute;left:' + rnd(0, 100).toFixed(2) + '%;top:' + rnd(0, 100).toFixed(2) + '%;width:' + s + 'px;height:' + s + 'px;border-radius:50%;background:#e6f1ff;box-shadow:0 0 ' + (s * 2.4).toFixed(1) + 'px rgba(180,215,255,.75);animation:jn-tw ' + rnd(2.4, 6).toFixed(2) + 's ease-in-out infinite ' + rnd(0, 6).toFixed(2) + 's;"></i>';
+    }
+    box.innerHTML = html;
+  }
+}
+
+</script>
+</body>
+</html>

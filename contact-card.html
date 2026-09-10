@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jung-Chen Yeh · Zoe — Contact Card</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon-512.png">
+<link rel="preload" href="assets/fonts/NotoSerifTC-Medium.ttf" as="font" type="font/ttf" crossorigin>
+<style>
+  @font-face{font-family:'Noto Serif TC';src:url('assets/fonts/NotoSerifTC-Medium.ttf') format('truetype');font-weight:300 700;font-style:normal;font-display:swap;}
+  *{box-sizing:border-box;}
+  html,body{margin:0;background:#050a18;}
+  a{color:#9fd0ff;}
+  a:hover{color:#dcecff;}
+  ::selection{background:#274a86;color:#eaf3ff;}
+  @keyframes cc-tw{0%,100%{opacity:.18}50%{opacity:1}}
+  @keyframes cc-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @media (max-width:560px){
+    .cc-name{font-size:44px !important;}
+    .cc-pad{padding-left:20px !important; padding-right:20px !important;}
+    .cc-acts{flex-direction:column !important;}
+    .cc-acts > *{width:100% !important;}
+  }
+</style>
+<template id="__bundler_thumbnail" data-bg-color="#0a1430">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect x="300" y="230" width="600" height="340" rx="18" fill="none" stroke="#7fc4ff" stroke-width="6"/><text x="600" y="440" font-family="Georgia,serif" font-size="130" fill="#dcecff" text-anchor="middle">Z</text></svg>
+</template>
+</helmet>
+
+<div data-root style="position:relative; min-height:100vh; background:radial-gradient(125% 90% at 28% 6%, #14274f 0%, #0a1430 46%, #050a18 100%); color:#e8f0ff; font-family:'Noto Serif TC',serif; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <div class="cc-stars" style="position:fixed; inset:0; pointer-events:none; z-index:0;"></div>
+  <div style="position:fixed; inset:0; pointer-events:none; z-index:0; background:radial-gradient(60% 40% at 78% 90%, rgba(70,130,230,.10), transparent 70%);"></div>
+
+  <header style="position:relative; z-index:2; max-width:640px; margin:0 auto; padding:18px 26px 0; display:flex; align-items:center; justify-content:space-between; gap:14px;">
+    <a href="index.html?enter=1" class="i18n" data-zh="← 返回星圖" data-en="← Back to the star-map" style="text-decoration:none; font-size:12.5px; letter-spacing:.12em; color:rgba(190,214,255,.8); white-space:nowrap;">← 返回星圖</a>
+    <span style="display:inline-flex; align-items:center; border:1px solid rgba(130,180,255,.3); border-radius:999px; overflow:hidden; cursor:pointer;">
+      <span data-lang-btn="zh" style="padding:7px 13px; font-size:12px; background:#7fc4ff; color:#08152e;">中</span>
+      <span data-lang-btn="en" style="padding:7px 13px; font-size:12px; background:transparent; color:rgba(190,214,255,.7);">EN</span>
+    </span>
+  </header>
+
+  <main class="cc-pad" style="position:relative; z-index:1; max-width:640px; margin:0 auto; padding:40px 26px 60px; animation:cc-rise .7s cubic-bezier(.2,.7,.2,1) both;">
+
+    <div class="i18n" data-zh="電子名片 · 以理性丈量，以詩意命名" data-en="Contact card · Measured by reason, named in poetry" style="font-size:11.5px; letter-spacing:.22em; color:#6fb0f0;">電子名片 · 以理性丈量，以詩意命名</div>
+
+    <h1 class="cc-name" style="font-size:58px; font-weight:500; line-height:1.02; letter-spacing:.01em; margin:22px 0 0; color:#eef4ff;">Jung-Chen Yeh</h1>
+    <div style="display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; margin-top:14px;">
+      <span style="font-size:26px; font-weight:500; color:#dce8ff; letter-spacing:.08em;">葉容辰</span>
+      <span style="font-size:18px; color:#8fc8ff; letter-spacing:.14em;">Zoe</span>
+    </div>
+
+    <p class="i18n" data-zh="教育 · 生成式 AI · 設計。把一個無形的概念，一路建構成能運轉的系統。" data-en="Education · Generative AI · Design. Carrying a formless idea all the way into a system that runs." style="font-size:15.5px; line-height:1.76; color:rgba(224,236,255,.72); margin:22px 0 0;">教育 · 生成式 AI · 設計。把一個無形的概念，一路建構成能運轉的系統。</p>
+
+    <div style="margin-top:46px; border-top:1px solid rgba(130,180,255,.22);">
+      <div class="i18n" data-zh="研究方向" data-en="Research directions" style="font-size:11px; letter-spacing:.22em; color:#6fb0f0; padding:22px 0 4px;">研究方向</div>
+      <div style="display:grid; gap:1px; background:rgba(130,180,255,.12); border:1px solid rgba(130,180,255,.12); margin-top:14px;">
+        <div style="background:rgba(10,20,48,.72); padding:18px 20px;"><div style="font-size:10.5px; color:#6fb0f0; margin-bottom:8px;">01</div><div style="font-size:18px; color:#eaf3ff; line-height:1.34;">Generative AI in Education</div><div class="i18n" data-zh="生成式 AI 於教育現場" data-en="Generative AI in the classroom" style="font-size:12.5px; color:rgba(224,236,255,.58); margin-top:6px;">生成式 AI 於教育現場</div></div>
+        <div style="background:rgba(10,20,48,.72); padding:18px 20px;"><div style="font-size:10.5px; color:#6fb0f0; margin-bottom:8px;">02</div><div style="font-size:18px; color:#eaf3ff; line-height:1.34;">Cognitive Scaffolding</div><div class="i18n" data-zh="認知鷹架" data-en="Cognitive scaffolding" style="font-size:12.5px; color:rgba(224,236,255,.58); margin-top:6px;">認知鷹架</div></div>
+        <div style="background:rgba(10,20,48,.72); padding:18px 20px;"><div style="font-size:10.5px; color:#6fb0f0; margin-bottom:8px;">03</div><div style="font-size:18px; color:#eaf3ff; line-height:1.34;">Cross-disciplinary Learning Design</div><div class="i18n" data-zh="跨域學習設計" data-en="Cross-disciplinary learning design" style="font-size:12.5px; color:rgba(224,236,255,.58); margin-top:6px;">跨域學習設計</div></div>
+      </div>
+    </div>
+
+    <div style="margin-top:46px; border-top:1px solid rgba(130,180,255,.22);">
+      <div class="i18n" data-zh="連結" data-en="Links" style="font-size:11px; letter-spacing:.22em; color:#6fb0f0; padding:22px 0 0;">連結</div>
+      <div style="display:grid; gap:10px; margin-top:16px;">
+        <a class="cc-link" href="https://echoofwren.github.io/portfolio/" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; gap:14px; min-height:60px; padding:15px 20px; text-decoration:none; border:1px solid rgba(130,180,255,.24); background:rgba(120,160,255,.05); transition:border-color .25s ease, background .25s ease;">
+          <span style="display:flex; flex-direction:column; gap:5px; min-width:0;"><span style="font-size:16px; color:#eaf3ff;">Portfolio</span><span class="i18n" data-zh="跨域作品集" data-en="Cross-disciplinary portfolio" style="font-size:12px; color:rgba(224,236,255,.55);">跨域作品集</span></span>
+          <span style="font-size:15px; color:#7fc4ff; flex:none;">↗</span>
+        </a>
+        <a class="cc-link" href="https://www.linkedin.com/in/zy-zoeyeh/" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; gap:14px; min-height:60px; padding:15px 20px; text-decoration:none; border:1px solid rgba(130,180,255,.24); background:rgba(120,160,255,.05); transition:border-color .25s ease, background .25s ease;">
+          <span style="display:flex; flex-direction:column; gap:5px; min-width:0;"><span style="font-size:16px; color:#eaf3ff;">LinkedIn</span><span class="i18n" data-zh="專業經歷與長文" data-en="Professional profile & long-form writing" style="font-size:12px; color:rgba(224,236,255,.55);">專業經歷與長文</span></span>
+          <span style="font-size:15px; color:#7fc4ff; flex:none;">↗</span>
+        </a>
+        <a class="cc-link" href="https://orcid.org/0009-0001-0180-2393" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; gap:14px; min-height:60px; padding:15px 20px; text-decoration:none; border:1px solid rgba(130,180,255,.24); background:rgba(120,160,255,.05); transition:border-color .25s ease, background .25s ease;">
+          <span style="display:flex; flex-direction:column; gap:5px; min-width:0;"><span style="font-size:16px; color:#eaf3ff;">ORCID</span><span style="font-size:12px; color:rgba(224,236,255,.55); font-variant-numeric:tabular-nums;">0009-0001-0180-2393</span></span>
+          <span style="font-size:15px; color:#7fc4ff; flex:none;">↗</span>
+        </a>
+        <a class="cc-link" href="https://www.youtube.com/@Wren-cc" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; gap:14px; min-height:60px; padding:15px 20px; text-decoration:none; border:1px solid rgba(130,180,255,.24); background:rgba(120,160,255,.05); transition:border-color .25s ease, background .25s ease;">
+          <span style="display:flex; flex-direction:column; gap:5px; min-width:0;"><span style="font-size:16px; color:#eaf3ff;">YouTube</span><span style="font-size:12px; color:rgba(224,236,255,.55);">@Wren-cc</span></span>
+          <span style="font-size:15px; color:#7fc4ff; flex:none;">↗</span>
+        </a>
+        <a class="cc-link" href="https://open.spotify.com/artist/2nsWxxYgNaqRhrwjvzmH8M" target="_blank" rel="noopener" style="display:flex; align-items:center; justify-content:space-between; gap:14px; min-height:60px; padding:15px 20px; text-decoration:none; border:1px solid rgba(130,180,255,.24); background:rgba(120,160,255,.05); transition:border-color .25s ease, background .25s ease;">
+          <span style="display:flex; flex-direction:column; gap:5px; min-width:0;"><span style="font-size:16px; color:#eaf3ff;">Spotify</span><span class="i18n" data-zh="藝人 Wren" data-en="The artist Wren" style="font-size:12px; color:rgba(224,236,255,.55);">藝人 Wren</span></span>
+          <span style="font-size:15px; color:#7fc4ff; flex:none;">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="cc-acts" style="display:flex; gap:12px; margin-top:34px; flex-wrap:wrap;">
+      <a href="assets/zoe-yeh.vcf" download="Jung-Chen-Yeh-Zoe.vcf" type="text/vcard" class="i18n" data-zh="儲存聯絡人" data-en="Save contact" style="flex:1 1 220px; min-height:56px; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:14.5px; letter-spacing:.06em; color:#08152e; background:#7fc4ff; padding:16px 22px;">儲存聯絡人</a>
+      <button data-copy class="i18n" data-zh="複製本頁連結" data-en="Copy this page's link" style="flex:1 1 220px; min-height:56px; font-family:inherit; font-size:14.5px; letter-spacing:.06em; color:#dcecff; background:transparent; border:1px solid rgba(140,190,255,.42); padding:16px 22px; cursor:pointer; transition:border-color .25s ease, background .25s ease;">複製本頁連結</button>
+    </div>
+    <div data-copied class="i18n" data-zh="已複製到剪貼簿" data-en="Copied to clipboard" style="font-size:12px; letter-spacing:.1em; color:#7fc4ff; margin-top:14px; opacity:0; transition:opacity .3s ease;">已複製到剪貼簿</div>
+
+    <p class="i18n" data-zh="名片檔僅含姓名與公開連結，不含電話與地址。" data-en="The contact file carries only the name and public links — no phone number, no address." style="font-size:11.5px; line-height:1.7; color:rgba(190,214,255,.45); margin:26px 0 0;">名片檔僅含姓名與公開連結，不含電話與地址。</p>
+
+    <div style="margin-top:54px; padding-top:24px; border-top:1px solid rgba(130,180,255,.16); display:flex; gap:22px; flex-wrap:wrap; font-size:12.5px; letter-spacing:.08em;">
+      <a href="Works.dc.html#about" class="i18n" data-zh="作品集 →" data-en="Portfolio →" style="text-decoration:none; color:rgba(190,214,255,.78);">作品集 →</a>
+      <a href="journal.html" class="i18n" data-zh="文章專區 →" data-en="Journal →" style="text-decoration:none; color:rgba(190,214,255,.78);">文章專區 →</a>
+    </div>
+  </main>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:700,&quot;height&quot;:1200}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const root = document.querySelector('[data-root]');
+    if (!root) return;
+    this.stars(root);
+    this.i18n(root);
+    root.querySelectorAll('.cc-link').forEach((a) => {
+      a.addEventListener('mouseenter', () => { a.style.borderColor = 'rgba(140,200,255,.7)'; a.style.background = 'rgba(127,196,255,.11)'; });
+      a.addEventListener('mouseleave', () => { a.style.borderColor = 'rgba(130,180,255,.24)'; a.style.background = 'rgba(120,160,255,.05)'; });
+    });
+    const btn = root.querySelector('[data-copy]');
+    const note = root.querySelector('[data-copied]');
+    if (btn) {
+      btn.addEventListener('mouseenter', () => { btn.style.borderColor = 'rgba(160,210,255,.8)'; btn.style.background = 'rgba(127,196,255,.1)'; });
+      btn.addEventListener('mouseleave', () => { btn.style.borderColor = 'rgba(140,190,255,.42)'; btn.style.background = 'transparent'; });
+      btn.addEventListener('click', async () => {
+        const url = location.href.split('#')[0];
+        let ok = false;
+        try { await navigator.clipboard.writeText(url); ok = true; } catch (e) {
+          try {
+            const ta = document.createElement('textarea');
+            ta.value = url; ta.style.cssText = 'position:fixed;opacity:0;';
+            document.body.appendChild(ta); ta.select(); ok = document.execCommand('copy'); ta.remove();
+          } catch (e2) {}
+        }
+        if (note && ok) { note.style.opacity = '1'; clearTimeout(this._t); this._t = setTimeout(() => { note.style.opacity = '0'; }, 2200); }
+      });
+    }
+  }
+
+  i18n(root) {
+    let lang = 'zh';
+    try { lang = localStorage.getItem('zoe_lang') || 'zh'; } catch (e) {}
+    if (lang !== 'en' && lang !== 'zh') lang = 'zh';
+    const apply = (l) => {
+      document.documentElement.lang = l === 'en' ? 'en' : 'zh-Hant';
+      root.querySelectorAll('.i18n').forEach((n) => {
+        const t = n.getAttribute(l === 'en' ? 'data-en' : 'data-zh');
+        if (t != null) n.textContent = t;
+      });
+      root.querySelectorAll('[data-lang-btn]').forEach((b) => {
+        const on = b.getAttribute('data-lang-btn') === l;
+        b.style.background = on ? '#7fc4ff' : 'transparent';
+        b.style.color = on ? '#08152e' : 'rgba(190,214,255,.7)';
+      });
+      try { localStorage.setItem('zoe_lang', l); } catch (e) {}
+    };
+    root.querySelectorAll('[data-lang-btn]').forEach((b) => {
+      b.addEventListener('click', (e) => { e.stopPropagation(); apply(b.getAttribute('data-lang-btn')); });
+    });
+    apply(lang);
+  }
+
+  stars(root) {
+    const box = root.querySelector('.cc-stars');
+    if (!box || box._s) return; box._s = true;
+    const rnd = (a, b) => a + Math.random() * (b - a);
+    let html = '';
+    for (let i = 0; i < 150; i++) {
+      const s = rnd(0.7, 2.1).toFixed(2);
+      html += '<i style="position:absolute;left:' + rnd(0, 100).toFixed(2) + '%;top:' + rnd(0, 100).toFixed(2) + '%;width:' + s + 'px;height:' + s + 'px;border-radius:50%;background:#e6f1ff;box-shadow:0 0 ' + (s * 2.4).toFixed(1) + 'px rgba(180,215,255,.75);animation:cc-tw ' + rnd(2.4, 6).toFixed(2) + 's ease-in-out infinite ' + rnd(0, 6).toFixed(2) + 's;"></i>';
+    }
+    box.innerHTML = html;
+  }
+}
+
+</script>
+</body>
+</html>

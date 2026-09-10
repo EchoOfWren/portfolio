@@ -1,0 +1,18 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Yeh;Jung-Chen;;;
+FN:Jung-Chen Yeh (Zoe)
+NICKNAME:Zoe
+NOTE:葉容辰 · Zoe — Research: Generative AI in Education; Cognitive Scaffolding; Cross-disciplinary Learning Design.
+item1.URL:https://echoofwren.github.io/portfolio/
+item1.X-ABLabel:Portfolio
+item2.URL:https://www.linkedin.com/in/zy-zoeyeh/
+item2.X-ABLabel:LinkedIn
+item3.URL:https://orcid.org/0009-0001-0180-2393
+item3.X-ABLabel:ORCID
+item4.URL:https://www.youtube.com/@Wren-cc
+item4.X-ABLabel:YouTube
+item5.URL:https://open.spotify.com/artist/2nsWxxYgNaqRhrwjvzmH8M
+item5.X-ABLabel:Spotify
+URL:https://echoofwren.github.io/portfolio/
+END:VCARD
