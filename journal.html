@@ -298,6 +298,13 @@ class Component extends DCLogic {
     kicker.textContent = (c ? this.t(c) : '') + ' · ' + this.langBadge(a.lang) + ' · ' + this.fmtDate(a.date);
     view.appendChild(kicker);
 
+    if (a.translation && a.translation.status === 'reviewed') {
+      const note = document.createElement('p');
+      note.textContent = this.lang === 'en' ? 'English original · Traditional Chinese translation available via 中 / EN.' : '繁體中文譯文 · 經 Gemini 潤稿；可切換 EN 閱讀英文原文。';
+      note.style.cssText = 'font-size:12px; line-height:1.7; color:rgba(190,214,255,.65); margin:12px 0 0;';
+      view.appendChild(note);
+    }
+
     const h = document.createElement('h1');
     h.textContent = this.t(a.title);
     h.style.cssText = 'font-size:52px; font-weight:500; line-height:1.06; margin:18px 0 0; color:#eef4ff; max-width:900px;';
@@ -330,7 +337,7 @@ class Component extends DCLogic {
       if (b.type === 'archive') {
         const e = document.createElement('div');
         e.className = 'archived-article';
-        e.innerHTML = b.html; // Locally imported, strictly allowlisted HTML.
+        e.innerHTML = this.lang === 'zh' && b.html_zh ? b.html_zh : b.html; // Validated local originals and reviewed translations.
         body.appendChild(e);
       } else if (b.type === 'h2') {
         const e = document.createElement('h2');
