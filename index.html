@@ -468,22 +468,6 @@ class Component extends DCLogic {
       lab.textContent = (this._lang === 'en' ? cat.en : cat.zh);
       lab.style.cssText = "position:absolute;left:50%;top:100%;transform:translate(-50%,12px);white-space:nowrap;font-family:'Noto Serif TC',serif;font-weight:500;font-size:18px;letter-spacing:.1em;color:rgba(214,232,255,.94);text-shadow:0 1px 12px rgba(0,0,0,.75);cursor:pointer;pointer-events:auto;padding:6px 10px;transition:color .3s ease;";
       f.appendChild(lab);
-      const subpage = cat.k === 'writing'
-        ? {href:'journal.html', zh:'文章專區 →', en:'Journal →'}
-        : cat.k === 'contact'
-          ? {href:'contact-card.html', zh:'電子名片 →', en:'Contact card →'}
-          : null;
-      if (subpage) {
-        const link = document.createElement('a');
-        link.href = subpage.href;
-        link.className = 'fy-i18n';
-        link.setAttribute('data-zh', subpage.zh);
-        link.setAttribute('data-en', subpage.en);
-        link.textContent = this._lang === 'en' ? subpage.en : subpage.zh;
-        link.style.cssText = "position:absolute;left:50%;top:calc(100% + 52px);transform:translateX(-50%);white-space:nowrap;font-family:'Noto Serif TC',serif;font-weight:500;font-size:15px;letter-spacing:.06em;color:#bfe0ff;text-decoration:none;border-bottom:1px solid rgba(140,205,255,.45);padding:8px 12px;min-height:40px;pointer-events:auto;";
-        link.addEventListener('click', e => e.stopPropagation());
-        f.appendChild(link);
-      }
       const onHover = () => { f.style.border = '1px solid rgba(184,226,255,.95)'; f.style.boxShadow = '0 0 32px 7px rgba(120,190,255,.55), inset 0 0 24px 5px rgba(120,190,255,.3)'; f.style.transform = f._baseTransform + ' scale(1.07)'; lab.style.color = '#eef7ff'; };
       const offHover = () => { f.style.border = '1px solid rgba(140,205,255,.38)'; f.style.boxShadow = '0 0 15px 2px rgba(70,160,255,.3), inset 0 0 18px 3px rgba(70,160,255,.16)'; f.style.transform = f._baseTransform; lab.style.color = 'rgba(214,232,255,.94)'; };
       f.addEventListener('click', nav);

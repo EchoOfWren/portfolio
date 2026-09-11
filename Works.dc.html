@@ -17,6 +17,10 @@
   *{box-sizing:border-box;}
   html,body{margin:0;background:#050a18;}
   a{color:inherit;}
+  .writing-nav{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0;}
+  .writing-nav a{padding:12px 24px;border:1px solid rgba(130,180,255,.3);border-radius:999px;text-decoration:none;font-size:15px;}
+  .writing-nav a[aria-current="page"]{background:#7fc4ff;color:#08152e;}
+  [data-writing-panel][hidden]{display:none !important;}
   ::selection{background:#274a86;color:#eaf3ff;}
   @keyframes wk-tw{0%,100%{opacity:.18}50%{opacity:1}}
   @keyframes wk-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -67,7 +71,7 @@
           <span data-lang-btn="zh" style="padding:6px 11px; font-size:12px; background:#7fc4ff; color:#08152e;">中</span>
           <span data-lang-btn="en" style="padding:6px 11px; font-size:12px; background:transparent; color:rgba(190,214,255,.7);">EN</span>
         </span>
-      <a href="journal.html" class="i18n" data-zh="文章" data-en="Journal" style="padding:6px 11px;color:#bed6ff;text-decoration:none">文章</a><a href="contact-card.html" class="i18n" data-zh="電子名片" data-en="Contact card" style="padding:6px 11px;color:#bed6ff;text-decoration:none">電子名片</a></nav>
+      </nav>
     </div>
   </header>
 
@@ -463,6 +467,12 @@
     <section data-cat="writing" data-screen-label="Writing" style="padding:74px 0 0; display:none;">
       <div class="i18n" data-zh="文字創作 · 以詩為劍，以詞為弦" data-en="Writing · Poems as blades, ci as strings" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">文字創作 · 以詩為劍，以詞為弦</div>
       <h1 class="i18n" data-zh="以理性丈量，以詩意命名。" data-en="Measured by reason, named in poetry." style="font-size:56px; font-weight:500; line-height:1.04; margin:14px 0 0; color:#eef4ff;">以理性丈量，以詩意命名。</h1>
+      <nav class="writing-nav" aria-label="文字創作分類">
+        <a href="#writing/poetry" data-writing-link="poetry" class="i18n" data-zh="詩歌" data-en="Poetry">詩歌</a>
+        <a href="#writing/prose" data-writing-link="prose" class="i18n" data-zh="散文" data-en="Prose">散文</a>
+        <a href="#writing/articles" data-writing-link="articles" class="i18n" data-zh="文章" data-en="Articles">文章</a>
+      </nav>
+      <div data-writing-panel="poetry">
       <p class="i18n" data-zh="一部古典詩詞創作集——以武俠與江湖入題，寫英雄、世道、情緣與天命。" data-en="A collection of original classical-Chinese poetry — set in the world of wuxia and the jianghu: heroes, the ways of the world, fate and the mandate of heaven." style="font-size:16px; line-height:1.74; color:rgba(224,236,255,.72); max-width:none; margin:22px 0 34px;">一部古典詩詞創作集——以武俠與江湖入題，寫英雄、世道、情緣與天命。</p>
 
       <div data-poems style="display:grid; grid-template-columns:minmax(200px, 280px) minmax(0, 1fr); gap:22px; align-items:stretch;">
@@ -487,7 +497,8 @@
         </article>
       </div>
 
-      <div style="margin-top:64px;">
+      </div>
+      <div data-writing-panel="prose" hidden>
         <div class="i18n" data-zh="散文" data-en="Prose" style="font-size:12px; letter-spacing:.2em; color:#6fb0f0;">散文</div>
         <article style="margin-top:18px; border:1px solid rgba(130,180,255,.2); background:linear-gradient(180deg, rgba(12,20,42,.72), rgba(8,14,32,.72)); box-shadow:inset 0 0 60px 6px rgba(60,120,220,.08); padding:46px 50px 44px;">
           <h3 style="font-size:30px; font-weight:500; letter-spacing:.05em; color:#eef4ff; margin:0;">習慣翻新</h3>
@@ -502,6 +513,13 @@
           </div>
         </article>
       </div>
+      <div data-writing-panel="articles" hidden>
+        <a href="journal.html" style="display:block;text-decoration:none;border:1px solid rgba(130,180,255,.2);background:rgba(8,18,40,.7);padding:30px;">
+          <h2 class="i18n" data-zh="文章" data-en="Articles" style="font-size:28px;font-weight:500;margin:0 0 16px;">文章</h2>
+          <p class="i18n" data-zh="教學反思、研究歷程與跨域實作。收錄已公開的 LinkedIn 長文，提供中文與英文閱讀。" data-en="Reflections on teaching, research and cross-disciplinary practice. Published LinkedIn essays, available in Chinese and English." style="line-height:1.8;color:rgba(224,236,255,.72);">教學反思、研究歷程與跨域實作。收錄已公開的 LinkedIn 長文，提供中文與英文閱讀。</p>
+          <span class="i18n" data-zh="閱讀文章 →" data-en="Read articles →" style="color:#7fc4ff;">閱讀文章 →</span>
+        </a>
+      </div>
     </section>
 
     <!-- ============ CONTACT ============ -->
@@ -509,6 +527,10 @@
       <div class="i18n" data-zh="聯絡我 · 一起重新設計" data-en="Contact · Let's redesign, together" style="font-size:12px; letter-spacing:.24em; color:#6fb0f0;">聯絡我 · 一起重新設計</div>
       <h1 class="i18n" data-zh="歡迎，一起把系統重新織起。" data-en="Let's reweave the system, together." style="font-size:64px; font-weight:500; line-height:1.0; margin:16px 0 0; color:#eef4ff; max-width:none;">歡迎，一起把系統重新織起。</h1>
       <p class="i18n" data-zh="特別歡迎 K-12 生成式 AI 鷹架的跨校複製研究——把在一間教室驗證過的系統，帶進更多教室。" data-en="Especially open to cross-school replication studies of GenAI scaffolding in K-12 — carrying a system proven in one classroom into many more." style="font-size:16px; line-height:1.72; color:rgba(224,236,255,.72); max-width:none; margin:26px 0 0;">特別歡迎 K-12 生成式 AI 鷹架的跨校複製研究——把在一間教室驗證過的系統，帶進更多教室。</p>
+      <a href="contact-card.html" style="display:block;text-decoration:none;border:1px solid rgba(130,180,255,.2);background:rgba(8,18,40,.7);padding:26px;margin-top:32px;">
+        <span class="i18n" data-zh="電子名片 →" data-en="Contact card →" style="font-size:24px;font-weight:500;color:#bfe0ff;">電子名片 →</span>
+        <p class="i18n" data-zh="我的公開連結與聯絡人下載。" data-en="My public profiles and downloadable contact details." style="color:rgba(224,236,255,.72);margin-bottom:0;">我的公開連結與聯絡人下載。</p>
+      </a>
       <div class="wk-contact" style="display:flex; flex-wrap:wrap; gap:14px; margin-top:38px;">
         <a href="https://www.linkedin.com/in/zy-zoeyeh/" target="_blank" rel="noopener" style="text-decoration:none; font-size:13px; letter-spacing:.06em; color:#08152e; background:#7fc4ff; padding:15px 26px;">LinkedIn ↗</a>
         <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=zoeyeh0822@gmail.com" target="_blank" rel="noopener" title="zoeyeh0822@gmail.com" style="text-decoration:none; font-size:13px; letter-spacing:.06em; color:#dcecff; border:1px solid rgba(140,190,255,.4); padding:15px 26px;">Gmail ↗</a>
@@ -1009,7 +1031,14 @@ class Component extends DCLogic {
     const tabs = Array.prototype.slice.call(root.querySelectorAll('[data-tab]'));
     const valid = cats.map((c) => c.getAttribute('data-cat'));
     const route = () => {
-      let key = (location.hash || '').replace('#', '');
+      const parts = (location.hash || '').replace('#', '').split('/');
+      let key = parts[0];
+      const writingKey = ['poetry','prose','articles'].includes(parts[1]) ? parts[1] : 'poetry';
+      root.querySelectorAll('[data-writing-panel]').forEach(p => { p.hidden = p.dataset.writingPanel !== writingKey; });
+      root.querySelectorAll('[data-writing-link]').forEach(a => {
+        if (a.dataset.writingLink === writingKey) a.setAttribute('aria-current','page');
+        else a.removeAttribute('aria-current');
+      });
       if (valid.indexOf(key) === -1) key = 'about';
       cats.forEach((c) => {
         const on = c.getAttribute('data-cat') === key;
