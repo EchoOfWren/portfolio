@@ -188,13 +188,13 @@
     <section data-cat="web" data-screen-label="Web Design" style="padding:74px 0 0; display:none;">
       <div class="i18n" data-zh="網頁設計" data-en="Web Design" style="font-size:12px;letter-spacing:.24em;color:#6fb0f0;">網頁設計</div>
       <h1 class="i18n" data-zh="讓想法成為可用的網站。" data-en="Ideas, made into useful websites." style="font-size:56px;font-weight:500;line-height:1.12;margin:14px 0 20px;color:#eef4ff;">讓想法成為可用的網站。</h1>
-      <p class="i18n" data-zh="研究、教學、營隊與創作。點選預覽，開啟完整網站。" data-en="Research, teaching, camps and stories. Select a preview to open the full site." style="font-size:16px;line-height:1.7;color:rgba(224,236,255,.72);margin:0 0 26px;">研究、教學、營隊與創作。點選預覽，開啟完整網站。</p>
+      <p class="i18n" data-zh="研究、教學與營隊。點選預覽，開啟完整網站。" data-en="Research, teaching and camps. Select a preview to open the full site." style="font-size:16px;line-height:1.7;color:rgba(224,236,255,.72);margin:0 0 26px;">研究、教學與營隊。點選預覽，開啟完整網站。</p>
       <nav class="wp-filters" aria-label="網站分類">
-      <a href="#web" data-web-filter="all" aria-current="page"><span class="i18n" data-zh="全部" data-en="All" >全部</span><span>27</span></a>
+      <a href="#web" data-web-filter="all" aria-current="page"><span class="i18n" data-zh="全部" data-en="All" >全部</span><span>25</span></a>
       <a href="#web/research" data-web-filter="research"><span class="i18n" data-zh="研究發表" data-en="Research &amp; Talks" >研究發表</span><span>11</span></a>
       <a href="#web/teaching" data-web-filter="teaching"><span class="i18n" data-zh="教學工具" data-en="Teaching Tools" >教學工具</span><span>7</span></a>
       <a href="#web/camp" data-web-filter="camp"><span class="i18n" data-zh="營隊應用" data-en="Camp Apps" >營隊應用</span><span>7</span></a>
-      <a href="#web/creative" data-web-filter="creative"><span class="i18n" data-zh="創作閱讀" data-en="Stories &amp; Reading" >創作閱讀</span><span>2</span></a>
+      
       </nav>
       <div class="wp-group" data-web-group="research">
       <h2 class="i18n" data-zh="研究發表" data-en="Research &amp; Talks" >研究發表</h2>
@@ -236,13 +236,7 @@
       <a class="wp-card" href="https://nb41f002.github.io/oyster-camp/id-card/id-card-forge.html" target="_blank" rel="noopener"><iframe class="wp-frame" src="https://nb41f002.github.io/oyster-camp/id-card/id-card-forge.html" data-src="https://nb41f002.github.io/oyster-camp/id-card/id-card-forge.html" loading="lazy" title="識別證產生器" tabindex="-1" aria-hidden="true" scrolling="no"></iframe><span class="i18n" data-zh="識別證產生器 ↗" data-en="ID Card Generator ↗" >識別證產生器 ↗</span></a>
       <a class="wp-card" href="https://nb41f002.github.io/oyster-camp/prep/" target="_blank" rel="noopener"><iframe class="wp-frame" src="https://nb41f002.github.io/oyster-camp/prep/" data-src="https://nb41f002.github.io/oyster-camp/prep/" loading="lazy" title="備課練習台" tabindex="-1" aria-hidden="true" scrolling="no"></iframe><span class="i18n" data-zh="備課練習台 ↗" data-en="Lesson Prep Practice ↗" >備課練習台 ↗</span></a>
       </div></div>
-      <div class="wp-group" data-web-group="creative">
-      <h2 class="i18n" data-zh="創作閱讀" data-en="Stories &amp; Reading" >創作閱讀</h2>
-      <p class="i18n" data-zh="小說世界、角色與原創音樂。" data-en="Fictional worlds, characters and original music." >小說世界、角色與原創音樂。</p>
-      <div class="wp-grid">
-      <a class="wp-card" href="https://seventh-summer-ash.netlify.app/" target="_blank" rel="noopener"><iframe class="wp-frame" src="https://seventh-summer-ash.netlify.app/" data-src="https://seventh-summer-ash.netlify.app/" loading="lazy" title="與你的第七次夏末 · 官網" tabindex="-1" aria-hidden="true" scrolling="no"></iframe><span class="i18n" data-zh="與你的第七次夏末 · 官網 ↗" data-en="The Seventh Summer · Official Site ↗" >與你的第七次夏末 · 官網 ↗</span></a>
-      <a class="wp-card" href="https://stay-my-host.netlify.app/" target="_blank" rel="noopener"><iframe class="wp-frame" src="https://stay-my-host.netlify.app/" data-src="https://stay-my-host.netlify.app/" loading="lazy" title="宿主請留步 · 官網" tabindex="-1" aria-hidden="true" scrolling="no"></iframe><span class="i18n" data-zh="宿主請留步 · 官網 ↗" data-en="Stay, My Host · Official Site ↗" >宿主請留步 · 官網 ↗</span></a>
-      </div></div>
+      
       <p class="i18n" data-zh="桌面版提供網頁內嵌預覽；手機版以縮圖呈現。" data-en="Live website previews on desktop; thumbnails on mobile." style="font-size:12px;color:rgba(190,214,255,.55);margin:28px 0;">桌面版提供網頁內嵌預覽；手機版以縮圖呈現。</p>
       </section>
 
@@ -1066,7 +1060,7 @@ class Component extends DCLogic {
       });
       if (key === 'journal') rrDefault();
       if (key === 'web') {
-        const group = ['research','teaching','camp','creative'].includes(parts[1]) ? parts[1] : 'all';
+        const group = ['research','teaching','camp'].includes(parts[1]) ? parts[1] : 'all';
         root.querySelectorAll('[data-web-group]').forEach((g) => { g.hidden = group !== 'all' && g.dataset.webGroup !== group; });
         root.querySelectorAll('[data-web-filter]').forEach((a) => {
           if (a.dataset.webFilter === group) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
